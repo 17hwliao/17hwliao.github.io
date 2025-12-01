@@ -475,6 +475,62 @@ return 0;
 
 
   
+    <article id="post-my-blog18" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2025/09/07/my-blog18/" class="article-date">
+      <time datetime="2025-09-07T07:44:19.247Z" itemprop="datePublished">2025-09-07</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <h2 id="四叶玫瑰花"><a href="#四叶玫瑰花" class="headerlink" title="四叶玫瑰花"></a>四叶玫瑰花</h2><h2 id="title-my-blog18date-2025-09-07-15-44-19tags"><a href="#title-my-blog18date-2025-09-07-15-44-19tags" class="headerlink" title="title: my-blog18date: 2025-09-07 15:44:19tags:"></a>title: my-blog18<br>date: 2025-09-07 15:44:19<br>tags:</h2><p>int func(int n);<br>int main(){<br>    int n;<br>    int arr[5];<br>    scanf(“%d”,&amp;n);<br>    int b[n];<br>    int cnt &#x3D; 0;<br>    for(int j &#x3D; 1000;j &lt;&#x3D; n ; j++){<br>        int k &#x3D; j;<br>        for(int i &#x3D; 0; i &lt;&#x3D; 4;i++){<br>            arr[i] &#x3D; k % 10;<br>            k &#x3D; k &#x2F; 10;<br>        }<br>    int sum;<br>    sum &#x3D; func(arr[0])+func(arr[1])+func(arr[2])+func(arr[3])+func(arr[4]);<br>    if(sum &#x3D;&#x3D; j){<br>        b[cnt] &#x3D; j;<br>        cnt++;<br>    }</p>
+<pre><code>&#125;
+for(int i= 0;i&lt;cnt; i++)&#123;
+    printf(&quot;%d&quot;,b[i]);
+    if(i != cnt-1)&#123;
+        printf(&quot; &quot;);
+    &#125;
+&#125;
+return 0;
+</code></pre>
+<p>}</p>
+<p>int func(int n){<br>    return n<em>n</em>n*n;<br>}</p>
+<p>#include &lt;stdio.h&gt;<br>#include &lt;string.h&gt;<br>int main(){<br>    long long count &#x3D;0;<br>    long long total &#x3D;0;<br>    char a[100001];<br>    scanf(“%s”,&amp;a);<br>    int n &#x3D; strlen(a);<br>    for(int i &#x3D; 0; i &lt; n; i++){<br>        if(a[i] &#x3D;&#x3D; ‘1’){<br>            count++;<br>        } else{<br>            total +&#x3D; count*(count+1)&#x2F;2;<br>            count &#x3D; 0;<br>      }<br>    }<br>    total +&#x3D; count*(count+1)&#x2F;2;<br>    printf(“%lld”,total);<br>    return 0 ;<br>}</p>
+
+      
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+
+      
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+  
     <article id="post-my-blog17" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
@@ -861,72 +917,6 @@ if (sum == a) &#123;
       
           
         <p>开始学习java<br>public class my_blog11{<br>	  public static void main(String[] args){<br>		  System.out.println(“你好时间”);<br>	  }<br>}</p>
-
-      
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-
-      
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-  
-    <article id="post-blog-10" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2025/08/29/blog-10/" class="article-date">
-      <time datetime="2025-08-29T08:08:51.000Z" itemprop="datePublished">2025-08-29</time>
-</a>
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2025/08/29/blog-10/">blog 10</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-          
-        <p>计算素数和素数和：<br>#include &lt;stdio.h&gt;<br>#include &lt;math.h&gt;</p>
-<p>int prime(int p) {<br>    if (p &lt; 2) return 0;<br>    if (p &#x3D;&#x3D; 2) return 1;<br>    if (p % 2 &#x3D;&#x3D; 0) return 0; </p>
-<pre><code>int limit = (int)sqrt(p);
-for (int i = 3; i &lt;= limit; i += 2) &#123;
-    if (p % i == 0) &#123;
-        return 0;
-    &#125;
-&#125;
-return 1;
-</code></pre>
-<p>}</p>
-<p>int PrimeSum(int m, int n) {<br>    int sum &#x3D; 0;<br>    for (int i &#x3D; m; i &lt;&#x3D; n; i++) {<br>        if (prime(i)) {<br>            sum +&#x3D; i;<br>        }<br>    }<br>    return sum;<br>}</p>
 
       
       

@@ -332,6 +332,72 @@
 </nav>
       <div class="body-wrap">
   
+    <article id="post-blog-10" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2025/08/29/blog-10/" class="article-date">
+      <time datetime="2025-08-29T08:08:51.000Z" itemprop="datePublished">2025-08-29</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2025/08/29/blog-10/">blog 10</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <p>计算素数和素数和：<br>#include &lt;stdio.h&gt;<br>#include &lt;math.h&gt;</p>
+<p>int prime(int p) {<br>    if (p &lt; 2) return 0;<br>    if (p &#x3D;&#x3D; 2) return 1;<br>    if (p % 2 &#x3D;&#x3D; 0) return 0; </p>
+<pre><code>int limit = (int)sqrt(p);
+for (int i = 3; i &lt;= limit; i += 2) &#123;
+    if (p % i == 0) &#123;
+        return 0;
+    &#125;
+&#125;
+return 1;
+</code></pre>
+<p>}</p>
+<p>int PrimeSum(int m, int n) {<br>    int sum &#x3D; 0;<br>    for (int i &#x3D; m; i &lt;&#x3D; n; i++) {<br>        if (prime(i)) {<br>            sum +&#x3D; i;<br>        }<br>    }<br>    return sum;<br>}</p>
+
+      
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+
+      
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+  
     <article id="post-blog-9" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
@@ -1010,61 +1076,6 @@ if (count == 0) &#123;
 <p>}<br>int ping(char board[ROW][COL], int row, int col) {<br>	int i &#x3D; 0;<br>	int j &#x3D; 0;<br>	for (i &#x3D; 0; i &lt; col; i++) {<br>		for (j &#x3D; 0; j &lt; col; j++) {<br>			if (board[i][j] &#x3D;&#x3D; ‘ ‘) {<br>				return 0;<br>			}<br>		}<br>	}<br>	return 1;<br>}<br>char win(char board[ROW][COL], int row, int col) {<br>	int i &#x3D; 0;        &#x2F;&#x2F;行<br>	for (i &#x3D; 0; i &lt; row; i++) {<br>		if (board[i][0] &#x3D;&#x3D; board[i][1] &amp;&amp; board[i][2] &amp;&amp; board[i][1] !&#x3D; ‘ ‘) {<br>			return board[i][1];<br>		}<br>	}<br>	int j &#x3D; 0;        &#x2F;&#x2F;列<br>	for (j &#x3D; 0; j &lt; row; j++) {<br>		if (board[0][j] &#x3D;&#x3D; board[1][j] &amp;&amp; board[2][j] &amp;&amp; board[1][j] !&#x3D; ‘ ‘) {<br>			return board[1][j];<br>		}<br>	}<br>	if(board[0][2] &#x3D;&#x3D; board[1][1] &amp;&amp; board[2][0] &#x3D;&#x3D; board[1][1] &amp;&amp; board[1][1] !&#x3D; ‘ ‘){<br>	return board[1][1]; }                          &#x2F;&#x2F;对角线<br>	<br>if (ping(board, row, col)) {<br>	return’Q’;<br>}<br>return’C’;<br>}</p>
 <p>test.c:<br>#include &lt;stdio.h&gt;<br>#include “game.h”<br>void menu() {<br>	printf(“########################################\n”);<br>	printf(“################1.开始玩耍###############\n”);<br>	printf(“################2.离开游戏###############\n”);<br>           }   &#x2F;&#x2F;设计个菜单<br>void game() {<br>	char ret &#x3D; 0;          &#x2F;&#x2F;加个变量接收值<br>	char board[ROW][COL] &#x3D; { 0 };<br>	in_board(board, ROW, COL);  &#x2F;&#x2F;初始化棋盘<br>	out_board(board, ROW, COL);        &#x2F;&#x2F;耍时候打印的棋盘<br>	while (1) {                    &#x2F;&#x2F;下棋<br>		people(board, ROW, COL);<br>		ret &#x3D; win(board, ROW, COL);     &#x2F;&#x2F;判断输赢<br>		if (ret !&#x3D; ‘C’) {<br>			break;<br>		}<br>		out_board(board, ROW, COL);<br>		computer(board, ROW, COL);<br>		ret &#x3D; win(board, ROW, COL);<br>		if (ret !&#x3D; ‘C’) {<br>			break;<br>		}<br>		out_board(board, ROW, COL);<br>	}<br>	if (ret &#x3D;&#x3D; ‘*’) {<br>		printf(“牢底666赢了\n”);<br>	}<br>	else if (ret &#x3D;&#x3D; ‘#’) {<br>		printf(“牢底你没下过电脑\n”);<br>	}<br>	else {<br>		printf(“这都能平局，菜！”);<br>	}<br>	out_board(board, ROW, COL);<br>}<br>int main() {<br>	srand((unsigned int)time(NULL));    &#x2F;&#x2F;利用时间栈制作随机数<br>	int input &#x3D; 0;<br>	do {<br>		menu();                     &#x2F;&#x2F;设置循环，方便玩耍<br>		printf(“你想选啥？&gt;”);<br>		scanf_s(“%d”, &amp;input);<br>		switch (input) {<br>		case 1:<br>			printf(“下棋了牢弟\n”);<br>			game();    &#x2F;&#x2F;设计游戏<br>				break;<br>		case 2:<br>			printf(“想退选这”);<br>				break;<br>		default:<br>			printf(“选个数字都不会，菜！”);<br>				break;<br>		}<br>	} while (input);<br>	return 0;<br>}</p>
 <p>game.h:<br>#include &lt;stdio.h&gt;<br>#pragma once           &#x2F;&#x2F;只用来声明函数<br>#define ROW 3            &#x2F;&#x2F;定义下实现n子棋<br>#define COL 3<br>#include &lt;stdlib.h&gt;<br>#include &lt;time.h&gt;<br>void in_board(char board[ROW][COL], int row, int col);    &#x2F;&#x2F;初始棋盘<br>void out_board(char board[ROW][COL], int row, int col);     &#x2F;&#x2F;打印棋盘<br>void people(char board[ROW][COL], int row, int col);    &#x2F;&#x2F;玩家游玩参数<br>void computer(char board[ROW][COL], int row, int col);    &#x2F;&#x2F;电脑参数<br>&#x2F;&#x2F;“ * ”   玩家赢<br>&#x2F;&#x2F;“ # ”   电脑赢<br>&#x2F;&#x2F;“ Q ”	  平局<br>&#x2F;&#x2F;“ C ”    继续<br>char win(char board[ROW][COL], int row, int col);</p>
-
-      
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-
-      
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-  
-    <article id="post-new-jounary" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2025/08/19/new-jounary/" class="article-date">
-      <time datetime="2025-08-19T04:27:18.000Z" itemprop="datePublished">2025-08-19</time>
-</a>
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2025/08/19/new-jounary/">new jounary</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-          
-        <p>This is my blog!</p>
 
       
       
