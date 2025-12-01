@@ -1,0 +1,1050 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>Hexo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta property="og:type" content="website">
+<meta property="og:title" content="Hexo">
+<meta property="og:url" content="http://example.com/page/4/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:author" content="John Doe">
+<meta name="twitter:card" content="summary">
+  
+    <link rel="alternative" href="/atom.xml" title="Hexo" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/http://oayoilchh.bkt.clouddn.com/2016/07/27/18:05:26%20">
+  
+  
+      
+<link rel="stylesheet" href="//cdn.bootcss.com/animate.css/3.5.0/animate.min.css">
+
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+  <link rel="stylesheet" href="/font-awesome/css/font-awesome.min.css">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  
+    
+    
+  
+  
+      <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  
+  <!-- 加载特效 -->
+    <script src="/js/pace.js"></script>
+    <link href="/css/pace/pace-theme-flash.css" rel="stylesheet" />
+  <script>
+      var yiliaConfig = {
+          rootUrl: '/',
+          fancybox: true,
+          animate: true,
+          isHome: true,
+          isPost: false,
+          isArchive: false,
+          isTag: false,
+          isCategory: false,
+          open_in_new: false
+      }
+  </script>
+<meta name="generator" content="Hexo 7.3.0"></head>
+<body>
+  <div id="container">
+    <div class="left-col">
+    <div class="overlay"></div>
+<div class="intrude-less">
+    <header id="header" class="inner">
+        <script src="http://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js"></script>
+        <a href="/" class="profilepic">
+            
+            <img lazy-src="img/head.jpg" class="js-avatar">
+            
+        </a>
+        <hgroup>
+          <h1 class="header-author"><a href="/"></a></h1>
+        </hgroup>
+        
+        
+            <form>
+                <input type="text" class="st-default-search-input search" id="local-search-input" placeholder="搜索一下" autocomplete="off">
+            </form>
+            <div id="local-search-result"></div>
+        
+        
+            <script type="text/javascript">
+                (function() {
+                    'use strict';
+                    function getMatchData(keyword, data) {
+                        var matchData = [];
+                        for(var i =0;i<data.length;i++){
+                            if(data[i].title.toLowerCase().indexOf(keyword)>=0) 
+                                matchData.push(data[i])
+                        }
+                        return matchData;
+                    }
+                    var $input = $('#local-search-input');
+                    var $resultContent = $('#local-search-result');
+                    $input.keyup(function(){
+                        $.ajax({
+                            url: '/search.json',
+                            dataType: "json",
+                            success: function( json ) {
+                                var str='<ul class=\"search-result-list\">';                
+                                var keyword = $input.val().trim().toLowerCase();
+                                $resultContent.innerHTML = "";
+                                if ($input.val().trim().length <= 0) {
+                                    $resultContent.empty();
+                                    $('#switch-area').show();
+                                    return;
+                                }
+                                var results = getMatchData(keyword, json);
+                                if(results.length === 0){
+                                    $resultContent.empty();
+                                    $('#switch-area').show();
+                                    return;
+                                } 
+                                for(var i =0; i<results.length; i++){
+                                    str += "<li><a href='"+ results[i].url +"' class='search-result-title'>"+ results[i].title +"</a></li>";
+                                }
+                                str += "</ul>";
+                                $resultContent.empty();
+                                $resultContent.append(str);
+                                $('#switch-area').hide();
+                            }
+                        });
+                    });
+                })();
+            </script>
+        
+        
+            <div id="switch-btn" class="switch-btn">
+                <div class="icon">
+                    <div class="icon-ctn">
+                        <div class="icon-wrap icon-house" data-idx="0">
+                            <div class="birdhouse"></div>
+                            <div class="birdhouse_holes"></div>
+                        </div>
+                        <div class="icon-wrap icon-ribbon hide" data-idx="1">
+                            <div class="ribbon"></div>
+                        </div>
+                        
+                        <div class="icon-wrap icon-link hide" data-idx="2">
+                            <div class="loopback_l"></div>
+                            <div class="loopback_r"></div>
+                        </div>
+                        
+                        
+                        <div class="icon-wrap icon-me hide" data-idx="3">
+                            <div class="user"></div>
+                            <div class="shoulder"></div>
+                        </div>
+                        
+                    </div>
+                </div>
+                <div class="tips-box hide">
+                    <div class="tips-arrow"></div>
+                    <ul class="tips-inner">
+                        <li>菜单</li>
+                        <li>标签</li>
+                        
+                        <li>友情链接</li>
+                        
+                        
+                        <li>关于我</li>
+                        
+                    </ul>
+                </div>
+            </div>
+        
+        <div id="switch-area" class="switch-area">
+            <div class="switch-wrap">
+                <section class="switch-part switch-part1">
+                    <nav class="header-menu">
+                        <ul>
+                        
+                            <li><a  target="_blank" rel="noopener" href="http://bestwing.me">博客首页</a></li>
+                        
+                            <li><a  href="/archives">文章归档</a></li>
+                        
+                            <li><a  href="/CTFStudy">学习导航</a></li>
+                        
+                            <li><a  href="/PWNABLE">PWNABLE</a></li>
+                        
+                            <li><a  href="/resume">个人简历</a></li>
+                        
+                        </ul>
+                    </nav>
+                    <nav class="header-nav">
+                        <ul class="social">
+                            
+                                <a class="fl mail"  target="_blank" href="http://mail.qq.com/cgi-bin/qm_share?t=qm_mailme&email=kvH99PT39-Dn_efS5PvivOPjvPH9-w" title="mail">mail</a>
+                            
+                                <a class="fl github"  target="_blank" href="https://github.com/WinMin" title="github">github</a>
+                            
+                                <a class="fl zhihu"  target="_blank" href="https://www.zhihu.com/people/Swings" title="zhihu">zhihu</a>
+                            
+                                <a class="fl weibo"  target="_blank" href="http://weibo.com/2672317963/profile?topnav=1&wvr=6&is_all=1" title="weibo">weibo</a>
+                            
+                                <a class="fl rss"  target="_blank" href="/atom.xml" title="rss">rss</a>
+                            
+                        </ul>
+                    </nav>
+                </section>
+                
+                <section class="switch-part switch-part2">
+                    <div class="widget tagcloud" id="js-tagcloud">
+                        
+                    </div>
+                </section>
+                
+                
+                <section class="switch-part switch-part3">
+                    <div id="js-friends">
+                    
+                      <a target="_blank"  class="main-nav-link switch-friends-link" href="http://ring3.xyz/">Yllen</a>
+                    
+                      <a target="_blank"  class="main-nav-link switch-friends-link" href="http://mxny.org/">麦香浓郁</a>
+                    
+                      <a target="_blank"  class="main-nav-link switch-friends-link" href="http://whereisk0shl.top/">K0sh1</a>
+                    
+                      <a target="_blank"  class="main-nav-link switch-friends-link" href="http://www.ycjcl.cc/">信鑫</a>
+                    
+                      <a target="_blank"  class="main-nav-link switch-friends-link" href="http://bystudent.com/">ByStundet表哥</a>
+                    
+                      <a target="_blank"  class="main-nav-link switch-friends-link" href="https://www.jarviswang.me/">汪神_Jarvis</a>
+                    
+                      <a target="_blank"  class="main-nav-link switch-friends-link" href="http://sh3ll.me/">Chu</a>
+                    
+                      <a target="_blank"  class="main-nav-link switch-friends-link" href="https://www.hackfun.org/">4ido10n</a>
+                    
+                      <a target="_blank"  class="main-nav-link switch-friends-link" href="http://www.cnblogs.com/iamstudy">L3m0n</a>
+                    
+                      <a target="_blank"  class="main-nav-link switch-friends-link" href="http://o0xmuhe.me/">muhe</a>
+                    
+                      <a target="_blank"  class="main-nav-link switch-friends-link" href="http://blog.nuptzj.cn/">_画船听雨</a>
+                    
+                      <a target="_blank"  class="main-nav-link switch-friends-link" href="http://www.virzz.com/index.html">Virink</a>
+                    
+                      <a target="_blank"  class="main-nav-link switch-friends-link" href="http://www.sqlsec.com/">国光</a>
+                    
+                      <a target="_blank"  class="main-nav-link switch-friends-link" href="http://www.bodkin.ren/">老锥</a>
+                    
+                      <a target="_blank"  class="main-nav-link switch-friends-link" href="http://www.cizel.cn/">C1zel</a>
+                    
+                      <a target="_blank"  class="main-nav-link switch-friends-link" href="http://1phan.cc">1phan</a>
+                    
+                      <a target="_blank"  class="main-nav-link switch-friends-link" href="https://www.liuil.top/">liuil</a>
+                    
+                      <a target="_blank"  class="main-nav-link switch-friends-link" href="http://www.cnblogs.com/Ox9A82/">Ox9A82</a>
+                    
+                      <a target="_blank"  class="main-nav-link switch-friends-link" href="http://burnegg.com/">burnegg</a>
+                    
+                      <a target="_blank"  class="main-nav-link switch-friends-link" href="https://jwrsec.cn/">jwr-sec</a>
+                    
+                      <a target="_blank"  class="main-nav-link switch-friends-link" href="http://sudalover.cn/">苏打</a>
+                    
+                      <a target="_blank"  class="main-nav-link switch-friends-link" href="http://blog.binklac.com">VeroFess</a>
+                    
+                      <a target="_blank"  class="main-nav-link switch-friends-link" href="http://www.bendawang.site/">bendawang</a>
+                    
+                      <a target="_blank"  class="main-nav-link switch-friends-link" href="http://weeklyalgo.codes/">hook</a>
+                    
+                      <a target="_blank"  class="main-nav-link switch-friends-link" href="http://www.flier.net.cn/">Flier&#39;blog</a>
+                    
+                      <a target="_blank"  class="main-nav-link switch-friends-link" href="http://www.mutepig.club">mutepig</a>
+                    
+                      <a target="_blank"  class="main-nav-link switch-friends-link" href="https://blog.iret.xyz/list.aspx">Silver</a>
+                    
+                      <a target="_blank"  class="main-nav-link switch-friends-link" href="http://simp1e.leanote.com/">Simple</a>
+                    
+                      <a target="_blank"  class="main-nav-link switch-friends-link" href="http://processor.pub/">Processor</a>
+                    
+                    </div>
+                </section>
+                
+                
+                
+                <section class="switch-part switch-part4">
+                
+                    <div id="js-aboutme">一只淹死在二进制海洋里的二进制狗</div>
+                </section>
+                
+            </div>
+        </div>
+    </header>
+</div>
+
+    </div>
+    <div class="mid-col">
+      <nav id="mobile-nav">
+      <div class="overlay">
+          <div class="slider-trigger"></div>
+          <h1 class="header-author js-mobile-header hide"><a href="/" title="Me"></a></h1>
+      </div>
+    <div class="intrude-less">
+        <header id="header" class="inner">
+            <a href="/" class="profilepic">
+                
+                    <img lazy-src="/img/head.jpg" class="js-avatar">
+                
+            </a>
+            <hgroup>
+              <h1 class="header-author"><a href="/" title="Me"></a></h1>
+            </hgroup>
+            
+            <nav class="header-menu">
+                <ul>
+                
+                    <li><a target="_blank" rel="noopener" href="http://bestwing.me">博客首页</a></li>
+                
+                    <li><a href="/archives">文章归档</a></li>
+                
+                    <li><a href="/CTFStudy">学习导航</a></li>
+                
+                    <li><a href="/PWNABLE">PWNABLE</a></li>
+                
+                    <li><a href="/resume">个人简历</a></li>
+                
+                <div class="clearfix"></div>
+                </ul>
+            </nav>
+            <nav class="header-nav">
+                <div class="social">
+                    
+                        <a class="mail" target="_blank" href="http://mail.qq.com/cgi-bin/qm_share?t=qm_mailme&email=kvH99PT39-Dn_efS5PvivOPjvPH9-w" title="mail">mail</a>
+                    
+                        <a class="github" target="_blank" href="https://github.com/WinMin" title="github">github</a>
+                    
+                        <a class="zhihu" target="_blank" href="https://www.zhihu.com/people/Swings" title="zhihu">zhihu</a>
+                    
+                        <a class="weibo" target="_blank" href="http://weibo.com/2672317963/profile?topnav=1&wvr=6&is_all=1" title="weibo">weibo</a>
+                    
+                        <a class="rss" target="_blank" href="/atom.xml" title="rss">rss</a>
+                    
+                </div>
+            </nav>
+        </header>                
+    </div>
+</nav>
+      <div class="body-wrap">
+  
+    <article id="post-my-blog50" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2025/10/09/my-blog50/" class="article-date">
+      <time datetime="2025-10-09T04:39:01.000Z" itemprop="datePublished">2025-10-09</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2025/10/09/my-blog50/">my-blog50</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <p>int CountDigit(int number, int digit) {<br>    if (number &#x3D;&#x3D; 0 &amp;&amp; digit &#x3D;&#x3D; 0){<br>    return 1;<br>}<br>    int count &#x3D; 0;<br>    long long n &#x3D; number;<br>    if (n &lt; 0) {<br>        n &#x3D; -n;<br>    }<br>    while (n &gt; 0) {<br>        int d &#x3D; n % 10;<br>        if (d &#x3D;&#x3D; digit) {<br>            count++;<br>        }<br>        n &#x2F;&#x3D; 10;<br>    }<br>    return count;<br>}</p>
+
+      
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+
+      
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+  
+    <article id="post-my-blog49" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2025/10/09/my-blog49/" class="article-date">
+      <time datetime="2025-10-09T04:38:02.000Z" itemprop="datePublished">2025-10-09</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2025/10/09/my-blog49/">my-blog49</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <p>int narcissistic(int number) {<br>    int a &#x3D; number;<br>    int n &#x3D; 0;<br>    int sum &#x3D; 0;</p>
+<pre><code>int temp = number;
+while (temp != 0) &#123;
+    n++;
+    temp /= 10;
+&#125;
+
+temp = number;
+while (temp != 0) &#123;
+    int digit = temp % 10;
+    sum += pow(digit, n);
+    temp /= 10;
+&#125;
+
+if (sum == a) &#123;
+    return 1;
+&#125; else &#123;
+    return 0;
+&#125;
+</code></pre>
+<p>}</p>
+<p>void PrintN(int m, int n) {<br>    for (int i &#x3D; m + 1; i &lt; n; i++) {<br>        if (narcissistic(i)) {<br>            printf(“%d\n”, i);<br>        }<br>    }<br>}</p>
+
+      
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+
+      
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+  
+    <article id="post-my-blog48" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2025/10/09/my-blog48/" class="article-date">
+      <time datetime="2025-10-09T04:37:43.000Z" itemprop="datePublished">2025-10-09</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2025/10/09/my-blog48/">my-blog48</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <p>int fn(int a, int n) {<br>    int temp &#x3D; 1;<br>    int arr &#x3D; 0;<br>    while(n &gt; 0) {<br>        arr +&#x3D; a * temp;<br>        temp *&#x3D; 10;<br>        n–;<br>    }<br>    return arr;<br>}</p>
+<p>int SumA(int a, int n) {<br>     static int sum &#x3D; 0;<br>    if(n &#x3D;&#x3D; 0) {<br>        int result &#x3D; sum;<br>        sum &#x3D; 0;<br>        return result;<br>    } else {<br>        sum +&#x3D; fn(a, n);<br>        return SumA(a, n - 1);<br>    }<br>}</p>
+
+      
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+
+      
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+  
+    <article id="post-my-blog47" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2025/10/09/my-blog47/" class="article-date">
+      <time datetime="2025-10-09T04:37:19.000Z" itemprop="datePublished">2025-10-09</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2025/10/09/my-blog47/">my-blog47</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <p>int reverse(int number) {<br>    if (number &#x3D;&#x3D; 0) return 0;</p>
+<pre><code>long long reversed = 0;
+int num = (number &lt; 0) ? -number : number;
+
+while (num != 0) &#123;
+    reversed = reversed * 10 + num % 10;
+    num /= 10; // ← 关键！
+&#125;
+
+if (number &lt; 0) reversed = -reversed;
+
+// 检查溢出（如需要）
+if (reversed &gt; 2147483647 || reversed &lt; -2147483648) 
+    return 0;
+    
+return (int)reversed;
+</code></pre>
+<p>}</p>
+
+      
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+
+      
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+  
+    <article id="post-my-blog46" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2025/10/05/my-blog46/" class="article-date">
+      <time datetime="2025-10-05T02:20:04.000Z" itemprop="datePublished">2025-10-05</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2025/10/05/my-blog46/">my_blog46</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <p>#include&lt;bits&#x2F;stdc++.h&gt;<br>using namespace std;<br>int main(){<br>    int n ;<br>    cin&gt;&gt;n;<br>    vector<int> arr(n);<br>    for(int i &#x3D; 0 ; i &lt; n ; i++){<br>        cin&gt;&gt;arr[i];<br>    }<br>    reverse(arr.begin(),arr.end());<br>    for(int j &#x3D; 0 ; j &lt; n ; j++){<br>        cout&lt;&lt;arr[j];<br>        if(j &lt; (n-1)){<br>            cout&lt;&lt;’ ‘;<br>        }<br>    }<br>    return 0 ;<br>}</p>
+
+      
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+
+      
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+  
+    <article id="post-my-blog45" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2025/10/05/my-blog45/" class="article-date">
+      <time datetime="2025-10-05T02:19:19.000Z" itemprop="datePublished">2025-10-05</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2025/10/05/my-blog45/">my_blog45</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <p>#include&lt;bits&#x2F;stdc++.h&gt;<br>using namespace std;<br>int main(){<br>    int n,k;<br>    cin&gt;&gt;n&gt;&gt;k;<br>    vector<int> arr;<br>    for(int i &#x3D; 1 ; i &lt;&#x3D; n; i++){<br>        arr.push_back(i);<br>    }<br>    int wei &#x3D; 0  ;<br>    while(arr.size()&gt;1){<br>        int s &#x3D; (wei+k-1) % arr.size();<br>        arr.erase(arr.begin()+s);<br>        wei &#x3D; s % arr.size();<br>    }<br>    cout&lt;&lt;arr[0];<br>    return 0;<br>}</p>
+
+      
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+
+      
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+  
+    <article id="post-my-blog44" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2025/10/05/my-blog44/" class="article-date">
+      <time datetime="2025-10-05T02:19:00.000Z" itemprop="datePublished">2025-10-05</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2025/10/05/my-blog44/">my_blog44</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <p>#include&lt;bits&#x2F;stdc++.h&gt;<br>using namespace std;<br>int main(){<br>    int n;<br>    cin&gt;&gt;n;<br>    int m,e;<br>    int sum &#x3D; 20;<br>    if((n&gt;0)&amp;&amp;(n&lt;&#x3D;20)){<br>    while(cin&gt;&gt;m&gt;&gt;e){<br>           sum -&#x3D; m ;<br>           if(sum &gt; 0 ){<br>               cout&lt;&lt;”属于你的故事，才刚刚开始”;<br>               break;<br>           } else{<br>        cout&lt;&lt;”此程未果，再战！”;<br>           }<br>        }<br>    }  else{<br>         cout&lt;&lt;”此程未果，再战！”;<br>    }</p>
+<pre><code>return 0 ;
+</code></pre>
+<p>}</p>
+
+      
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+
+      
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+  
+    <article id="post-my-blog43" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2025/10/02/my-blog43/" class="article-date">
+      <time datetime="2025-10-02T03:22:34.000Z" itemprop="datePublished">2025-10-02</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2025/10/02/my-blog43/">my_blog43</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <p>#include &lt;bits&#x2F;stdc++.h&gt;<br>using namespace std;<br>int main() {<br>    ios::sync_with_stdio(false);<br>    cin.tie(nullptr);<br>    int n;<br>    cin &gt;&gt; n;<br>    vector<long long> even(n), odd(n);<br>    vector<int> len(n);<br>    for (int i &#x3D; 0; i &lt; n; i++) {<br>        string s;<br>        cin &gt;&gt; s;<br>        len[i] &#x3D; s.size();<br>        for (int j &#x3D; 0; j &lt; s.size(); j++) {<br>            int digit &#x3D; s[j] - ‘0’;<br>            if (j % 2 &#x3D;&#x3D; 0) even[i] +&#x3D; digit;<br>            else            odd[i]  +&#x3D; digit;<br>        }<br>    }<br>    long long count &#x3D; 0;<br>    for (int i &#x3D; 0; i &lt; n; i++) {<br>        for (int j &#x3D; 0; j &lt; n; j++) {<br>            if (i &#x3D;&#x3D; j) continue;</p>
+<pre><code>        long long total_even, total_odd;
+        if (len[i] % 2 == 0) &#123;
+            total_even = even[i] + even[j];
+            total_odd  = odd[i]  + odd[j];
+        &#125; else &#123;
+            total_even = even[i] + odd[j];
+            total_odd  = odd[i]  + even[j];
+        &#125;
+
+        long long diff = total_odd - total_even;
+        if (diff % 11 == 0) &#123;
+            count++;
+        &#125;
+    &#125;
+&#125;
+cout &lt;&lt; count &lt;&lt; &#39;\n&#39;;
+return 0;
+</code></pre>
+<p>}</p>
+
+      
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+
+      
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+  
+    <article id="post-my-blog42" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2025/10/01/my-blog42/" class="article-date">
+      <time datetime="2025-10-01T07:04:57.253Z" itemprop="datePublished">2025-10-01</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <h2 id="十月一日发"><a href="#十月一日发" class="headerlink" title="十月一日发"></a>十月一日发</h2><h2 id="title-my-blog42date-2025-10-01-15-04-57tags"><a href="#title-my-blog42date-2025-10-01-15-04-57tags" class="headerlink" title="title: my_blog42date: 2025-10-01 15:04:57tags:"></a>title: my_blog42<br>date: 2025-10-01 15:04:57<br>tags:</h2><p>#include&lt;bits&#x2F;stdc++.h&gt;<br>using namespace std;<br>int main(){<br>    string s,q;<br>    cin&gt;&gt;s&gt;&gt;q;<br>    for (char &amp;c : s) c &#x3D; tolower(c);<br>    for (char &amp;c : q) c &#x3D; tolower(c);<br>    if(s&gt;q) cout&lt;&lt;1;<br>    else if(s&lt;q) cout&lt;&lt;-1;<br>    else cout&lt;&lt;0;<br>    return 0;<br>}</p>
+
+      
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+
+      
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+  
+    <article id="post-my-blog41" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2025/10/01/my-blog41/" class="article-date">
+      <time datetime="2025-10-01T07:04:40.491Z" itemprop="datePublished">2025-10-01</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <h2 id="补档九月三十日"><a href="#补档九月三十日" class="headerlink" title="补档九月三十日"></a>补档九月三十日</h2><h2 id="title-my-blog41date-2025-10-01-15-04-40tags"><a href="#title-my-blog41date-2025-10-01-15-04-40tags" class="headerlink" title="title: my_blog41date: 2025-10-01 15:04:40tags:"></a>title: my_blog41<br>date: 2025-10-01 15:04:40<br>tags:</h2><p>#include&lt;bits&#x2F;stdc++.h&gt;<br>using namespace std;<br>typedef long long ll;<br>int main(){<br>    ll n, m, k;<br>    cin &gt;&gt; n &gt;&gt; m &gt;&gt; k;<br>    vector&lt;set<int>&gt; arr(k + 1);<br>    for(int i &#x3D; 0; i &lt; n; i++){<br>        for(int j &#x3D; 0; j &lt; m; j++){<br>            int day;<br>            cin &gt;&gt; day;<br>            arr[day].insert(j + 1);<br>        }<br>    }<br>    for(int day &#x3D; 1; day &lt;&#x3D; k; day++){<br>        cout &lt;&lt; arr[day].size();<br>        if(day &lt; k) {<br>            cout &lt;&lt; “ “;<br>        }<br>    }<br>    cout &lt;&lt; endl;</p>
+<pre><code>return 0;
+</code></pre>
+<p>}</p>
+
+      
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+
+      
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+  
+  
+    <nav id="page-nav">
+      <a class="extend prev" rel="prev" href="/page/3/">&laquo; Prev</a><a class="page-number" href="/">1</a><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><span class="page-number current">4</span><a class="page-number" href="/page/5/">5</a><a class="page-number" href="/page/6/">6</a><span class="space">&hellip;</span><a class="page-number" href="/page/9/">9</a><a class="extend next" rel="next" href="/page/5/">Next &raquo;</a>
+    </nav>
+  
+</div>
+      <footer id="footer">
+    <div class="outer">
+        <div id="footer-info">
+            <div class="footer-left">
+                &copy; 2025 John Doe
+            </div>
+            <div class="footer-right">
+                <a href="http://hexo.io/" target="_blank">Hexo</a>  Theme <a href="http://bestwing.me" target="_blank">Sw'blog</a> by Swing
+            </div>
+        </div>
+        
+            <div class="visit">
+                
+                    <span id="busuanzi_container_site_pv" style='display:none'>
+                        <span id="site-visit" >海贼到访数: 
+                            <span id="busuanzi_value_site_uv"></span>
+                        </span>
+                    </span>
+                
+                
+                    <span>, </span>
+                
+                
+                    <span id="busuanzi_container_page_pv" style='display:none'>
+                        <span id="page-visit">本页阅读量: 
+                            <span id="busuanzi_value_page_pv"></span>
+                        </span>
+                    </span>
+                
+            </div>
+        
+    </div>
+</footer>
+
+    </div>
+    
+<script src="https://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js"></script>
+
+
+<script src="/js/main.js"></script>
+
+
+    <script>
+        $(document).ready(function() {
+            var backgroundnum = 24;
+            var backgroundimg = "url(/background/bg-x.jpg)".replace(/x/gi, Math.ceil(Math.random() * backgroundnum));
+            $("#mobile-nav").css({"background-image": backgroundimg,"background-size": "cover","background-position": "center"});
+            $(".left-col").css({"background-image": backgroundimg,"background-size": "cover","background-position": "center"});
+        })
+    </script>
+
+
+
+
+
+<div class="scroll" id="scroll">
+    <a href="#"><i class="fa fa-arrow-up"></i></a>
+    <a href="#comments"><i class="fa fa-comments-o"></i></a>
+    <a href="#footer"><i class="fa fa-arrow-down"></i></a>
+</div>
+<script>
+    $(document).ready(function() {
+        if ($("#comments").length < 1) {
+            $("#scroll > a:nth-child(2)").hide();
+        };
+    })
+</script>
+
+<script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js">
+</script>
+
+  <script language="javascript">
+    $(function() {
+        $("a[title]").each(function() {
+            var a = $(this);
+            var title = a.attr('title');
+            if (title == undefined || title == "") return;
+            a.data('title', title).removeAttr('title').hover(
+
+            function() {
+                var offset = a.offset();
+                $("<div id=\"anchortitlecontainer\"></div>").appendTo($("body")).html(title).css({
+                    top: offset.top - a.outerHeight() - 15,
+                    left: offset.left + a.outerWidth()/2 + 1
+                }).fadeIn(function() {
+                    var pop = $(this);
+                    setTimeout(function() {
+                        pop.remove();
+                    }, pop.text().length * 800);
+                });
+            }, function() {
+                $("#anchortitlecontainer").remove();
+            });
+        });
+    });
+</script>
+
+
+    <script type="text/javascript">
+      window.onload = function(){
+        document.getElementById("search").onclick = function(){
+            console.log("search")
+            search();
+        }
+      }
+      function search(){
+        (function(w,d,t,u,n,s,e){w['SwiftypeObject']=n;w[n]=w[n]||function(){
+        (w[n].q=w[n].q||[]).push(arguments);};s=d.createElement(t);
+        e=d.getElementsByTagName(t)[0];s.async=1;s.src=u;e.parentNode.insertBefore(s,e);
+        })(window,document,'script','//s.swiftypecdn.com/install/v2/st.js','_st');
+
+        _st('install','A1Pz-LKMXbrzcFg2FWi6','2.0.0');
+      }
+    </script>
+
+  </div>
+</body>
+</html>

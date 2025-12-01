@@ -1,0 +1,1218 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>Hexo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta property="og:type" content="website">
+<meta property="og:title" content="Hexo">
+<meta property="og:url" content="http://example.com/page/8/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:author" content="John Doe">
+<meta name="twitter:card" content="summary">
+  
+    <link rel="alternative" href="/atom.xml" title="Hexo" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/http://oayoilchh.bkt.clouddn.com/2016/07/27/18:05:26%20">
+  
+  
+      
+<link rel="stylesheet" href="//cdn.bootcss.com/animate.css/3.5.0/animate.min.css">
+
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+  <link rel="stylesheet" href="/font-awesome/css/font-awesome.min.css">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  
+    
+    
+  
+  
+      <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  
+  <!-- 加载特效 -->
+    <script src="/js/pace.js"></script>
+    <link href="/css/pace/pace-theme-flash.css" rel="stylesheet" />
+  <script>
+      var yiliaConfig = {
+          rootUrl: '/',
+          fancybox: true,
+          animate: true,
+          isHome: true,
+          isPost: false,
+          isArchive: false,
+          isTag: false,
+          isCategory: false,
+          open_in_new: false
+      }
+  </script>
+<meta name="generator" content="Hexo 7.3.0"></head>
+<body>
+  <div id="container">
+    <div class="left-col">
+    <div class="overlay"></div>
+<div class="intrude-less">
+    <header id="header" class="inner">
+        <script src="http://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js"></script>
+        <a href="/" class="profilepic">
+            
+            <img lazy-src="img/head.jpg" class="js-avatar">
+            
+        </a>
+        <hgroup>
+          <h1 class="header-author"><a href="/"></a></h1>
+        </hgroup>
+        
+        
+            <form>
+                <input type="text" class="st-default-search-input search" id="local-search-input" placeholder="搜索一下" autocomplete="off">
+            </form>
+            <div id="local-search-result"></div>
+        
+        
+            <script type="text/javascript">
+                (function() {
+                    'use strict';
+                    function getMatchData(keyword, data) {
+                        var matchData = [];
+                        for(var i =0;i<data.length;i++){
+                            if(data[i].title.toLowerCase().indexOf(keyword)>=0) 
+                                matchData.push(data[i])
+                        }
+                        return matchData;
+                    }
+                    var $input = $('#local-search-input');
+                    var $resultContent = $('#local-search-result');
+                    $input.keyup(function(){
+                        $.ajax({
+                            url: '/search.json',
+                            dataType: "json",
+                            success: function( json ) {
+                                var str='<ul class=\"search-result-list\">';                
+                                var keyword = $input.val().trim().toLowerCase();
+                                $resultContent.innerHTML = "";
+                                if ($input.val().trim().length <= 0) {
+                                    $resultContent.empty();
+                                    $('#switch-area').show();
+                                    return;
+                                }
+                                var results = getMatchData(keyword, json);
+                                if(results.length === 0){
+                                    $resultContent.empty();
+                                    $('#switch-area').show();
+                                    return;
+                                } 
+                                for(var i =0; i<results.length; i++){
+                                    str += "<li><a href='"+ results[i].url +"' class='search-result-title'>"+ results[i].title +"</a></li>";
+                                }
+                                str += "</ul>";
+                                $resultContent.empty();
+                                $resultContent.append(str);
+                                $('#switch-area').hide();
+                            }
+                        });
+                    });
+                })();
+            </script>
+        
+        
+            <div id="switch-btn" class="switch-btn">
+                <div class="icon">
+                    <div class="icon-ctn">
+                        <div class="icon-wrap icon-house" data-idx="0">
+                            <div class="birdhouse"></div>
+                            <div class="birdhouse_holes"></div>
+                        </div>
+                        <div class="icon-wrap icon-ribbon hide" data-idx="1">
+                            <div class="ribbon"></div>
+                        </div>
+                        
+                        <div class="icon-wrap icon-link hide" data-idx="2">
+                            <div class="loopback_l"></div>
+                            <div class="loopback_r"></div>
+                        </div>
+                        
+                        
+                        <div class="icon-wrap icon-me hide" data-idx="3">
+                            <div class="user"></div>
+                            <div class="shoulder"></div>
+                        </div>
+                        
+                    </div>
+                </div>
+                <div class="tips-box hide">
+                    <div class="tips-arrow"></div>
+                    <ul class="tips-inner">
+                        <li>菜单</li>
+                        <li>标签</li>
+                        
+                        <li>友情链接</li>
+                        
+                        
+                        <li>关于我</li>
+                        
+                    </ul>
+                </div>
+            </div>
+        
+        <div id="switch-area" class="switch-area">
+            <div class="switch-wrap">
+                <section class="switch-part switch-part1">
+                    <nav class="header-menu">
+                        <ul>
+                        
+                            <li><a  target="_blank" rel="noopener" href="http://bestwing.me">博客首页</a></li>
+                        
+                            <li><a  href="/archives">文章归档</a></li>
+                        
+                            <li><a  href="/CTFStudy">学习导航</a></li>
+                        
+                            <li><a  href="/PWNABLE">PWNABLE</a></li>
+                        
+                            <li><a  href="/resume">个人简历</a></li>
+                        
+                        </ul>
+                    </nav>
+                    <nav class="header-nav">
+                        <ul class="social">
+                            
+                                <a class="fl mail"  target="_blank" href="http://mail.qq.com/cgi-bin/qm_share?t=qm_mailme&email=kvH99PT39-Dn_efS5PvivOPjvPH9-w" title="mail">mail</a>
+                            
+                                <a class="fl github"  target="_blank" href="https://github.com/WinMin" title="github">github</a>
+                            
+                                <a class="fl zhihu"  target="_blank" href="https://www.zhihu.com/people/Swings" title="zhihu">zhihu</a>
+                            
+                                <a class="fl weibo"  target="_blank" href="http://weibo.com/2672317963/profile?topnav=1&wvr=6&is_all=1" title="weibo">weibo</a>
+                            
+                                <a class="fl rss"  target="_blank" href="/atom.xml" title="rss">rss</a>
+                            
+                        </ul>
+                    </nav>
+                </section>
+                
+                <section class="switch-part switch-part2">
+                    <div class="widget tagcloud" id="js-tagcloud">
+                        
+                    </div>
+                </section>
+                
+                
+                <section class="switch-part switch-part3">
+                    <div id="js-friends">
+                    
+                      <a target="_blank"  class="main-nav-link switch-friends-link" href="http://ring3.xyz/">Yllen</a>
+                    
+                      <a target="_blank"  class="main-nav-link switch-friends-link" href="http://mxny.org/">麦香浓郁</a>
+                    
+                      <a target="_blank"  class="main-nav-link switch-friends-link" href="http://whereisk0shl.top/">K0sh1</a>
+                    
+                      <a target="_blank"  class="main-nav-link switch-friends-link" href="http://www.ycjcl.cc/">信鑫</a>
+                    
+                      <a target="_blank"  class="main-nav-link switch-friends-link" href="http://bystudent.com/">ByStundet表哥</a>
+                    
+                      <a target="_blank"  class="main-nav-link switch-friends-link" href="https://www.jarviswang.me/">汪神_Jarvis</a>
+                    
+                      <a target="_blank"  class="main-nav-link switch-friends-link" href="http://sh3ll.me/">Chu</a>
+                    
+                      <a target="_blank"  class="main-nav-link switch-friends-link" href="https://www.hackfun.org/">4ido10n</a>
+                    
+                      <a target="_blank"  class="main-nav-link switch-friends-link" href="http://www.cnblogs.com/iamstudy">L3m0n</a>
+                    
+                      <a target="_blank"  class="main-nav-link switch-friends-link" href="http://o0xmuhe.me/">muhe</a>
+                    
+                      <a target="_blank"  class="main-nav-link switch-friends-link" href="http://blog.nuptzj.cn/">_画船听雨</a>
+                    
+                      <a target="_blank"  class="main-nav-link switch-friends-link" href="http://www.virzz.com/index.html">Virink</a>
+                    
+                      <a target="_blank"  class="main-nav-link switch-friends-link" href="http://www.sqlsec.com/">国光</a>
+                    
+                      <a target="_blank"  class="main-nav-link switch-friends-link" href="http://www.bodkin.ren/">老锥</a>
+                    
+                      <a target="_blank"  class="main-nav-link switch-friends-link" href="http://www.cizel.cn/">C1zel</a>
+                    
+                      <a target="_blank"  class="main-nav-link switch-friends-link" href="http://1phan.cc">1phan</a>
+                    
+                      <a target="_blank"  class="main-nav-link switch-friends-link" href="https://www.liuil.top/">liuil</a>
+                    
+                      <a target="_blank"  class="main-nav-link switch-friends-link" href="http://www.cnblogs.com/Ox9A82/">Ox9A82</a>
+                    
+                      <a target="_blank"  class="main-nav-link switch-friends-link" href="http://burnegg.com/">burnegg</a>
+                    
+                      <a target="_blank"  class="main-nav-link switch-friends-link" href="https://jwrsec.cn/">jwr-sec</a>
+                    
+                      <a target="_blank"  class="main-nav-link switch-friends-link" href="http://sudalover.cn/">苏打</a>
+                    
+                      <a target="_blank"  class="main-nav-link switch-friends-link" href="http://blog.binklac.com">VeroFess</a>
+                    
+                      <a target="_blank"  class="main-nav-link switch-friends-link" href="http://www.bendawang.site/">bendawang</a>
+                    
+                      <a target="_blank"  class="main-nav-link switch-friends-link" href="http://weeklyalgo.codes/">hook</a>
+                    
+                      <a target="_blank"  class="main-nav-link switch-friends-link" href="http://www.flier.net.cn/">Flier&#39;blog</a>
+                    
+                      <a target="_blank"  class="main-nav-link switch-friends-link" href="http://www.mutepig.club">mutepig</a>
+                    
+                      <a target="_blank"  class="main-nav-link switch-friends-link" href="https://blog.iret.xyz/list.aspx">Silver</a>
+                    
+                      <a target="_blank"  class="main-nav-link switch-friends-link" href="http://simp1e.leanote.com/">Simple</a>
+                    
+                      <a target="_blank"  class="main-nav-link switch-friends-link" href="http://processor.pub/">Processor</a>
+                    
+                    </div>
+                </section>
+                
+                
+                
+                <section class="switch-part switch-part4">
+                
+                    <div id="js-aboutme">一只淹死在二进制海洋里的二进制狗</div>
+                </section>
+                
+            </div>
+        </div>
+    </header>
+</div>
+
+    </div>
+    <div class="mid-col">
+      <nav id="mobile-nav">
+      <div class="overlay">
+          <div class="slider-trigger"></div>
+          <h1 class="header-author js-mobile-header hide"><a href="/" title="Me"></a></h1>
+      </div>
+    <div class="intrude-less">
+        <header id="header" class="inner">
+            <a href="/" class="profilepic">
+                
+                    <img lazy-src="/img/head.jpg" class="js-avatar">
+                
+            </a>
+            <hgroup>
+              <h1 class="header-author"><a href="/" title="Me"></a></h1>
+            </hgroup>
+            
+            <nav class="header-menu">
+                <ul>
+                
+                    <li><a target="_blank" rel="noopener" href="http://bestwing.me">博客首页</a></li>
+                
+                    <li><a href="/archives">文章归档</a></li>
+                
+                    <li><a href="/CTFStudy">学习导航</a></li>
+                
+                    <li><a href="/PWNABLE">PWNABLE</a></li>
+                
+                    <li><a href="/resume">个人简历</a></li>
+                
+                <div class="clearfix"></div>
+                </ul>
+            </nav>
+            <nav class="header-nav">
+                <div class="social">
+                    
+                        <a class="mail" target="_blank" href="http://mail.qq.com/cgi-bin/qm_share?t=qm_mailme&email=kvH99PT39-Dn_efS5PvivOPjvPH9-w" title="mail">mail</a>
+                    
+                        <a class="github" target="_blank" href="https://github.com/WinMin" title="github">github</a>
+                    
+                        <a class="zhihu" target="_blank" href="https://www.zhihu.com/people/Swings" title="zhihu">zhihu</a>
+                    
+                        <a class="weibo" target="_blank" href="http://weibo.com/2672317963/profile?topnav=1&wvr=6&is_all=1" title="weibo">weibo</a>
+                    
+                        <a class="rss" target="_blank" href="/atom.xml" title="rss">rss</a>
+                    
+                </div>
+            </nav>
+        </header>                
+    </div>
+</nav>
+      <div class="body-wrap">
+  
+    <article id="post-blog-9" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2025/08/28/blog-9/" class="article-date">
+      <time datetime="2025-08-28T07:06:08.000Z" itemprop="datePublished">2025-08-28</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2025/08/28/blog-9/">blog 9</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <p>&#x2F;&#x2F;冒泡排序<br>void func1(int arr[], int n) {<br>	int i, j;<br>	for (i &#x3D; 0; i &lt; n - 1; i++) {<br>		for (j &#x3D; 0; j &lt; n - 1 - i; j++) {<br>			if (arr[j] &gt; arr[j + 1]) {<br>				int num &#x3D; arr[j];<br>				arr[j] &#x3D; arr[j+1];<br>				arr[j + 1] &#x3D; num;<br>			}<br>		}<br>	}<br>}</p>
+<p>&#x2F;&#x2F;二分查找<br>int func2(int n, int arr[],int x) {<br>	int left &#x3D; 0;<br>	int right &#x3D; n - 1;<br>	while (left &lt;&#x3D; right) {<br>		int mid &#x3D; left +(right - left) &#x2F; 2;<br>		if (arr[mid] &#x3D;&#x3D; x) {<br>			return mid;<br>		}<br>		else if (arr[mid] &lt; x) {<br>			left &#x3D; mid + 1;<br>		}<br>		else right &#x3D; mid - 1;<br>	}<br>	return -1;<br>}</p>
+<p>&#x2F;&#x2F;希尔排序<br>void func3(int arr[], int n) {<br>	int i, j, num,gap;<br>	for (gap &#x3D; n &#x2F; 2; gap &gt; 0; gap &#x2F;&#x3D; 2) {<br>		for (i &#x3D; gap; i&lt;n; i++) {<br>			num &#x3D; arr[i];<br>			for (j &#x3D; i; j &gt;&#x3D; gap &amp;&amp; num &lt; arr[j - gap]; j -&#x3D; gap) {<br>				arr[j] &#x3D; arr[j - gap];<br>			}<br>			arr[j] &#x3D; num;<br>		}<br>	}<br>}</p>
+
+      
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+
+      
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+  
+    <article id="post-my-blog-8" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2025/08/27/my-blog-8/" class="article-date">
+      <time datetime="2025-08-27T07:22:16.000Z" itemprop="datePublished">2025-08-27</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2025/08/27/my-blog-8/">my blog 8</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <p>#include &lt;stdio.h&gt;</p>
+<p>int main() {<br>    int apples[10];  &#x2F;&#x2F; 存储10个苹果的高度<br>    int tao_height;  &#x2F;&#x2F; 陶陶的伸手高度<br>    int count &#x3D; 0;   &#x2F;&#x2F; 能够摘到的苹果数量</p>
+<pre><code>// 读取10个苹果的高度
+for(int i = 0; i &lt; 10; i++) &#123;
+    scanf(&quot;%d&quot;, &amp;apples[i]);
+&#125;
+
+// 读取陶陶的伸手高度
+scanf(&quot;%d&quot;, &amp;tao_height);
+
+// 计算陶陶能够到的高度（加上板凳高度）
+int reach_height = tao_height + 30;
+
+// 统计能够摘到的苹果数量
+for(int i = 0; i &lt; 10; i++) &#123;
+    if(apples[i] &lt;= reach_height) &#123;
+        count++;
+    &#125;
+&#125;
+
+// 输出结果
+printf(&quot;%d\n&quot;, count);
+
+return 0;
+</code></pre>
+<p>}</p>
+
+      
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+
+      
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+  
+    <article id="post-my-blog-7" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2025/08/26/my-blog-7/" class="article-date">
+      <time datetime="2025-08-26T06:35:27.000Z" itemprop="datePublished">2025-08-26</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2025/08/26/my-blog-7/">my blog 7</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <p>#include&lt;stdio.h&gt;<br>int arr2(int k,int i ,double j){<br>    if(j&gt;k){<br>       return i-1;<br>    }<br>        return arr2(k,i+1,j + 1.0&#x2F;i);<br>    }<br>int main(){<br>    int k ;<br>    scanf(“%d”,&amp;k);<br>    int s &#x3D; arr2(k,1,0.0);<br>    printf(“%d”,s);<br>     return 0;<br>}</p>
+
+      
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+
+      
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+  
+    <article id="post-blog-6" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2025/08/25/blog-6/" class="article-date">
+      <time datetime="2025-08-25T10:22:54.000Z" itemprop="datePublished">2025-08-25</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2025/08/25/blog-6/">blog 6</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <p>#include &lt;stdio.h&gt;<br>#include &lt;stdlib.h&gt;<br>#include &lt;string.h&gt;</p>
+<p>#define MAX_NAME_LENGTH 50<br>#define MAX_NAMES 100000</p>
+<p>typedef struct {<br>    char name[MAX_NAME_LENGTH];<br>    int count;<br>} Child;</p>
+<p>Child children[MAX_NAMES];<br>int child_count &#x3D; 0;<br>int find_or_add_child(const char *name) {<br>    for (int i &#x3D; 0; i &lt; child_count; i++) {<br>        if (strcmp(children[i].name, name) &#x3D;&#x3D; 0) {<br>            return i;<br>        }<br>    }<br>    strcpy(children[child_count].name, name);<br>    children[child_count].count &#x3D; 0;<br>    return child_count++;<br>}</p>
+<p>int main() {<br>    int n;<br>    scanf(“%d”, &amp;n);</p>
+<pre><code>int total = 0;
+int ans = 0;
+
+for (int i = 0; i &lt; n; i++) &#123;
+    char name[MAX_NAME_LENGTH];
+    scanf(&quot;%s&quot;, name);
+    
+    int idx = find_or_add_child(name);
+    
+    if (children[idx].count &gt; total - children[idx].count) &#123;
+        ans++;
+    &#125;
+    
+    children[idx].count++;
+    total++;
+&#125;
+
+printf(&quot;%d\n&quot;, ans);
+return 0;
+</code></pre>
+<p>}</p>
+
+      
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+
+      
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+  
+    <article id="post-blog5" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2025/08/24/blog5/" class="article-date">
+      <time datetime="2025-08-24T10:00:51.000Z" itemprop="datePublished">2025-08-24</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2025/08/24/blog5/">blog   5</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <p>include &lt;stdio.h&gt;<br>#include &lt;stdbool.h&gt;</p>
+<p>int main() {<br>    int n, m, horse_x, horse_y;<br>    scanf(“%d %d %d %d”, &amp;n, &amp;m, &amp;horse_x, &amp;horse_y);</p>
+<pre><code>// 马的控制点偏移量
+int dx[] = &#123;1, 1, -1, -1, 2, 2, -2, -2, 0&#125;;
+int dy[] = &#123;2, -2, 2, -2, 1, -1, 1, -1, 0&#125;;
+
+// 创建障碍物网格
+bool obstacle[n + 1][m + 1];
+for (int i = 0; i &lt;= n; i++) &#123;
+    for (int j = 0; j &lt;= m; j++) &#123;
+        obstacle[i][j] = false;
+    &#125;
+&#125;
+
+// 标记马的控制点为障碍物
+for (int i = 0; i &lt; 9; i++) &#123;
+    int nx = horse_x + dx[i];
+    int ny = horse_y + dy[i];
+    if (nx &gt;= 0 &amp;&amp; nx &lt;= n &amp;&amp; ny &gt;= 0 &amp;&amp; ny &lt;= m) &#123;
+        obstacle[nx][ny] = true;
+    &#125;
+&#125;
+
+// 如果起点是障碍物，直接输出0
+if (obstacle[0][0]) &#123;
+    printf(&quot;0\n&quot;);
+    return 0;
+&#125;
+
+// 初始化DP数组
+long long dp[n + 1][m + 1];
+for (int i = 0; i &lt;= n; i++) &#123;
+    for (int j = 0; j &lt;= m; j++) &#123;
+        dp[i][j] = 0;
+    &#125;
+&#125;
+dp[0][0] = 1;
+
+// 动态规划计算路径数
+for (int i = 0; i &lt;= n; i++) &#123;
+    for (int j = 0; j &lt;= m; j++) &#123;
+        if (obstacle[i][j]) &#123;
+            continue;
+        &#125;
+        if (i &gt; 0 &amp;&amp; !obstacle[i - 1][j]) &#123;
+            dp[i][j] += dp[i - 1][j];
+        &#125;
+        if (j &gt; 0 &amp;&amp; !obstacle[i][j - 1]) &#123;
+            dp[i][j] += dp[i][j - 1];
+        &#125;
+    &#125;
+&#125;
+
+printf(&quot;%lld\n&quot;, dp[n][m]);
+return 0;
+</code></pre>
+<p>}</p>
+
+      
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+
+      
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+  
+    <article id="post-blog4" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2025/08/23/blog4/" class="article-date">
+      <time datetime="2025-08-23T10:40:33.000Z" itemprop="datePublished">2025-08-23</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2025/08/23/blog4/">blog4</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <p>实现数字反转<br>#include &lt;stdio.h&gt;</p>
+<p>int add2(int a, int c) {<br>    if (a &#x3D;&#x3D; 0) {<br>        return c;<br>    }<br>    return add2(a &#x2F; 10, c * 10 + a % 10);<br>}</p>
+<p>int main() {<br>    int x &#x3D; 0;<br>    int y &#x3D; 0;<br>    scanf(“%d”,&amp;x);<br>    if (x &lt; 0) {<br>        x &#x3D; -x;<br>        y &#x3D; add2(x, 0);<br>        printf(“-%d”, y);<br>    } else {<br>        y &#x3D; add2(x, 0);<br>        printf(“%d”, y);<br>    }<br>    return 0;<br>}</p>
+
+      
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+
+      
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+  
+    <article id="post-my-blog3" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2025/08/21/my-blog3/" class="article-date">
+      <time datetime="2025-08-21T07:52:19.000Z" itemprop="datePublished">2025-08-21</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2025/08/21/my-blog3/">my blog3</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <p>python  crawler:import os<br>import requests<br>from lxml import etree</p>
+<p>headers &#x3D; {<br>    ‘User-Agent’: ‘Mozilla&#x2F;5.0 (Windows NT 10.0; Win64; x64) AppleWebKit&#x2F;537.36 (KHTML, like Gecko) Chrome&#x2F;121.0.0.0 Safari&#x2F;537.36’,<br>}<br>index_url &#x3D; ‘<a target="_blank" rel="noopener" href="https://music.163.com/discover/toplist?id=19723756">https://music.163.com/discover/toplist?id=19723756</a>‘<br>response &#x3D; requests.get(index_url, headers&#x3D;headers)<br>html &#x3D; etree.HTML(response.text)<br>id_info_list &#x3D; html.xpath(‘&#x2F;&#x2F;ul[@class&#x3D;”f-hide”]&#x2F;li&#x2F;a&#x2F;@href’)<br>name_list &#x3D; html.xpath(‘&#x2F;&#x2F;ul[@class&#x3D;”f-hide”]&#x2F;li&#x2F;a&#x2F;text()’)<br>if not os.path.exists(‘网易云音乐’):<br>    os.mkdir(‘网易云音乐’)<br>for id_info, name in zip(id_info_list, name_list):<br>    music_id &#x3D; id_info.split(‘&#x3D;’)[1]<br>    music_url &#x3D; ‘<a target="_blank" rel="noopener" href="https://music.163.com/song/media/outer/url?id=">https://music.163.com/song/media/outer/url?id=</a>‘ + music_id<br>    response &#x3D; requests.get(music_url, headers&#x3D;headers)<br>    name &#x3D; name.replace(‘&#x2F;‘, ‘-‘)<br>    with open(f’.&#x2F;网易云音乐&#x2F;{name}.mp3’, ‘wb’) as file:<br>        file.write(response.content)</p>
+<pre><code>print(f&#39;音乐名称：&#123;name&#125;  下载链接：&#123;music_url&#125; 下载完毕&#39;)
+</code></pre>
+
+      
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+
+      
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+  
+    <article id="my-blog2" class="article article-type-my" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2025/08/20/blog2/" class="article-date">
+      <time datetime="2025-08-20T12:26:04.000Z" itemprop="datePublished">2025-08-20</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2025/08/20/blog2/">blog2</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <p>实现扫雷游戏：<br>game.c:<br>#include “game.h”</p>
+<p>void in_board(char board[ROWS][COLS], int rows, int cols, char set) {<br>	int i &#x3D; 0;<br>	int j &#x3D; 0;<br>	for (i &#x3D; 0; i &lt; rows; i++) {<br>		for (j &#x3D; 0; j &lt; cols; j++) {<br>			board[i][j] &#x3D; set;<br>		}<br>	}<br>}</p>
+<p>void paly_board(char board[ROWS][COLS], int row, int col) {<br>	int i &#x3D; 0;<br>	int j &#x3D; 0;<br>	printf(“—————-扫雷游戏——————-\n”);<br>	for (j &#x3D; 0; j &lt;&#x3D; col; j++) {<br>		printf(“%d “, j);<br>	}<br>	printf(“\n”);<br>	for (i &#x3D; 1; i &lt;&#x3D; row; i++) {<br>		printf(“%d “, i);<br>		for (j &#x3D; 1; j &lt;&#x3D; col; j++) {<br>			printf(“%c “, board[i][j]);<br>		}<br>		printf(“\n”);<br>	}<br>	printf(“—————-扫雷游戏——————-\n”);<br>}</p>
+<p>void setmine(char board[ROWS][COLS], int row, int col) {<br>	int count &#x3D; MINE_COUNT;<br>	while (count) {<br>		int x &#x3D; rand() % row + 1;<br>		int y &#x3D; rand() % col + 1;<br>		if (board[x][y] &#x3D;&#x3D; ‘0’) {<br>			board[x][y] &#x3D; ‘1’;<br>			count–;<br>		}<br>	}<br>}</p>
+<p>int get_mine_count(char board[ROWS][COLS], int x, int y) {<br>	return (board[x - 1][y] +<br>		board[x - 1][y - 1] +<br>		board[x - 1][y + 1] +<br>		board[x][y - 1] +<br>		board[x][y + 1] +<br>		board[x + 1][y - 1] +<br>		board[x + 1][y + 1] +<br>		board[x + 1][y] - 8 * ‘0’);<br>}</p>
+<p>&#x2F;&#x2F; 扩展空白区域的递归函数<br>void expand(char mine[ROWS][COLS], char show[ROWS][COLS], int x, int y, int* win) {<br>	&#x2F;&#x2F; 检查坐标是否越界<br>	if (x &lt; 1 || x &gt; ROW || y &lt; 1 || y &gt; COL) {<br>		return;<br>	}</p>
+<pre><code>// 如果该位置已经展开或者是地雷，则返回
+if (show[x][y] != &#39;*&#39; || mine[x][y] == &#39;1&#39;) &#123;
+	return;
+&#125;
+
+// 计算周围地雷数量
+int count = get_mine_count(mine, x, y);
+show[x][y] = count + &#39;0&#39;;
+(*win)++;
+
+// 如果周围没有地雷，则递归展开周围的8个格子
+if (count == 0) &#123;
+	expand(mine, show, x - 1, y - 1, win);
+	expand(mine, show, x - 1, y, win);
+	expand(mine, show, x - 1, y + 1, win);
+	expand(mine, show, x, y - 1, win);
+	expand(mine, show, x, y + 1, win);
+	expand(mine, show, x + 1, y - 1, win);
+	expand(mine, show, x + 1, y, win);
+	expand(mine, show, x + 1, y + 1, win);
+&#125;
+</code></pre>
+<p>}</p>
+<p>void FindMine(char mine[ROWS][COLS], char show[ROWS][COLS], int row, int col) {<br>	int x &#x3D; 0;<br>	int y &#x3D; 0;<br>	int win &#x3D; 0;</p>
+<pre><code>while (win &lt; row * col - MINE_COUNT) &#123;
+	printf(&quot;牢底祝你这次不会被炸死，坐标&gt;&quot;);
+	scanf_s(&quot;%d %d&quot;, &amp;x, &amp;y);
+	if (x &gt;= 1 &amp;&amp; x &lt;= row &amp;&amp; y &gt;= 1 &amp;&amp; y &lt;= col) &#123;
+		if (show[x][y] != &#39;*&#39;) &#123;
+			printf(&quot;会玩不这已经有了\n&quot;);
+		&#125;
+		else &#123;
+			if (mine[x][y] == &#39;1&#39;) &#123;
+				printf(&quot;很遗憾，您踩到地雷了！游戏结束\n&quot;);
+				paly_board(mine, ROW, COL);
+				break;
+			&#125;
+			else &#123;
+				// 使用扩展函数而不是直接显示数字
+				expand(mine, show, x, y, &amp;win);
+				paly_board(show, ROW, COL);
+			&#125;
+		&#125;
+	&#125;
+	else &#123;
+		printf(&quot;牢底会不会玩，重新输入！\n&quot;);
+	&#125;
+
+	if (win == row * col - MINE_COUNT) &#123;
+		printf(&quot;牢底你会玩，赢了\n&quot;);
+		paly_board(show, ROW, COL);
+	&#125;
+&#125;
+</code></pre>
+<p>}</p>
+<p>game.h:<br>#pragma once</p>
+<p>#include &lt;stdio.h&gt;<br>#include &lt;stdlib.h&gt;<br>#include &lt;time.h&gt;</p>
+<p>#define ROW 9<br>#define COL 9</p>
+<p>#define ROWS ROW+2<br>#define COLS COL+2</p>
+<p>#define MINE_COUNT 10</p>
+<p>&#x2F;&#x2F; 初始化棋盘<br>void in_board(char board[ROWS][COLS], int rows, int cols, char set);</p>
+<p>&#x2F;&#x2F; 打印棋盘<br>void paly_board(char board[ROWS][COLS], int row, int col);</p>
+<p>&#x2F;&#x2F; 布置雷<br>void setmine(char board[ROWS][COLS], int row, int col);</p>
+<p>&#x2F;&#x2F; 排雷<br>void FindMine(char mine[ROWS][COLS], char show[ROWS][COLS], int row, int col);</p>
+<p>&#x2F;&#x2F; 扩展空白区域 - 新增函数<br>void expand(char mine[ROWS][COLS], char show[ROWS][COLS], int x, int y, int* win);</p>
+<p>test.c:<br>#include “game.h”</p>
+<p>void menu() {<br>	printf(“<strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong>\n”);<br>	printf(“</strong></strong></strong>*   1. 牢底来扫雷了       <em><strong><strong><strong>\n”);<br>	printf(“</strong></strong></strong></em>   2. 不想玩就输这个     *******\n”);<br>	printf(“******</strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong>\n”);<br>}</p>
+<p>void game() {<br>	char mine[ROWS][COLS] &#x3D; {0};&#x2F;&#x2F;存放布置好的雷<br>	char show[ROWS][COLS] &#x3D; {0};&#x2F;&#x2F;存放排查出的雷的信息<br>	&#x2F;&#x2F;初始化棋盘<br>	in_board(mine, ROWS, COLS, ‘0’);&#x2F;&#x2F;‘0’<br>	in_board(show, ROWS, COLS, ‘<em>‘);&#x2F;&#x2F;‘</em>‘<br>	&#x2F;&#x2F;布置雷<br>	setmine(mine, ROW, COL);<br>	&#x2F;&#x2F;打印棋盘<br>	&#x2F;&#x2F;paly_board(mine, ROW, COL);<br>	paly_board(show, ROW, COL);<br>	&#x2F;&#x2F;排查雷<br>	FindMine(mine, show, ROW, COL);<br>}</p>
+<p>int main() {<br>	int input &#x3D; 0;<br>	srand((unsigned int)time(NULL));<br>	do {<br>		menu();<br>		printf(“请选择:&gt;”);<br>		scanf_s(“%d”, &amp;input);<br>		switch (input) {<br>		case 1:<br>			game();<br>			break;<br>		case 2:<br>			printf(“退出游戏\n”);<br>			break;<br>		default:<br>			printf(“选择错误，重新选择！\n”);<br>			break;<br>		}<br>	} while (input);<br>	return 0;<br>}</p>
+
+      
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+
+      
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+  
+    <article id="post-the-first-program" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2025/08/19/the-first-program/" class="article-date">
+      <time datetime="2025-08-19T05:34:52.000Z" itemprop="datePublished">2025-08-19</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2025/08/19/the-first-program/">the first program</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <p>game.c:<br>&#x2F;&#x2F;具体实现函数运营<br>#include “game.h”<br>#include &lt;stdio.h&gt;<br>void in_board(char board[ROW][COL], int row, int col){<br>	int i &#x3D; 0;<br>	int j &#x3D; 0;<br>	for (i &#x3D; 0; i &lt; row; i++)      &#x2F;&#x2F;实现二维数组<br>	{<br>		for (j &#x3D; 0; j &lt; col; j++)<br>		{<br>			board[i][j] &#x3D; ‘ ‘;        &#x2F;&#x2F;空格为字符占位<br>	}</p>
+<pre><code>&#125;
+</code></pre>
+<p>}<br>void out_board(char board[ROW][COL], int row, int col) {<br>	int i &#x3D; 0;<br>	for (i &#x3D;0; i&lt;row ; i++){<br>	&#x2F;&#x2F;printf(“ %c | %c | %c \n”, board[i][0], board[i][1], board[i][2]);    &#x2F;&#x2F;打印数据<br>		int j &#x3D; 0;<br>		for (j &#x3D; 0; j &lt; col; j++) {<br>			printf(“ %c “, board[i][j]);<br>			if (j &lt; col-1)<br>				printf(“|”);</p>
+<pre><code>	&#125;
+	printf(&quot;\n&quot;);
+	if (i &lt; row - 1) &#123;
+		int j = 0;
+		for (j = 0; j &lt; col; j++) &#123;
+			printf(&quot;---&quot;);
+			if (j &lt; col - 1)
+				printf(&quot;|&quot;);
+		&#125;
+
+		printf(&quot;\n&quot;);
+	&#125;
+
+&#125;
+</code></pre>
+<p>}<br>void people(char board[ROW][COL], int row, int col) {<br>	int x &#x3D; 0;<br>	int y &#x3D; 0;<br>	printf(“牢底轮你了\n”);<br>	while (1) {<br>		printf(“输入坐标\n”);<br>		scanf_s(“%d %d”, &amp;x, &amp;y);<br>		if (x &gt;&#x3D; 1 &amp;&amp; x &lt;&#x3D; row &amp;&amp; y &gt;&#x3D; 1 &amp;&amp; y &lt;&#x3D; col) {<br>			if (board[x - 1][y - 1] &#x3D;&#x3D; ‘ ‘) {<br>				board[x - 1][y - 1] &#x3D; ‘*’;<br>				break;<br>			}<br>			else {<br>				printf(“牢底重复下了”);<br>			}<br>		}<br>		else {<br>			printf(“牢底别瞎玩\n”);<br>		}<br>	}</p>
+<p>}<br>void computer(char board[ROW][COL], int row, int col) {<br>	printf(“电脑该你下了\n”);<br>		int x &#x3D; 0;<br>	    int y &#x3D; 0;<br>		while (1) {<br>			x &#x3D; rand() % row;<br>			y &#x3D; rand() % col;<br>			if (board[x][y] &#x3D;&#x3D; ‘ ‘) {<br>				board[x][y] &#x3D; ‘#’;<br>				break;<br>			}<br>		}</p>
+<p>}<br>int ping(char board[ROW][COL], int row, int col) {<br>	int i &#x3D; 0;<br>	int j &#x3D; 0;<br>	for (i &#x3D; 0; i &lt; col; i++) {<br>		for (j &#x3D; 0; j &lt; col; j++) {<br>			if (board[i][j] &#x3D;&#x3D; ‘ ‘) {<br>				return 0;<br>			}<br>		}<br>	}<br>	return 1;<br>}<br>char win(char board[ROW][COL], int row, int col) {<br>	int i &#x3D; 0;        &#x2F;&#x2F;行<br>	for (i &#x3D; 0; i &lt; row; i++) {<br>		if (board[i][0] &#x3D;&#x3D; board[i][1] &amp;&amp; board[i][2] &amp;&amp; board[i][1] !&#x3D; ‘ ‘) {<br>			return board[i][1];<br>		}<br>	}<br>	int j &#x3D; 0;        &#x2F;&#x2F;列<br>	for (j &#x3D; 0; j &lt; row; j++) {<br>		if (board[0][j] &#x3D;&#x3D; board[1][j] &amp;&amp; board[2][j] &amp;&amp; board[1][j] !&#x3D; ‘ ‘) {<br>			return board[1][j];<br>		}<br>	}<br>	if(board[0][2] &#x3D;&#x3D; board[1][1] &amp;&amp; board[2][0] &#x3D;&#x3D; board[1][1] &amp;&amp; board[1][1] !&#x3D; ‘ ‘){<br>	return board[1][1]; }                          &#x2F;&#x2F;对角线<br>	<br>if (ping(board, row, col)) {<br>	return’Q’;<br>}<br>return’C’;<br>}</p>
+<p>test.c:<br>#include &lt;stdio.h&gt;<br>#include “game.h”<br>void menu() {<br>	printf(“########################################\n”);<br>	printf(“################1.开始玩耍###############\n”);<br>	printf(“################2.离开游戏###############\n”);<br>           }   &#x2F;&#x2F;设计个菜单<br>void game() {<br>	char ret &#x3D; 0;          &#x2F;&#x2F;加个变量接收值<br>	char board[ROW][COL] &#x3D; { 0 };<br>	in_board(board, ROW, COL);  &#x2F;&#x2F;初始化棋盘<br>	out_board(board, ROW, COL);        &#x2F;&#x2F;耍时候打印的棋盘<br>	while (1) {                    &#x2F;&#x2F;下棋<br>		people(board, ROW, COL);<br>		ret &#x3D; win(board, ROW, COL);     &#x2F;&#x2F;判断输赢<br>		if (ret !&#x3D; ‘C’) {<br>			break;<br>		}<br>		out_board(board, ROW, COL);<br>		computer(board, ROW, COL);<br>		ret &#x3D; win(board, ROW, COL);<br>		if (ret !&#x3D; ‘C’) {<br>			break;<br>		}<br>		out_board(board, ROW, COL);<br>	}<br>	if (ret &#x3D;&#x3D; ‘*’) {<br>		printf(“牢底666赢了\n”);<br>	}<br>	else if (ret &#x3D;&#x3D; ‘#’) {<br>		printf(“牢底你没下过电脑\n”);<br>	}<br>	else {<br>		printf(“这都能平局，菜！”);<br>	}<br>	out_board(board, ROW, COL);<br>}<br>int main() {<br>	srand((unsigned int)time(NULL));    &#x2F;&#x2F;利用时间栈制作随机数<br>	int input &#x3D; 0;<br>	do {<br>		menu();                     &#x2F;&#x2F;设置循环，方便玩耍<br>		printf(“你想选啥？&gt;”);<br>		scanf_s(“%d”, &amp;input);<br>		switch (input) {<br>		case 1:<br>			printf(“下棋了牢弟\n”);<br>			game();    &#x2F;&#x2F;设计游戏<br>				break;<br>		case 2:<br>			printf(“想退选这”);<br>				break;<br>		default:<br>			printf(“选个数字都不会，菜！”);<br>				break;<br>		}<br>	} while (input);<br>	return 0;<br>}</p>
+<p>game.h:<br>#include &lt;stdio.h&gt;<br>#pragma once           &#x2F;&#x2F;只用来声明函数<br>#define ROW 3            &#x2F;&#x2F;定义下实现n子棋<br>#define COL 3<br>#include &lt;stdlib.h&gt;<br>#include &lt;time.h&gt;<br>void in_board(char board[ROW][COL], int row, int col);    &#x2F;&#x2F;初始棋盘<br>void out_board(char board[ROW][COL], int row, int col);     &#x2F;&#x2F;打印棋盘<br>void people(char board[ROW][COL], int row, int col);    &#x2F;&#x2F;玩家游玩参数<br>void computer(char board[ROW][COL], int row, int col);    &#x2F;&#x2F;电脑参数<br>&#x2F;&#x2F;“ * ”   玩家赢<br>&#x2F;&#x2F;“ # ”   电脑赢<br>&#x2F;&#x2F;“ Q ”	  平局<br>&#x2F;&#x2F;“ C ”    继续<br>char win(char board[ROW][COL], int row, int col);</p>
+
+      
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+
+      
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+  
+    <article id="post-new-jounary" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2025/08/19/new-jounary/" class="article-date">
+      <time datetime="2025-08-19T04:27:18.000Z" itemprop="datePublished">2025-08-19</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2025/08/19/new-jounary/">new jounary</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <p>This is my blog!</p>
+
+      
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+
+      
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+  
+  
+    <nav id="page-nav">
+      <a class="extend prev" rel="prev" href="/page/7/">&laquo; Prev</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/6/">6</a><a class="page-number" href="/page/7/">7</a><span class="page-number current">8</span><a class="page-number" href="/page/9/">9</a><a class="extend next" rel="next" href="/page/9/">Next &raquo;</a>
+    </nav>
+  
+</div>
+      <footer id="footer">
+    <div class="outer">
+        <div id="footer-info">
+            <div class="footer-left">
+                &copy; 2025 John Doe
+            </div>
+            <div class="footer-right">
+                <a href="http://hexo.io/" target="_blank">Hexo</a>  Theme <a href="http://bestwing.me" target="_blank">Sw'blog</a> by Swing
+            </div>
+        </div>
+        
+            <div class="visit">
+                
+                    <span id="busuanzi_container_site_pv" style='display:none'>
+                        <span id="site-visit" >海贼到访数: 
+                            <span id="busuanzi_value_site_uv"></span>
+                        </span>
+                    </span>
+                
+                
+                    <span>, </span>
+                
+                
+                    <span id="busuanzi_container_page_pv" style='display:none'>
+                        <span id="page-visit">本页阅读量: 
+                            <span id="busuanzi_value_page_pv"></span>
+                        </span>
+                    </span>
+                
+            </div>
+        
+    </div>
+</footer>
+
+    </div>
+    
+<script src="https://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js"></script>
+
+
+<script src="/js/main.js"></script>
+
+
+    <script>
+        $(document).ready(function() {
+            var backgroundnum = 24;
+            var backgroundimg = "url(/background/bg-x.jpg)".replace(/x/gi, Math.ceil(Math.random() * backgroundnum));
+            $("#mobile-nav").css({"background-image": backgroundimg,"background-size": "cover","background-position": "center"});
+            $(".left-col").css({"background-image": backgroundimg,"background-size": "cover","background-position": "center"});
+        })
+    </script>
+
+
+
+
+
+<div class="scroll" id="scroll">
+    <a href="#"><i class="fa fa-arrow-up"></i></a>
+    <a href="#comments"><i class="fa fa-comments-o"></i></a>
+    <a href="#footer"><i class="fa fa-arrow-down"></i></a>
+</div>
+<script>
+    $(document).ready(function() {
+        if ($("#comments").length < 1) {
+            $("#scroll > a:nth-child(2)").hide();
+        };
+    })
+</script>
+
+<script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js">
+</script>
+
+  <script language="javascript">
+    $(function() {
+        $("a[title]").each(function() {
+            var a = $(this);
+            var title = a.attr('title');
+            if (title == undefined || title == "") return;
+            a.data('title', title).removeAttr('title').hover(
+
+            function() {
+                var offset = a.offset();
+                $("<div id=\"anchortitlecontainer\"></div>").appendTo($("body")).html(title).css({
+                    top: offset.top - a.outerHeight() - 15,
+                    left: offset.left + a.outerWidth()/2 + 1
+                }).fadeIn(function() {
+                    var pop = $(this);
+                    setTimeout(function() {
+                        pop.remove();
+                    }, pop.text().length * 800);
+                });
+            }, function() {
+                $("#anchortitlecontainer").remove();
+            });
+        });
+    });
+</script>
+
+
+    <script type="text/javascript">
+      window.onload = function(){
+        document.getElementById("search").onclick = function(){
+            console.log("search")
+            search();
+        }
+      }
+      function search(){
+        (function(w,d,t,u,n,s,e){w['SwiftypeObject']=n;w[n]=w[n]||function(){
+        (w[n].q=w[n].q||[]).push(arguments);};s=d.createElement(t);
+        e=d.getElementsByTagName(t)[0];s.async=1;s.src=u;e.parentNode.insertBefore(s,e);
+        })(window,document,'script','//s.swiftypecdn.com/install/v2/st.js','_st');
+
+        _st('install','A1Pz-LKMXbrzcFg2FWi6','2.0.0');
+      }
+    </script>
+
+  </div>
+</body>
+</html>
