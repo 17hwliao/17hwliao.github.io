@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  
+  <title>ackwing16 | 我的博客</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="###Լ��#1:ɸ��Լ��vector check(int n ) {	vector arr;	for (int i &#x3D; 1; i &lt;&#x3D; n &#x2F; i; i++) {		if (n % i &#x3D;&#x3D; 0) {			arr.push_back(i);			if (i !&#x3D; n &#x2F; i) arr.push_back(n &amp;#x2">
+<meta property="og:type" content="article">
+<meta property="og:title" content="ackwing16">
+<meta property="og:url" content="https://17hwliao.github.io/2025/11/22/ackwing15/index.html">
+<meta property="og:site_name" content="我的博客">
+<meta property="og:description" content="###Լ��#1:ɸ��Լ��vector check(int n ) {	vector arr;	for (int i &#x3D; 1; i &lt;&#x3D; n &#x2F; i; i++) {		if (n % i &#x3D;&#x3D; 0) {			arr.push_back(i);			if (i !&#x3D; n &#x2F; i) arr.push_back(n &amp;#x2">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2025-11-22T01:51:50.000Z">
+<meta property="article:modified_time" content="2025-12-07T09:06:24.496Z">
+<meta property="article:author" content="你的名字">
+<meta name="twitter:card" content="summary">
+  
+    <link rel="alternate" href="/atom.xml" title="我的博客" type="application/atom+xml">
+  
+  
+    <link rel="shortcut icon" href="/favicon.png">
+  
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+  
+    
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.min.css">
+
+  
+  
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/fork-awesome@1.2.0/css/fork-awesome.min.css">
+
+<meta name="generator" content="Hexo 7.3.0"></head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">我的博客</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"><span class="fa fa-bars"></span></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+        
+          <a class="nav-icon" href="/atom.xml" title="RSS 订阅"><span class="fa fa-rss"></span></a>
+        
+        <a class="nav-icon nav-search-btn" title="搜索"><span class="fa fa-search"></span></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="搜索"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="https://17hwliao.github.io"></form>
+      </div>
+    </div>
+  </div>
+</header>
+
+      <div class="outer">
+        <section id="main"><article id="post-ackwing15" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2025/11/22/ackwing15/" class="article-date">
+  <time class="dt-published" datetime="2025-11-22T01:51:50.000Z" itemprop="datePublished">2025-11-22</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="p-name article-title" itemprop="headline name">
+      ackwing16
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <p>###Լ��<br>#1:ɸ��Լ��<br>vector<int> check(int n ) {<br>	vector<int> arr;<br>	for (int i &#x3D; 1; i &lt;&#x3D; n &#x2F; i; i++) {<br>		if (n % i &#x3D;&#x3D; 0) {<br>			arr.push_back(i);<br>			if (i !&#x3D; n &#x2F; i) arr.push_back(n &#x2F; i);<br>		}<br>	}<br>	sort(arr.begin(), arr.end());<br>	return arr;<br>}</p>
+<p>#2.����Լ������<br>#include<unordered_map><br>#define int long long<br>const int N &#x3D; 1e9 + 17;<br>void yue_s() {<br>	int n;<br>	cin &gt;&gt; n;<br>	unordered_map&lt;int , int&gt; arr;<br>	for (int i &#x3D; 2; i &lt;&#x3D; n &#x2F; i; i++) {<br>		while (n % i &#x3D;&#x3D; 0) {<br>			n &#x2F;&#x3D; i;<br>			arr[i]++;<br>		}	<br>	}<br>	if (n &gt; 1) arr[n]++;<br>	int s &#x3D; 1;<br>	for (auto it : arr) s &#x3D; s * (it.second + 1) % N;<br>	cout &lt;&lt; s;<br>}</p>
+<p>#3.����Լ��֮��<br>void yue_s() {<br>	int n;<br>	cin &gt;&gt; n;<br>	unordered_map&lt;int , int&gt; arr;<br>	for (int i &#x3D; 2; i &lt;&#x3D; n &#x2F; i; i++) {<br>		while (n % i &#x3D;&#x3D; 0) {<br>			n &#x2F;&#x3D; i;<br>			arr[i]++;<br>		}	<br>	}<br>	if (n &gt; 1) arr[n]++;<br>	int s &#x3D; 1;<br>	for (auto it : arr) {<br>		int p &#x3D; it.first, a &#x3D; it.second;<br>		int sum &#x3D; 1;<br>		while (a–) sum &#x3D; (sum * p + 1 ) % N;<br>		s &#x3D; s * sum % N;<br>	}<br>	cout &lt;&lt; s;<br>}<br>&#x2F;&#x2F;��������ǳ�ʱ��������1ms��<br>\��������������Լ���ܺ� &#x3D; sum(r) - sum(l - 1);<br>�Ż�(���۷ֿ�):   �����1��n ��������Լ��֮��:���㵥һֵʱ:sum(n) - sum(n - 1);<br>ll sum(int n) {<br>    if (n &lt;&#x3D; 1) return n;<br>    ll ans &#x3D; 0;<br>    for (ll l &#x3D; 1, r; l &lt;&#x3D; n; l &#x3D; r + 1) {<br>        int yue &#x3D; (n &#x2F; l);<br>        r &#x3D; n &#x2F; yue;<br>        ans +&#x3D; yue * (l + r) * (r - l + 1) &#x2F; 2;<br>    }<br>    return ans;<br>}</p>
+<p>#4.�����Լ��(���Դ��ĸ���)<br>int gcd(int a, int b) {<br>    while (b !&#x3D; 0) {<br>        int temp &#x3D; b;<br>        b &#x3D; a % b;<br>        a &#x3D; temp;<br>    }<br>    return a;<br>}</p>
+<p>#5.������<br>int kuai_mi(int x, int n,int ) {<br>	int res &#x3D; 1;<br>	while (n) {<br>		if (n &amp; 1) {<br>			res *&#x3D; x;<br>		}<br>		x *&#x3D; x;<br>		n &gt;&gt;&#x3D; 1;<br>	}<br>	return res;<br>}</p>
+<p>#6.ʮ����ת��Ϊ2 - 10 ����<br>int huan(int x, int k) {<br>	if (x &#x3D;&#x3D; 0) return 0;<br>	int step &#x3D; 1;<br>	int result &#x3D; 0;<br>	while (x) {<br>		int m &#x3D; x % k;<br>		x &#x3D; x &#x2F; k;<br>		result &#x3D; m * step + result;<br>		step *&#x3D; 10;<br>	}<br>	return result;<br>}</p>
+<p>#7.����������Ԫ:<br>int kuai_ni(int x, int p, int k) {<br>    int res &#x3D; 1;<br>    while (p &gt; 0) {<br>        if (p &amp; 1) {<br>            res &#x3D; (res * x) % k;<br>        }<br>        x &#x3D; (x * x) % k;<br>        p &gt;&gt;&#x3D; 1;<br>    }<br>    return res;<br>}</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://17hwliao.github.io/2025/11/22/ackwing15/" data-id="cmivjnu9b0007ekug6v6qh255" data-title="ackwing16" class="article-share-link"><span class="fa fa-share">分享</span></a>
+      
+      
+      
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2025/11/24/ackwing17/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">前一篇</strong>
+      <div class="article-nav-title">
+        
+          ackwing17
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2025/11/21/acwing16/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">后一篇</strong>
+      <div class="article-nav-title">acwing15</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+
+  
+    
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">归档</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2025/12/">十二月 2025</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2025/11/">十一月 2025</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2025/10/">十月 2025</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2025/09/">九月 2025</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2025/08/">八月 2025</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">最新文章</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2025/12/07/acking23/">acking23</a>
+          </li>
+        
+          <li>
+            <a href="/2025/12/05/ackwing22/">ackwing22</a>
+          </li>
+        
+          <li>
+            <a href="/2025/12/04/ackwing21/">(no title)</a>
+          </li>
+        
+          <li>
+            <a href="/2025/12/03/ackwing20/">ackwing20</a>
+          </li>
+        
+          <li>
+            <a href="/2025/12/01/ackwing19/">ackwing19</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      
+      &copy; 2025 你的名字<br>
+      Powered by <a href="https://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+
+<script src="/js/jquery-3.6.4.min.js"></script>
+
+
+
+  
+<script src="/fancybox/jquery.fancybox.min.js"></script>
+
+
+
+
+<script src="/js/script.js"></script>
+
+
+
+
+
+  </div>
+</body>
+</html>

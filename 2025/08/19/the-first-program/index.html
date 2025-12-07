@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  
+  <title>the first program | 我的博客</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="game.c:&#x2F;&#x2F;具体实现函数运营#include “game.h”#include &lt;stdio.h&gt;void in_board(char board[ROW][COL], int row, int col){	int i &#x3D; 0;	int j &#x3D; 0;	for (i &#x3D; 0; i &lt; row; i++)      &#x2F;">
+<meta property="og:type" content="article">
+<meta property="og:title" content="the first program">
+<meta property="og:url" content="https://17hwliao.github.io/2025/08/19/the-first-program/index.html">
+<meta property="og:site_name" content="我的博客">
+<meta property="og:description" content="game.c:&#x2F;&#x2F;具体实现函数运营#include “game.h”#include &lt;stdio.h&gt;void in_board(char board[ROW][COL], int row, int col){	int i &#x3D; 0;	int j &#x3D; 0;	for (i &#x3D; 0; i &lt; row; i++)      &#x2F;">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2025-08-19T05:34:52.000Z">
+<meta property="article:modified_time" content="2025-08-19T05:36:46.886Z">
+<meta property="article:author" content="你的名字">
+<meta name="twitter:card" content="summary">
+  
+    <link rel="alternate" href="/atom.xml" title="我的博客" type="application/atom+xml">
+  
+  
+    <link rel="shortcut icon" href="/favicon.png">
+  
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+  
+    
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.min.css">
+
+  
+  
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/fork-awesome@1.2.0/css/fork-awesome.min.css">
+
+<meta name="generator" content="Hexo 7.3.0"></head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">我的博客</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"><span class="fa fa-bars"></span></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+        
+          <a class="nav-icon" href="/atom.xml" title="RSS 订阅"><span class="fa fa-rss"></span></a>
+        
+        <a class="nav-icon nav-search-btn" title="搜索"><span class="fa fa-search"></span></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="搜索"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="https://17hwliao.github.io"></form>
+      </div>
+    </div>
+  </div>
+</header>
+
+      <div class="outer">
+        <section id="main"><article id="post-the-first-program" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2025/08/19/the-first-program/" class="article-date">
+  <time class="dt-published" datetime="2025-08-19T05:34:52.000Z" itemprop="datePublished">2025-08-19</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="p-name article-title" itemprop="headline name">
+      the first program
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <p>game.c:<br>&#x2F;&#x2F;具体实现函数运营<br>#include “game.h”<br>#include &lt;stdio.h&gt;<br>void in_board(char board[ROW][COL], int row, int col){<br>	int i &#x3D; 0;<br>	int j &#x3D; 0;<br>	for (i &#x3D; 0; i &lt; row; i++)      &#x2F;&#x2F;实现二维数组<br>	{<br>		for (j &#x3D; 0; j &lt; col; j++)<br>		{<br>			board[i][j] &#x3D; ‘ ‘;        &#x2F;&#x2F;空格为字符占位<br>	}</p>
+<pre><code>&#125;
+</code></pre>
+<p>}<br>void out_board(char board[ROW][COL], int row, int col) {<br>	int i &#x3D; 0;<br>	for (i &#x3D;0; i&lt;row ; i++){<br>	&#x2F;&#x2F;printf(“ %c | %c | %c \n”, board[i][0], board[i][1], board[i][2]);    &#x2F;&#x2F;打印数据<br>		int j &#x3D; 0;<br>		for (j &#x3D; 0; j &lt; col; j++) {<br>			printf(“ %c “, board[i][j]);<br>			if (j &lt; col-1)<br>				printf(“|”);</p>
+<pre><code>	&#125;
+	printf(&quot;\n&quot;);
+	if (i &lt; row - 1) &#123;
+		int j = 0;
+		for (j = 0; j &lt; col; j++) &#123;
+			printf(&quot;---&quot;);
+			if (j &lt; col - 1)
+				printf(&quot;|&quot;);
+		&#125;
+
+		printf(&quot;\n&quot;);
+	&#125;
+
+&#125;
+</code></pre>
+<p>}<br>void people(char board[ROW][COL], int row, int col) {<br>	int x &#x3D; 0;<br>	int y &#x3D; 0;<br>	printf(“牢底轮你了\n”);<br>	while (1) {<br>		printf(“输入坐标\n”);<br>		scanf_s(“%d %d”, &amp;x, &amp;y);<br>		if (x &gt;&#x3D; 1 &amp;&amp; x &lt;&#x3D; row &amp;&amp; y &gt;&#x3D; 1 &amp;&amp; y &lt;&#x3D; col) {<br>			if (board[x - 1][y - 1] &#x3D;&#x3D; ‘ ‘) {<br>				board[x - 1][y - 1] &#x3D; ‘*’;<br>				break;<br>			}<br>			else {<br>				printf(“牢底重复下了”);<br>			}<br>		}<br>		else {<br>			printf(“牢底别瞎玩\n”);<br>		}<br>	}</p>
+<p>}<br>void computer(char board[ROW][COL], int row, int col) {<br>	printf(“电脑该你下了\n”);<br>		int x &#x3D; 0;<br>	    int y &#x3D; 0;<br>		while (1) {<br>			x &#x3D; rand() % row;<br>			y &#x3D; rand() % col;<br>			if (board[x][y] &#x3D;&#x3D; ‘ ‘) {<br>				board[x][y] &#x3D; ‘#’;<br>				break;<br>			}<br>		}</p>
+<p>}<br>int ping(char board[ROW][COL], int row, int col) {<br>	int i &#x3D; 0;<br>	int j &#x3D; 0;<br>	for (i &#x3D; 0; i &lt; col; i++) {<br>		for (j &#x3D; 0; j &lt; col; j++) {<br>			if (board[i][j] &#x3D;&#x3D; ‘ ‘) {<br>				return 0;<br>			}<br>		}<br>	}<br>	return 1;<br>}<br>char win(char board[ROW][COL], int row, int col) {<br>	int i &#x3D; 0;        &#x2F;&#x2F;行<br>	for (i &#x3D; 0; i &lt; row; i++) {<br>		if (board[i][0] &#x3D;&#x3D; board[i][1] &amp;&amp; board[i][2] &amp;&amp; board[i][1] !&#x3D; ‘ ‘) {<br>			return board[i][1];<br>		}<br>	}<br>	int j &#x3D; 0;        &#x2F;&#x2F;列<br>	for (j &#x3D; 0; j &lt; row; j++) {<br>		if (board[0][j] &#x3D;&#x3D; board[1][j] &amp;&amp; board[2][j] &amp;&amp; board[1][j] !&#x3D; ‘ ‘) {<br>			return board[1][j];<br>		}<br>	}<br>	if(board[0][2] &#x3D;&#x3D; board[1][1] &amp;&amp; board[2][0] &#x3D;&#x3D; board[1][1] &amp;&amp; board[1][1] !&#x3D; ‘ ‘){<br>	return board[1][1]; }                          &#x2F;&#x2F;对角线<br>	<br>if (ping(board, row, col)) {<br>	return’Q’;<br>}<br>return’C’;<br>}</p>
+<p>test.c:<br>#include &lt;stdio.h&gt;<br>#include “game.h”<br>void menu() {<br>	printf(“########################################\n”);<br>	printf(“################1.开始玩耍###############\n”);<br>	printf(“################2.离开游戏###############\n”);<br>           }   &#x2F;&#x2F;设计个菜单<br>void game() {<br>	char ret &#x3D; 0;          &#x2F;&#x2F;加个变量接收值<br>	char board[ROW][COL] &#x3D; { 0 };<br>	in_board(board, ROW, COL);  &#x2F;&#x2F;初始化棋盘<br>	out_board(board, ROW, COL);        &#x2F;&#x2F;耍时候打印的棋盘<br>	while (1) {                    &#x2F;&#x2F;下棋<br>		people(board, ROW, COL);<br>		ret &#x3D; win(board, ROW, COL);     &#x2F;&#x2F;判断输赢<br>		if (ret !&#x3D; ‘C’) {<br>			break;<br>		}<br>		out_board(board, ROW, COL);<br>		computer(board, ROW, COL);<br>		ret &#x3D; win(board, ROW, COL);<br>		if (ret !&#x3D; ‘C’) {<br>			break;<br>		}<br>		out_board(board, ROW, COL);<br>	}<br>	if (ret &#x3D;&#x3D; ‘*’) {<br>		printf(“牢底666赢了\n”);<br>	}<br>	else if (ret &#x3D;&#x3D; ‘#’) {<br>		printf(“牢底你没下过电脑\n”);<br>	}<br>	else {<br>		printf(“这都能平局，菜！”);<br>	}<br>	out_board(board, ROW, COL);<br>}<br>int main() {<br>	srand((unsigned int)time(NULL));    &#x2F;&#x2F;利用时间栈制作随机数<br>	int input &#x3D; 0;<br>	do {<br>		menu();                     &#x2F;&#x2F;设置循环，方便玩耍<br>		printf(“你想选啥？&gt;”);<br>		scanf_s(“%d”, &amp;input);<br>		switch (input) {<br>		case 1:<br>			printf(“下棋了牢弟\n”);<br>			game();    &#x2F;&#x2F;设计游戏<br>				break;<br>		case 2:<br>			printf(“想退选这”);<br>				break;<br>		default:<br>			printf(“选个数字都不会，菜！”);<br>				break;<br>		}<br>	} while (input);<br>	return 0;<br>}</p>
+<p>game.h:<br>#include &lt;stdio.h&gt;<br>#pragma once           &#x2F;&#x2F;只用来声明函数<br>#define ROW 3            &#x2F;&#x2F;定义下实现n子棋<br>#define COL 3<br>#include &lt;stdlib.h&gt;<br>#include &lt;time.h&gt;<br>void in_board(char board[ROW][COL], int row, int col);    &#x2F;&#x2F;初始棋盘<br>void out_board(char board[ROW][COL], int row, int col);     &#x2F;&#x2F;打印棋盘<br>void people(char board[ROW][COL], int row, int col);    &#x2F;&#x2F;玩家游玩参数<br>void computer(char board[ROW][COL], int row, int col);    &#x2F;&#x2F;电脑参数<br>&#x2F;&#x2F;“ * ”   玩家赢<br>&#x2F;&#x2F;“ # ”   电脑赢<br>&#x2F;&#x2F;“ Q ”	  平局<br>&#x2F;&#x2F;“ C ”    继续<br>char win(char board[ROW][COL], int row, int col);</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://17hwliao.github.io/2025/08/19/the-first-program/" data-id="cmivjnu9u002dekughi8je7z3" data-title="the first program" class="article-share-link"><span class="fa fa-share">分享</span></a>
+      
+      
+      
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2025/08/20/blog2/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">前一篇</strong>
+      <div class="article-nav-title">
+        
+          blog2
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2025/08/19/new-jounary/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">后一篇</strong>
+      <div class="article-nav-title">new jounary</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+
+  
+    
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">归档</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2025/12/">十二月 2025</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2025/11/">十一月 2025</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2025/10/">十月 2025</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2025/09/">九月 2025</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2025/08/">八月 2025</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">最新文章</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2025/12/07/acking23/">acking23</a>
+          </li>
+        
+          <li>
+            <a href="/2025/12/05/ackwing22/">ackwing22</a>
+          </li>
+        
+          <li>
+            <a href="/2025/12/04/ackwing21/">(no title)</a>
+          </li>
+        
+          <li>
+            <a href="/2025/12/03/ackwing20/">ackwing20</a>
+          </li>
+        
+          <li>
+            <a href="/2025/12/01/ackwing19/">ackwing19</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      
+      &copy; 2025 你的名字<br>
+      Powered by <a href="https://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+
+<script src="/js/jquery-3.6.4.min.js"></script>
+
+
+
+  
+<script src="/fancybox/jquery.fancybox.min.js"></script>
+
+
+
+
+<script src="/js/script.js"></script>
+
+
+
+
+
+  </div>
+</body>
+</html>

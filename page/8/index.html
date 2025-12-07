@@ -1,0 +1,708 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  
+  <title>我的博客</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta property="og:type" content="website">
+<meta property="og:title" content="我的博客">
+<meta property="og:url" content="https://17hwliao.github.io/page/8/index.html">
+<meta property="og:site_name" content="我的博客">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:author" content="你的名字">
+<meta name="twitter:card" content="summary">
+  
+    <link rel="alternate" href="/atom.xml" title="我的博客" type="application/atom+xml">
+  
+  
+    <link rel="shortcut icon" href="/favicon.png">
+  
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+  
+    
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.min.css">
+
+  
+  
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/fork-awesome@1.2.0/css/fork-awesome.min.css">
+
+<meta name="generator" content="Hexo 7.3.0"></head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">我的博客</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"><span class="fa fa-bars"></span></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+        
+          <a class="nav-icon" href="/atom.xml" title="RSS 订阅"><span class="fa fa-rss"></span></a>
+        
+        <a class="nav-icon nav-search-btn" title="搜索"><span class="fa fa-search"></span></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="搜索"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="https://17hwliao.github.io"></form>
+      </div>
+    </div>
+  </div>
+</header>
+
+      <div class="outer">
+        <section id="main">
+  
+    <article id="post-my-blog14" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2025/09/02/my-blog14/" class="article-date">
+  <time class="dt-published" datetime="2025-09-02T13:31:42.000Z" itemprop="datePublished">2025-09-02</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/2025/09/02/my-blog14/">my_blog14</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <p>找出水仙花数并从小到大打印<br>#include &lt;stdio.h&gt;<br>#include &lt;math.h&gt;</p>
+<p>int narcissistic(int number) {<br>    int a &#x3D; number;<br>    int n &#x3D; 0;<br>    int sum &#x3D; 0;</p>
+<pre><code>int temp = number;
+while (temp != 0) &#123;
+    n++;
+    temp /= 10;
+&#125;
+
+temp = number;
+while (temp != 0) &#123;
+    int digit = temp % 10;
+    sum += pow(digit, n);
+    temp /= 10;
+&#125;
+
+if (sum == a) &#123;
+    return 1;
+&#125; else &#123;
+    return 0;
+&#125;
+</code></pre>
+<p>}</p>
+<p>void PrintN(int m, int n) {<br>    for (int i &#x3D; m + 1; i &lt; n; i++) {<br>        if (narcissistic(i)) {<br>            printf(“%d\n”, i);<br>        }<br>    }<br>}</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://17hwliao.github.io/2025/09/02/my-blog14/" data-id="cmivjnu9l0014ekugf4gj7312" data-title="my_blog14" class="article-share-link"><span class="fa fa-share">分享</span></a>
+      
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+    <article id="post-my-blog13" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2025/09/01/my-blog13/" class="article-date">
+  <time class="dt-published" datetime="2025-09-01T14:28:49.000Z" itemprop="datePublished">2025-09-01</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/2025/09/01/my-blog13/">my_blog13</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <p>int CountDigit(int number, int digit) {<br>    if (number &#x3D;&#x3D; 0 &amp;&amp; digit &#x3D;&#x3D; 0){<br>    return 1;<br>}<br>    int count &#x3D; 0;<br>    long long n &#x3D; number;<br>    if (n &lt; 0) {<br>        n &#x3D; -n;<br>    }<br>    while (n &gt; 0) {<br>        int d &#x3D; n % 10;<br>        if (d &#x3D;&#x3D; digit) {<br>            count++;<br>        }<br>        n &#x2F;&#x3D; 10;<br>    }<br>    return count;<br>}</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://17hwliao.github.io/2025/09/01/my-blog13/" data-id="cmivjnu9l0015ekuge1g03dya" data-title="my_blog13" class="article-share-link"><span class="fa fa-share">分享</span></a>
+      
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+    <article id="post-my-blog12" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2025/08/31/my-blog12/" class="article-date">
+  <time class="dt-published" datetime="2025-08-31T01:27:54.000Z" itemprop="datePublished">2025-08-31</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/2025/08/31/my-blog12/">my_blog12</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <p>public class my_blog12{<br>	  public static void main(String[] args){<br>		  System.out.println(“Hello Wrold”);<br>	  }<br>}</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://17hwliao.github.io/2025/08/31/my-blog12/" data-id="cmivjnu9k0013ekug988i5yt8" data-title="my_blog12" class="article-share-link"><span class="fa fa-share">分享</span></a>
+      
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+    <article id="post-my-blog11" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2025/08/30/my-blog11/" class="article-date">
+  <time class="dt-published" datetime="2025-08-30T02:33:51.000Z" itemprop="datePublished">2025-08-30</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/2025/08/30/my-blog11/">my_blog11</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <p>开始学习java<br>public class my_blog11{<br>	  public static void main(String[] args){<br>		  System.out.println(“你好时间”);<br>	  }<br>}</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://17hwliao.github.io/2025/08/30/my-blog11/" data-id="cmivjnu9k0011ekugdaqugwc9" data-title="my_blog11" class="article-share-link"><span class="fa fa-share">分享</span></a>
+      
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+    <article id="post-blog-10" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2025/08/29/blog-10/" class="article-date">
+  <time class="dt-published" datetime="2025-08-29T08:08:51.000Z" itemprop="datePublished">2025-08-29</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/2025/08/29/blog-10/">blog 10</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <p>计算素数和素数和：<br>#include &lt;stdio.h&gt;<br>#include &lt;math.h&gt;</p>
+<p>int prime(int p) {<br>    if (p &lt; 2) return 0;<br>    if (p &#x3D;&#x3D; 2) return 1;<br>    if (p % 2 &#x3D;&#x3D; 0) return 0; </p>
+<pre><code>int limit = (int)sqrt(p);
+for (int i = 3; i &lt;= limit; i += 2) &#123;
+    if (p % i == 0) &#123;
+        return 0;
+    &#125;
+&#125;
+return 1;
+</code></pre>
+<p>}</p>
+<p>int PrimeSum(int m, int n) {<br>    int sum &#x3D; 0;<br>    for (int i &#x3D; m; i &lt;&#x3D; n; i++) {<br>        if (prime(i)) {<br>            sum +&#x3D; i;<br>        }<br>    }<br>    return sum;<br>}</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://17hwliao.github.io/2025/08/29/blog-10/" data-id="cmivjnu9g000oekughaivbw3d" data-title="blog 10" class="article-share-link"><span class="fa fa-share">分享</span></a>
+      
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+    <article id="post-blog-9" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2025/08/28/blog-9/" class="article-date">
+  <time class="dt-published" datetime="2025-08-28T07:06:08.000Z" itemprop="datePublished">2025-08-28</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/2025/08/28/blog-9/">blog 9</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <p>&#x2F;&#x2F;冒泡排序<br>void func1(int arr[], int n) {<br>	int i, j;<br>	for (i &#x3D; 0; i &lt; n - 1; i++) {<br>		for (j &#x3D; 0; j &lt; n - 1 - i; j++) {<br>			if (arr[j] &gt; arr[j + 1]) {<br>				int num &#x3D; arr[j];<br>				arr[j] &#x3D; arr[j+1];<br>				arr[j + 1] &#x3D; num;<br>			}<br>		}<br>	}<br>}</p>
+<p>&#x2F;&#x2F;二分查找<br>int func2(int n, int arr[],int x) {<br>	int left &#x3D; 0;<br>	int right &#x3D; n - 1;<br>	while (left &lt;&#x3D; right) {<br>		int mid &#x3D; left +(right - left) &#x2F; 2;<br>		if (arr[mid] &#x3D;&#x3D; x) {<br>			return mid;<br>		}<br>		else if (arr[mid] &lt; x) {<br>			left &#x3D; mid + 1;<br>		}<br>		else right &#x3D; mid - 1;<br>	}<br>	return -1;<br>}</p>
+<p>&#x2F;&#x2F;希尔排序<br>void func3(int arr[], int n) {<br>	int i, j, num,gap;<br>	for (gap &#x3D; n &#x2F; 2; gap &gt; 0; gap &#x2F;&#x3D; 2) {<br>		for (i &#x3D; gap; i&lt;n; i++) {<br>			num &#x3D; arr[i];<br>			for (j &#x3D; i; j &gt;&#x3D; gap &amp;&amp; num &lt; arr[j - gap]; j -&#x3D; gap) {<br>				arr[j] &#x3D; arr[j - gap];<br>			}<br>			arr[j] &#x3D; num;<br>		}<br>	}<br>}</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://17hwliao.github.io/2025/08/28/blog-9/" data-id="cmivjnu9g000qekug5cz50c2s" data-title="blog 9" class="article-share-link"><span class="fa fa-share">分享</span></a>
+      
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+    <article id="post-my-blog-8" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2025/08/27/my-blog-8/" class="article-date">
+  <time class="dt-published" datetime="2025-08-27T07:22:16.000Z" itemprop="datePublished">2025-08-27</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/2025/08/27/my-blog-8/">my blog 8</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <p>#include &lt;stdio.h&gt;</p>
+<p>int main() {<br>    int apples[10];  &#x2F;&#x2F; 存储10个苹果的高度<br>    int tao_height;  &#x2F;&#x2F; 陶陶的伸手高度<br>    int count &#x3D; 0;   &#x2F;&#x2F; 能够摘到的苹果数量</p>
+<pre><code>// 读取10个苹果的高度
+for(int i = 0; i &lt; 10; i++) &#123;
+    scanf(&quot;%d&quot;, &amp;apples[i]);
+&#125;
+
+// 读取陶陶的伸手高度
+scanf(&quot;%d&quot;, &amp;tao_height);
+
+// 计算陶陶能够到的高度（加上板凳高度）
+int reach_height = tao_height + 30;
+
+// 统计能够摘到的苹果数量
+for(int i = 0; i &lt; 10; i++) &#123;
+    if(apples[i] &lt;= reach_height) &#123;
+        count++;
+    &#125;
+&#125;
+
+// 输出结果
+printf(&quot;%d\n&quot;, count);
+
+return 0;
+</code></pre>
+<p>}</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://17hwliao.github.io/2025/08/27/my-blog-8/" data-id="cmivjnu9j000zekugglm15odj" data-title="my blog 8" class="article-share-link"><span class="fa fa-share">分享</span></a>
+      
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+    <article id="post-my-blog-7" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2025/08/26/my-blog-7/" class="article-date">
+  <time class="dt-published" datetime="2025-08-26T06:35:27.000Z" itemprop="datePublished">2025-08-26</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/2025/08/26/my-blog-7/">my blog 7</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <p>#include&lt;stdio.h&gt;<br>int arr2(int k,int i ,double j){<br>    if(j&gt;k){<br>       return i-1;<br>    }<br>        return arr2(k,i+1,j + 1.0&#x2F;i);<br>    }<br>int main(){<br>    int k ;<br>    scanf(“%d”,&amp;k);<br>    int s &#x3D; arr2(k,1,0.0);<br>    printf(“%d”,s);<br>     return 0;<br>}</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://17hwliao.github.io/2025/08/26/my-blog-7/" data-id="cmivjnu9j000yekug0lzx4b6s" data-title="my blog 7" class="article-share-link"><span class="fa fa-share">分享</span></a>
+      
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+    <article id="post-blog-6" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2025/08/25/blog-6/" class="article-date">
+  <time class="dt-published" datetime="2025-08-25T10:22:54.000Z" itemprop="datePublished">2025-08-25</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/2025/08/25/blog-6/">blog 6</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <p>#include &lt;stdio.h&gt;<br>#include &lt;stdlib.h&gt;<br>#include &lt;string.h&gt;</p>
+<p>#define MAX_NAME_LENGTH 50<br>#define MAX_NAMES 100000</p>
+<p>typedef struct {<br>    char name[MAX_NAME_LENGTH];<br>    int count;<br>} Child;</p>
+<p>Child children[MAX_NAMES];<br>int child_count &#x3D; 0;<br>int find_or_add_child(const char *name) {<br>    for (int i &#x3D; 0; i &lt; child_count; i++) {<br>        if (strcmp(children[i].name, name) &#x3D;&#x3D; 0) {<br>            return i;<br>        }<br>    }<br>    strcpy(children[child_count].name, name);<br>    children[child_count].count &#x3D; 0;<br>    return child_count++;<br>}</p>
+<p>int main() {<br>    int n;<br>    scanf(“%d”, &amp;n);</p>
+<pre><code>int total = 0;
+int ans = 0;
+
+for (int i = 0; i &lt; n; i++) &#123;
+    char name[MAX_NAME_LENGTH];
+    scanf(&quot;%s&quot;, name);
+    
+    int idx = find_or_add_child(name);
+    
+    if (children[idx].count &gt; total - children[idx].count) &#123;
+        ans++;
+    &#125;
+    
+    children[idx].count++;
+    total++;
+&#125;
+
+printf(&quot;%d\n&quot;, ans);
+return 0;
+</code></pre>
+<p>}</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://17hwliao.github.io/2025/08/25/blog-6/" data-id="cmivjnu9g000pekug1rrdg44u" data-title="blog 6" class="article-share-link"><span class="fa fa-share">分享</span></a>
+      
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+    <article id="post-blog5" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2025/08/24/blog5/" class="article-date">
+  <time class="dt-published" datetime="2025-08-24T10:00:51.000Z" itemprop="datePublished">2025-08-24</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/2025/08/24/blog5/">blog   5</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <p>include &lt;stdio.h&gt;<br>#include &lt;stdbool.h&gt;</p>
+<p>int main() {<br>    int n, m, horse_x, horse_y;<br>    scanf(“%d %d %d %d”, &amp;n, &amp;m, &amp;horse_x, &amp;horse_y);</p>
+<pre><code>// 马的控制点偏移量
+int dx[] = &#123;1, 1, -1, -1, 2, 2, -2, -2, 0&#125;;
+int dy[] = &#123;2, -2, 2, -2, 1, -1, 1, -1, 0&#125;;
+
+// 创建障碍物网格
+bool obstacle[n + 1][m + 1];
+for (int i = 0; i &lt;= n; i++) &#123;
+    for (int j = 0; j &lt;= m; j++) &#123;
+        obstacle[i][j] = false;
+    &#125;
+&#125;
+
+// 标记马的控制点为障碍物
+for (int i = 0; i &lt; 9; i++) &#123;
+    int nx = horse_x + dx[i];
+    int ny = horse_y + dy[i];
+    if (nx &gt;= 0 &amp;&amp; nx &lt;= n &amp;&amp; ny &gt;= 0 &amp;&amp; ny &lt;= m) &#123;
+        obstacle[nx][ny] = true;
+    &#125;
+&#125;
+
+// 如果起点是障碍物，直接输出0
+if (obstacle[0][0]) &#123;
+    printf(&quot;0\n&quot;);
+    return 0;
+&#125;
+
+// 初始化DP数组
+long long dp[n + 1][m + 1];
+for (int i = 0; i &lt;= n; i++) &#123;
+    for (int j = 0; j &lt;= m; j++) &#123;
+        dp[i][j] = 0;
+    &#125;
+&#125;
+dp[0][0] = 1;
+
+// 动态规划计算路径数
+for (int i = 0; i &lt;= n; i++) &#123;
+    for (int j = 0; j &lt;= m; j++) &#123;
+        if (obstacle[i][j]) &#123;
+            continue;
+        &#125;
+        if (i &gt; 0 &amp;&amp; !obstacle[i - 1][j]) &#123;
+            dp[i][j] += dp[i - 1][j];
+        &#125;
+        if (j &gt; 0 &amp;&amp; !obstacle[i][j - 1]) &#123;
+            dp[i][j] += dp[i][j - 1];
+        &#125;
+    &#125;
+&#125;
+
+printf(&quot;%lld\n&quot;, dp[n][m]);
+return 0;
+</code></pre>
+<p>}</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://17hwliao.github.io/2025/08/24/blog5/" data-id="cmivjnu9h000tekug3obl48kt" data-title="blog   5" class="article-share-link"><span class="fa fa-share">分享</span></a>
+      
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+
+
+  <nav id="page-nav">
+    
+    <a class="extend prev" rel="prev" href="/page/7/">&laquo; 上一页</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/6/">6</a><a class="page-number" href="/page/7/">7</a><span class="page-number current">8</span><a class="page-number" href="/page/9/">9</a><a class="extend next" rel="next" href="/page/9/">下一页 &raquo;</a>
+  </nav>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+
+  
+    
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">归档</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2025/12/">十二月 2025</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2025/11/">十一月 2025</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2025/10/">十月 2025</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2025/09/">九月 2025</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2025/08/">八月 2025</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">最新文章</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2025/12/07/acking23/">acking23</a>
+          </li>
+        
+          <li>
+            <a href="/2025/12/05/ackwing22/">ackwing22</a>
+          </li>
+        
+          <li>
+            <a href="/2025/12/04/ackwing21/">(no title)</a>
+          </li>
+        
+          <li>
+            <a href="/2025/12/03/ackwing20/">ackwing20</a>
+          </li>
+        
+          <li>
+            <a href="/2025/12/01/ackwing19/">ackwing19</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      
+      &copy; 2025 你的名字<br>
+      Powered by <a href="https://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+
+<script src="/js/jquery-3.6.4.min.js"></script>
+
+
+
+  
+<script src="/fancybox/jquery.fancybox.min.js"></script>
+
+
+
+
+<script src="/js/script.js"></script>
+
+
+
+
+
+  </div>
+</body>
+</html>

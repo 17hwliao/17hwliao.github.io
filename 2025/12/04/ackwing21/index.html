@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  
+  <title>我的博客</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="#�����㷨�ĵڶ�ʮһ��(δ����)  title: ackwing21date: 2025-12-04 20:14:52tags:����ջ(�ݼ����ߵ���)  &#x2F;&#x2F;brr�洢ԭʼ��,arr��ջ�洢�±�#includefor (int i &#x3D; 1; i &lt;&#x3D; n; i++) {	while (!arr.empty() &amp;&amp;">
+<meta property="og:type" content="article">
+<meta property="og:title" content="我的博客">
+<meta property="og:url" content="https://17hwliao.github.io/2025/12/04/ackwing21/index.html">
+<meta property="og:site_name" content="我的博客">
+<meta property="og:description" content="#�����㷨�ĵڶ�ʮһ��(δ����)  title: ackwing21date: 2025-12-04 20:14:52tags:����ջ(�ݼ����ߵ���)  &#x2F;&#x2F;brr�洢ԭʼ��,arr��ջ�洢�±�#includefor (int i &#x3D; 1; i &lt;&#x3D; n; i++) {	while (!arr.empty() &amp;&amp;">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2025-12-04T12:14:52.123Z">
+<meta property="article:modified_time" content="2025-12-05T03:23:50.517Z">
+<meta property="article:author" content="你的名字">
+<meta name="twitter:card" content="summary">
+  
+    <link rel="alternate" href="/atom.xml" title="我的博客" type="application/atom+xml">
+  
+  
+    <link rel="shortcut icon" href="/favicon.png">
+  
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+  
+    
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.min.css">
+
+  
+  
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/fork-awesome@1.2.0/css/fork-awesome.min.css">
+
+<meta name="generator" content="Hexo 7.3.0"></head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">我的博客</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"><span class="fa fa-bars"></span></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+        
+          <a class="nav-icon" href="/atom.xml" title="RSS 订阅"><span class="fa fa-rss"></span></a>
+        
+        <a class="nav-icon nav-search-btn" title="搜索"><span class="fa fa-search"></span></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="搜索"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="https://17hwliao.github.io"></form>
+      </div>
+    </div>
+  </div>
+</header>
+
+      <div class="outer">
+        <section id="main"><article id="post-ackwing21" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2025/12/04/ackwing21/" class="article-date">
+  <time class="dt-published" datetime="2025-12-04T12:14:52.123Z" itemprop="datePublished">2025-12-04</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <p>#�����㷨�ĵڶ�ʮһ��(δ����)</p>
+<hr>
+<h2 id="title-ackwing21date-2025-12-04-20-14-52tags"><a href="#title-ackwing21date-2025-12-04-20-14-52tags" class="headerlink" title="title: ackwing21date: 2025-12-04 20:14:52tags:"></a>title: ackwing21<br>date: 2025-12-04 20:14:52<br>tags:</h2><p>����ջ(�ݼ����ߵ���)  &#x2F;&#x2F;brr�洢ԭʼ��,arr��ջ�洢�±�<br>#include<iostream><br>for (int i &#x3D; 1; i &lt;&#x3D; n; i++) {<br>	while (!arr.empty() &amp;&amp; brr[arr.top()] &gt; brr[i]) {      &#x2F;&#x2F;arr.top() ����Ŀǰ����һ��������<br>		�Բ�ͬ��ĿҪ��洢���ⲿ����result ;<br>		arr.pop();<br>	}<br>	arr.push(i);<br>}<br>&#x2F;&#x2F;�������ҵ���ʵ�����Ҳ��һ�������<br>for (int i &#x3D; 1; i &lt;&#x3D; n; i++) {<br>        &#x2F;&#x2F; ��ǰԪ��arr[i]��ջ����Ϊջ��Ԫ���ҵ���<br>        while (!brr.empty() &amp;&amp; arr[brr.top()] &lt; arr[i]) {<br>            result[brr.top()] &#x3D; i;  &#x2F;&#x2F; ջ��Ԫ�صĴ���i<br>            brr.pop();<br>        }<br>        brr.push(i);<br>    }<br>&#x2F;&#x2F;ʵ�ִ�������<br>	for (int i &#x3D; n; i &gt; 0 ; i–) {<br>		while (!arr.empty() &amp;&amp; brr[arr.top()] &gt; brr[i]) {   &#x2F;&#x2F;arr.top() ����Ŀǰ�Ҳ��һ��������<br>			�Բ�ͬ��ĿҪ��洢���ⲿ����result ;<br>			arr.pop();<br>		}<br>		arr.push(i);<br>	}<br>	&#x2F;&#x2F;����������ʵ��������һ�������<br>	for (int i &#x3D; n; i &gt; 0 ; i–) {<br>        &#x2F;&#x2F; ��ǰԪ��arr[i]��ջ����Ϊջ��Ԫ���ҵ���<br>        while (!brr.empty() &amp;&amp; arr[brr.top()] &lt; arr[i]) {<br>            result[brr.top()] &#x3D; i;  &#x2F;&#x2F; ջ��Ԫ�صĴ���i<br>            brr.pop();<br>        }<br>        brr.push(i);<br>    }<br>&#x2F;&#x2F;��������(��������)<br>#include<iostream><br>int k , n ;<br>vector<int> brr;<br>deque<int> arr;<br>vectot<int> dd_lie() {<br>	vector<int> result;<br>	for (int i &#x3D; 0; i &lt; n; i++) {<br>		if (!arr.empty() &amp;&amp; arr.front() &lt; i - k + 1) {<br>			arr.pop_front();<br>		}<br>		if (!arr.empty() &amp;&amp; brr[arr.end()] &gt;&#x3D; x)  {                &#x2F;&#x2F;ʵ���������Сʱ�ķ��Ÿ�һ�¾��й�<br>			arr.pop_back();<br>		}<br>		arr.push_back(i);<br>		if (i &gt; k - 1) result.push_back(brr[arr.back()]);<br>	}<br>	return result;<br>}</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://17hwliao.github.io/2025/12/04/ackwing21/" data-id="cmivjnu9d000dekughb2x9hk9" data-title="" class="article-share-link"><span class="fa fa-share">分享</span></a>
+      
+      
+      
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2025/12/05/ackwing22/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">前一篇</strong>
+      <div class="article-nav-title">
+        
+          ackwing22
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2025/12/03/ackwing20/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">后一篇</strong>
+      <div class="article-nav-title">ackwing20</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+
+  
+    
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">归档</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2025/12/">十二月 2025</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2025/11/">十一月 2025</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2025/10/">十月 2025</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2025/09/">九月 2025</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2025/08/">八月 2025</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">最新文章</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2025/12/07/acking23/">acking23</a>
+          </li>
+        
+          <li>
+            <a href="/2025/12/05/ackwing22/">ackwing22</a>
+          </li>
+        
+          <li>
+            <a href="/2025/12/04/ackwing21/">(no title)</a>
+          </li>
+        
+          <li>
+            <a href="/2025/12/03/ackwing20/">ackwing20</a>
+          </li>
+        
+          <li>
+            <a href="/2025/12/01/ackwing19/">ackwing19</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      
+      &copy; 2025 你的名字<br>
+      Powered by <a href="https://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+
+<script src="/js/jquery-3.6.4.min.js"></script>
+
+
+
+  
+<script src="/fancybox/jquery.fancybox.min.js"></script>
+
+
+
+
+<script src="/js/script.js"></script>
+
+
+
+
+
+  </div>
+</body>
+</html>

@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  
+  <title>my blog3 | 我的博客</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="python  crawler:import osimport requestsfrom lxml import etree headers &#x3D; {    ‘User-Agent’: ‘Mozilla&#x2F;5.0 (Windows NT 10.0; Win64; x64) AppleWebKit&#x2F;537.36 (KHTML, like Gecko) Chrome&amp;#x2F">
+<meta property="og:type" content="article">
+<meta property="og:title" content="my blog3">
+<meta property="og:url" content="https://17hwliao.github.io/2025/08/21/my-blog3/index.html">
+<meta property="og:site_name" content="我的博客">
+<meta property="og:description" content="python  crawler:import osimport requestsfrom lxml import etree headers &#x3D; {    ‘User-Agent’: ‘Mozilla&#x2F;5.0 (Windows NT 10.0; Win64; x64) AppleWebKit&#x2F;537.36 (KHTML, like Gecko) Chrome&amp;#x2F">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2025-08-21T07:52:19.000Z">
+<meta property="article:modified_time" content="2025-08-21T07:54:10.990Z">
+<meta property="article:author" content="你的名字">
+<meta name="twitter:card" content="summary">
+  
+    <link rel="alternate" href="/atom.xml" title="我的博客" type="application/atom+xml">
+  
+  
+    <link rel="shortcut icon" href="/favicon.png">
+  
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+  
+    
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.min.css">
+
+  
+  
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/fork-awesome@1.2.0/css/fork-awesome.min.css">
+
+<meta name="generator" content="Hexo 7.3.0"></head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">我的博客</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"><span class="fa fa-bars"></span></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+        
+          <a class="nav-icon" href="/atom.xml" title="RSS 订阅"><span class="fa fa-rss"></span></a>
+        
+        <a class="nav-icon nav-search-btn" title="搜索"><span class="fa fa-search"></span></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="搜索"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="https://17hwliao.github.io"></form>
+      </div>
+    </div>
+  </div>
+</header>
+
+      <div class="outer">
+        <section id="main"><article id="post-my-blog3" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2025/08/21/my-blog3/" class="article-date">
+  <time class="dt-published" datetime="2025-08-21T07:52:19.000Z" itemprop="datePublished">2025-08-21</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="p-name article-title" itemprop="headline name">
+      my blog3
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <p>python  crawler:import os<br>import requests<br>from lxml import etree</p>
+<p>headers &#x3D; {<br>    ‘User-Agent’: ‘Mozilla&#x2F;5.0 (Windows NT 10.0; Win64; x64) AppleWebKit&#x2F;537.36 (KHTML, like Gecko) Chrome&#x2F;121.0.0.0 Safari&#x2F;537.36’,<br>}<br>index_url &#x3D; ‘<a target="_blank" rel="noopener" href="https://music.163.com/discover/toplist?id=19723756">https://music.163.com/discover/toplist?id=19723756</a>‘<br>response &#x3D; requests.get(index_url, headers&#x3D;headers)<br>html &#x3D; etree.HTML(response.text)<br>id_info_list &#x3D; html.xpath(‘&#x2F;&#x2F;ul[@class&#x3D;”f-hide”]&#x2F;li&#x2F;a&#x2F;@href’)<br>name_list &#x3D; html.xpath(‘&#x2F;&#x2F;ul[@class&#x3D;”f-hide”]&#x2F;li&#x2F;a&#x2F;text()’)<br>if not os.path.exists(‘网易云音乐’):<br>    os.mkdir(‘网易云音乐’)<br>for id_info, name in zip(id_info_list, name_list):<br>    music_id &#x3D; id_info.split(‘&#x3D;’)[1]<br>    music_url &#x3D; ‘<a target="_blank" rel="noopener" href="https://music.163.com/song/media/outer/url?id=">https://music.163.com/song/media/outer/url?id=</a>‘ + music_id<br>    response &#x3D; requests.get(music_url, headers&#x3D;headers)<br>    name &#x3D; name.replace(‘&#x2F;‘, ‘-‘)<br>    with open(f’.&#x2F;网易云音乐&#x2F;{name}.mp3’, ‘wb’) as file:<br>        file.write(response.content)</p>
+<pre><code>print(f&#39;音乐名称：&#123;name&#125;  下载链接：&#123;music_url&#125; 下载完毕&#39;)
+</code></pre>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://17hwliao.github.io/2025/08/21/my-blog3/" data-id="cmivjnu9p001mekug1vs9b2gu" data-title="my blog3" class="article-share-link"><span class="fa fa-share">分享</span></a>
+      
+      
+      
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2025/08/23/blog4/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">前一篇</strong>
+      <div class="article-nav-title">
+        
+          blog4
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2025/08/20/blog2/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">后一篇</strong>
+      <div class="article-nav-title">blog2</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+
+  
+    
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">归档</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2025/12/">十二月 2025</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2025/11/">十一月 2025</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2025/10/">十月 2025</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2025/09/">九月 2025</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2025/08/">八月 2025</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">最新文章</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2025/12/07/acking23/">acking23</a>
+          </li>
+        
+          <li>
+            <a href="/2025/12/05/ackwing22/">ackwing22</a>
+          </li>
+        
+          <li>
+            <a href="/2025/12/04/ackwing21/">(no title)</a>
+          </li>
+        
+          <li>
+            <a href="/2025/12/03/ackwing20/">ackwing20</a>
+          </li>
+        
+          <li>
+            <a href="/2025/12/01/ackwing19/">ackwing19</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      
+      &copy; 2025 你的名字<br>
+      Powered by <a href="https://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+
+<script src="/js/jquery-3.6.4.min.js"></script>
+
+
+
+  
+<script src="/fancybox/jquery.fancybox.min.js"></script>
+
+
+
+
+<script src="/js/script.js"></script>
+
+
+
+
+
+  </div>
+</body>
+</html>
