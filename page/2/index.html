@@ -1,601 +1,66 @@
-<!DOCTYPE html>
-<html>
-<head>
-  <meta charset="utf-8">
-  
-  
-  <title>17hwliao的妙妙屋</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <meta property="og:type" content="website">
+<!DOCTYPE html><html lang="zh-CN"><head><meta charset="utf-8"/><meta name="viewport" content="width=device-width, initial-scale=1.0"/><meta name="author" content="17hwliao"/><meta name="keyword" content="[]"/><meta property="og:type" content="website">
 <meta property="og:title" content="17hwliao的妙妙屋">
 <meta property="og:url" content="https://17hwliao.github.io/page/2/index.html">
 <meta property="og:site_name" content="17hwliao的妙妙屋">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:author" content="17hwliao">
-<meta name="twitter:card" content="summary">
-  
-    <link rel="alternate" href="/atom.xml" title="17hwliao的妙妙屋" type="application/atom+xml">
-  
-  
-    <link rel="shortcut icon" href="/favicon.png">
-  
-  
-  
-<link rel="stylesheet" href="/css/style.css">
-
-  
-    
-<link rel="stylesheet" href="/fancybox/jquery.fancybox.min.css">
-
-  
-  
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/fork-awesome@1.2.0/css/fork-awesome.min.css">
-
-<meta name="generator" content="Hexo 7.3.0"></head>
-
-<body>
-  <div id="container">
-    <div id="wrap">
-      <header id="header">
-  <div id="banner"></div>
-  <div id="header-outer" class="outer">
-    <div id="header-title" class="inner">
-      <h1 id="logo-wrap">
-        <a href="/" id="logo">17hwliao的妙妙屋</a>
-      </h1>
-      
-    </div>
-    <div id="header-inner" class="inner">
-      <nav id="main-nav">
-        <a id="main-nav-toggle" class="nav-icon"><span class="fa fa-bars"></span></a>
-        
-          <a class="main-nav-link" href="/">Home</a>
-        
-          <a class="main-nav-link" href="/archives">Archives</a>
-        
-      </nav>
-      <nav id="sub-nav">
-        
-        
-          <a class="nav-icon" href="/atom.xml" title="RSS 订阅"><span class="fa fa-rss"></span></a>
-        
-        <a class="nav-icon nav-search-btn" title="搜索"><span class="fa fa-search"></span></a>
-      </nav>
-      <div id="search-form-wrap">
-        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="搜索"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="https://17hwliao.github.io"></form>
-      </div>
-    </div>
-  </div>
-</header>
-
-      <div class="outer">
-        <section id="main">
-  
-    <article id="post-acwing16" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/2025/11/21/acwing16/" class="article-date">
-  <time class="dt-published" datetime="2025-11-21T01:50:09.000Z" itemprop="datePublished">2025-11-21</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="p-name article-title" href="/2025/11/21/acwing16/">acwing15</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="e-content article-entry" itemprop="articleBody">
-      
-        <p>##��̬�滮<br>��������(0 - 1)<br>int bei_1(vector<int> wei, vector<int>values, int max_wei) {<br>    int n &#x3D; wei.size();<br>    vector<int> dp(max_wei + 1, 0);<br>    for (int i &#x3D; 0; i &lt; n; i++) {<br>        for (int w &#x3D; max_wei; w &gt;&#x3D; we[i]; w–) {<br>            dp[w] &#x3D; max(dp[w], values[i] + dp[w - wei[i]]);<br>        }<br>    }<br>    return dp[max_wei];<br>}<br>��ȫ��������(ÿһ���������޵���Ŀ)<br>int wan_bei(vector<int> wei, vector<int> values, int max_wei) {<br>    int n &#x3D; wei.size();<br>    vector<int> dp( max_wei+ 1, 0);<br>    for (int i &#x3D; 0; i &lt; n; i++) {<br>        &#x2F;&#x2F; ��������������ظ�ѡ��ͬһ��Ʒ<br>        for (int w &#x3D; wei[i]; w &lt;&#x3D; max_wei; w++) {<br>            dp[w] &#x3D; max(dp[w], values[i] + dp[w - wei[i]]);<br>        }<br>    }<br>    return dp[max_wei];<br>}<br>���ر�������(ÿ����Ʒ������̶��ĸ���)<br> vector<int> new_wei, new_value;<br>    for (int i &#x3D; 0; i &lt; wei.size(); i++) {<br>        int count &#x3D; counts[i];    &#x2F;&#x2F;������Ʒ����Ŀ<br>        for (int k &#x3D; 1; k &lt;&#x3D; count; k *&#x3D; 2) {<br>            new_wei.push_back(wei[i] * k);<br>            new_value.push_back(value[i] * k);<br>            count -&#x3D; k;<br>        }<br>        if (count &gt; 0) {<br>            new_wei.push_back(wei[i] * count);<br>            new_value.push_back(value[i] * count);<br>        }<br>    }<br>    &#x2F;&#x2F; 2. 0-1������⣨�������ʵ���δ��룩<br>    vector<int> dp(max_wei	+ 1, 0);<br>    for (int i &#x3D; 0; i &lt; new_wei.size(); i++) {<br>        for (int w &#x3D; max_wei; w &gt;&#x3D; new_wei[i]; w–) {<br>            dp[w] &#x3D; max(dp[w], new_value[i] + dp[w - new_wei[i]]);<br>        }<br>    }</p>
-<pre><code>return dp[max_wei];
-</code></pre>
-<p>}</p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="https://17hwliao.github.io/2025/11/21/acwing16/" data-id="cmiwl8iwi000iq4ug5qok09la" data-title="acwing15" class="article-share-link"><span class="fa fa-share">分享</span></a>
-      
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-
-  
-    <article id="post-ackwing14" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/2025/11/20/ackwing14/" class="article-date">
-  <time class="dt-published" datetime="2025-11-20T04:20:51.000Z" itemprop="datePublished">2025-11-20</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="p-name article-title" href="/2025/11/20/ackwing14/">ackwing14</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="e-content article-entry" itemprop="articleBody">
-      
-        <p>##�ж�����<br>bool check(int x ) {<br>	if (x &lt; 2) return false;<br>	for (int i &#x3D; 2; i &lt;&#x3D; x &#x2F; i; i++) {<br>		if (x % i &#x3D;&#x3D; 0) {<br>			return false;<br>		}<br>	}<br>	return true;<br>}<br>##Ѱ��������<br>void check(int x) {<br>	for (int i &#x3D; 2; i &lt;&#x3D; x &#x2F; i; i++) {<br>		if (x % i &#x3D;&#x3D; 0) {<br>			int count &#x3D; 0;<br>			while (x % i &#x3D;&#x3D; 0) {<br>				x &#x3D; x &#x2F; i;<br>				count++;      &#x2F;&#x2F;count ����i ��ָ��<br>			}<br>			cout &lt;&lt; i &lt;&lt;’ ‘&lt;&lt; count;<br>		}<br>	}<br>	if (x &gt; 1) {<br>		cout &lt;&lt; x &lt;&lt; ‘ ‘ &lt;&lt; 1;<br>	}<br>}</p>
-<p>##Ѱ����������<br>const int N &#x3D; 1e5;<br>vector<int> arr(N);<br>int cnt;<br>bool brr[N];<br>void check(int x) {<br>	for (int i &#x3D; 2; i &lt;&#x3D; x; i++) {<br>		if (!brr[i]) {<br>			arr[cnt++] &#x3D; i;<br>			for (int j &#x3D; i + i; j &lt;&#x3D; x; j +&#x3D; i) {<br>				brr[j] &#x3D; true;<br>			}<br>		}<br>	}<br>	for (int i &#x3D; 0; i &lt;cnt; i++) {<br>		cout &lt;&lt; arr[i];<br>	}<br>}<br>for (int i &#x3D; 0; i &lt; ans; i++) {<br>        for (int j &#x3D; max(2LL * arr[i], ((M + arr[i] - 1) &#x2F; arr[i]) * arr[i]); j &lt;&#x3D; N; j +&#x3D; arr[i]) {<br>            if (j - M &gt;&#x3D; 0) {<br>                crr[j - M] &#x3D; 1;<br>            }<br>        }<br>    }<br>&#x2F;&#x2F;��������������Ŀ</p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="https://17hwliao.github.io/2025/11/20/ackwing14/" data-id="cmiwl8iwf0008q4ug5o1o9xee" data-title="ackwing14" class="article-share-link"><span class="fa fa-share">分享</span></a>
-      
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-
-  
-    <article id="post-java-01" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/2025/11/14/java-01/" class="article-date">
-  <time class="dt-published" datetime="2025-11-14T03:06:44.000Z" itemprop="datePublished">2025-11-14</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="p-name article-title" href="/2025/11/14/java-01/">java_01</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="e-content article-entry" itemprop="articleBody">
-      
-        <p>##���������<br>import java.util.Scanner ;     &#x2F;&#x2F;����<br>    public static void main(String[] args) {<br>        Scanner s &#x3D; new Scanner(System.in);      &#x2F;&#x2F;����¼��<br>        int n &#x3D; s . nextDouble() ;                          &#x2F;&#x2F;���ñ���<br>        System.out.println(1 + 1 ) ;<br>#��������:<br>byte ���з�����������(-128 �� 127)</p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="https://17hwliao.github.io/2025/11/14/java-01/" data-id="cmiwl8iwo000tq4ug2h19env9" data-title="java_01" class="article-share-link"><span class="fa fa-share">分享</span></a>
-      
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-
-  
-    <article id="post-ackwing13" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/2025/11/14/ackwing13/" class="article-date">
-  <time class="dt-published" datetime="2025-11-14T02:21:29.282Z" itemprop="datePublished">2025-11-14</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-    <div class="e-content article-entry" itemprop="articleBody">
-      
-        <p>####�����㷨�ĵ�ʮ����</p>
-<hr>
-<h2 id="title-ackwing13date-2025-11-14-10-21-29tags"><a href="#title-ackwing13date-2025-11-14-10-21-29tags" class="headerlink" title="title: ackwing13date: 2025-11-14 10:21:29tags:"></a>title: ackwing13<br>date: 2025-11-14 10:21:29<br>tags:</h2>
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="https://17hwliao.github.io/2025/11/14/ackwing13/" data-id="cmiwl8iwd0002q4ug2rijaq83" data-title="" class="article-share-link"><span class="fa fa-share">分享</span></a>
-      
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-
-  
-    <article id="post-ackwing12" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/2025/11/13/ackwing12/" class="article-date">
-  <time class="dt-published" datetime="2025-11-13T08:36:59.000Z" itemprop="datePublished">2025-11-13</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="p-name article-title" href="/2025/11/13/ackwing12/">ackwing12</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="e-content article-entry" itemprop="articleBody">
-      
-        <p>###���ֽ���:<br>#������ֵ,����Χ������ֵ���Լ���<br>##������code:<br>#include<iostream><br>#include<vector><br>using namespace std;<br>#define int long long<br>int n, m;<br>const int N &#x3D; 3e6 + 17 + 3e5;<br>vector<int>arr(N);<br>int check(int x) {<br>    int num &#x3D; 0, count &#x3D; 0 ;<br>    for (int i &#x3D; 0; i &lt; n; i++) {<br>        if (num + arr[i] &gt;&#x3D; x) {<br>            count++;<br>            num &#x3D; arr[i];<br>        }<br>        else {<br>            num +&#x3D; arr[i];<br>        }<br>    }<br>    return count &gt;&#x3D; m ;<br>}<br>signed main() {<br>    cin &gt;&gt; n &gt;&gt; m;<br>    int l &#x3D; 0, r &#x3D; 0;<br>    for (int i &#x3D; 0; i &lt; n; i++) {<br>        cin &gt;&gt; arr[i];<br>        l &#x3D; max(l, arr[i]);<br>        r +&#x3D; arr[i];<br>    }<br>    if (m &#x3D;&#x3D; n) {<br>        cout &lt;&lt; l;<br>        return 0;<br>    }<br>    while (l + 1 &lt; r) {<br>        int mid &#x3D; (l + r) &gt;&gt; 1;<br>        if (check(mid)) l &#x3D; mid;<br>        else r &#x3D; mid;<br>    }<br>    cout &lt;&lt; l;<br>    return 0;<br>}</p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="https://17hwliao.github.io/2025/11/13/ackwing12/" data-id="cmiwl8iwf0007q4ughhrj612r" data-title="ackwing12" class="article-share-link"><span class="fa fa-share">分享</span></a>
-      
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-
-  
-    <article id="post-crawler1" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/2025/11/12/crawler1/" class="article-date">
-  <time class="dt-published" datetime="2025-11-12T07:39:09.000Z" itemprop="datePublished">2025-11-12</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="p-name article-title" href="/2025/11/12/crawler1/">crawler1</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="e-content article-entry" itemprop="articleBody">
-      
-        <p>�������⻷��C:\Crawler\venv\Scripts\python.exe (�˴�·��������������⺯��)”��Ŀ��ַָ��Ŀ���ļ�.py”<br>##��ȡͼƬcode:<br>import request ; &#x2F;&#x2F; https ����<br>url  &#x3D; “ “<br>response &#x3D; request.get(url)<br>with open(‘��Ŀ��.��ʽ’ ,’wb’(ͼƬ����)) as f:<br>        f.write(response.content)<br>##��ȡMP3<br>import os : �ļ���Ŀ¼����<br>import requests<br>from lxml import etree<br> headers &#x3D; {����ͷ(user_agent + cookies)}    &#x2F;&#x2F; ��һ������ͷ�ĳ���<br> url &#x3D; “��ַ”<br> response &#x3D; request.get(url ,headers &#x3D; headers)<br> html &#x3D; etree.HTML(response.text)    &#x2F;&#x2F; ץȡHTML����<br> song_ids &#x3D; html.xpath(‘&#x2F;&#x2F;ul[@class&#x3D;”f-hide”]&#x2F;li&#x2F;a&#x2F;@href’)<br>song_names &#x3D; html.xpath(‘&#x2F;&#x2F;ul[@class&#x3D;”f-hide”]&#x2F;li&#x2F;a&#x2F;text()’)   (xpathѡ����)</p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="https://17hwliao.github.io/2025/11/12/crawler1/" data-id="cmiwl8iwo000sq4ugdwqu7z2f" data-title="crawler1" class="article-share-link"><span class="fa fa-share">分享</span></a>
-      
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-
-  
-    <article id="post-acking11" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/2025/11/12/acking11/" class="article-date">
-  <time class="dt-published" datetime="2025-11-12T01:50:38.000Z" itemprop="datePublished">2025-11-12</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="p-name article-title" href="/2025/11/12/acking11/">acking11</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="e-content article-entry" itemprop="articleBody">
-      
-        <p>##����joker����Ŀcode:<br>#include<iostream><br>#include<vector><br>#include<cmath><br>#define int long long<br>using namespace std;<br>int n , m ;<br>const int N &#x3D; 5e6 + 17;<br>vector<int> arr(N);<br>bool check(int x ){<br>    int ans &#x3D; 0  ;<br>    for(int i &#x3D; 0 ; i &lt; n ; i ++){<br>        if(arr[i] &gt; x) continue;<br>        ans +&#x3D; (x - arr[i]);<br>        if(ans &gt; m) return false ;<br>    }<br>    return ans &lt;&#x3D; m;<br>}<br>signed main(){<br>    cin&gt;&gt;n&gt;&gt;m;<br>    int right &#x3D; 5e8+17;<br>    for(int i &#x3D; 0 ; i &lt; n ; i++ ) {<br>        cin&gt;&gt;arr[i];<br>    }<br>    int left &#x3D; -1 ;<br>    while(left + 1 &lt; right){<br>        int mid &#x3D; (left + right ) &gt;&gt; 1 ;<br>        if(check(mid)) left &#x3D; mid;<br>        else right &#x3D; mid;<br>    }<br>    cout&lt;&lt;left;<br>    return 0 ;<br>}</p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="https://17hwliao.github.io/2025/11/12/acking11/" data-id="cmiwl8iwd0003q4ug3be4akd2" data-title="acking11" class="article-share-link"><span class="fa fa-share">分享</span></a>
-      
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-
-  
-    <article id="post-acking10" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/2025/11/10/acking10/" class="article-date">
-  <time class="dt-published" datetime="2025-11-10T02:19:14.000Z" itemprop="datePublished">2025-11-10</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="p-name article-title" href="/2025/11/10/acking10/">acking10</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="e-content article-entry" itemprop="articleBody">
-      
-        <p> ##��겻������<br> ��ϰ��һ�����</p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="https://17hwliao.github.io/2025/11/10/acking10/" data-id="cmiwl8iw80000q4ugcjiybqly" data-title="acking10" class="article-share-link"><span class="fa fa-share">分享</span></a>
-      
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-
-  
-    <article id="post-ackwing9" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/2025/11/07/ackwing9/" class="article-date">
-  <time class="dt-published" datetime="2025-11-07T02:04:23.000Z" itemprop="datePublished">2025-11-07</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="p-name article-title" href="/2025/11/07/ackwing9/">ackwing9</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="e-content article-entry" itemprop="articleBody">
-      
-        <p>###��ɢ����ϰ<br>#������ɢcode:<br>int er_f(int x,const vector<int>&amp;brr ){<br>    int l &#x3D; -1 , r &#x3D; brr.size();<br>    while(l+1 &lt; r){<br>        int mid &#x3D; (l + r)&gt;&gt;1;<br>        if(brr[mid] &lt; x) l &#x3D; mid;<br>        else r &#x3D; mid;<br>    }<br>    return l+1 ;<br>}<br>void mq(){<br>     int m ;<br>        cin&gt;&gt;m;<br>        vector<int> arr(m);<br>        for(int i &#x3D; 0 ; i &lt; m ; i++) cin&gt;&gt;arr[i];<br>        vector<int>brr &#x3D; arr;<br>        sort(brr.begin(),brr.end());<br>        brr.erase(unique(brr.begin(),brr.end()),brr.end());<br>        for(int i &#x3D; 0 ; i&lt; m ; i++){<br>            int count &#x3D; er_f(arr[i],brr);<br>            cout&lt;&lt;count+1&lt;&lt;’ ‘;<br>        }<br>        cout&lt;&lt;’\n’;<br>}</p>
-<p>#���ճ��(�ϲ�����):<br>typedef pair&lt;int , int&gt; Q;<br>int n;<br>vector<Q> arr;<br>void lsan(vector<Q>&amp;arr){<br>    vector<Q> brr;<br>    sort(arr.begin(),arr.end());<br>    int  st &#x3D; -1e9 , ed &#x3D; -1e9;<br>    for(auto it : arr){<br>        if(it.first &gt; ed){<br>          if(st !&#x3D; -1e9) brr.push_back({st,ed});<br>            st &#x3D; it.first;<br>            ed &#x3D; it.second;<br>        } else{<br>            ed &#x3D; max(ed , it.second);<br>        }<br>    }<br>    if(st !&#x3D; -1e9) brr.push_back({st,ed});<br>    arr &#x3D; brr;<br>}</p>
-<p>##λ����<br>#ԭ������Ķ���:��������������ͬ(����1�����ʵ�� &#x2F; 2)<br>#����ȡ��+1<br>##^	��λ���	����λ��ͬʱ���Ϊ1	1010 ^ 1100 &#x3D; 0110<br>##~	��λȡ��	����λȡ����0��1��1��0��	~1010 &#x3D; 0101<br>###�ҳ�x�����������е�1<br>&#x2F;&#x2F;�ҵ�x���λ������������<br>int lowbit(int x)<br>{<br>    return x &amp; -x;<br>}<br>    while (n – )<br>    {<br>        int x;<br>        cin &gt;&gt; x;<br>        int res &#x3D; 0;<br>        while (x)<br>        {<br>            x -&#x3D; lowbit(x); &#x2F;&#x2F; ȥ�����λһȥ����һ��1<br>            res++;          &#x2F;&#x2F; ������1<br>        }<br>		<br>####ʵ�ֿ����ݵ�����(����2����)<br>long long binpow(long long a, long long b, long long mod) {<br>    long long res &#x3D; 1;<br>    while (b &gt; 0) {<br>        if (b &amp; 1) {  &#x2F;&#x2F; ��鵱ǰ������λ�Ƿ�Ϊ1  (���Ƕ�����λ��1 ��֮��Ҫ��a����)<br>            res &#x3D; res * a % mod;  &#x2F;&#x2F; ���Ϊ1��������<br>        }<br>        a &#x3D; a * a % mod;  &#x2F;&#x2F; a�Գˣ�������һ�ֵ�a^(2^k)<br>        b &gt;&gt;&#x3D; 1;          &#x2F;&#x2F; ���ƣ�������һλ<br>    }<br>    return res;<br>&#x3D;<br>&#x2F;&#x2F;�ݹ������(��ѷ�ڵ���)<br>int QuickPow(int N, int x, int mod)<br>{<br>    if(x &#x3D;&#x3D; 0) return 1;<br>    if(x &#x3D;&#x3D; 1) return N % mod;<br>    long long result;<br>    if(x &amp; 1) {  &#x2F;&#x2F; ����<br>        result &#x3D; (long long)N * QuickPow(N, x-1, mod) % mod;<br>    } else {     &#x2F;&#x2F; ż��<br>        long long temp &#x3D; QuickPow((long long)N * N % mod, x&#x2F;2, mod);<br>        result &#x3D; temp % mod;<br>    }<br>    return result;<br>}</p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="https://17hwliao.github.io/2025/11/07/ackwing9/" data-id="cmiwl8iwm000mq4ughrem7vf5" data-title="ackwing9" class="article-share-link"><span class="fa fa-share">分享</span></a>
-      
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-
-  
-    <article id="post-ackwing8" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/2025/11/06/ackwing8/" class="article-date">
-  <time class="dt-published" datetime="2025-11-06T09:30:34.000Z" itemprop="datePublished">2025-11-06</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="p-name article-title" href="/2025/11/06/ackwing8/">ackwing8</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="e-content article-entry" itemprop="articleBody">
-      
-        <p>##ѡ����code(Ѱ����̶̹�������):<br>    for (int i &#x3D; 1; i &lt;&#x3D; n; i++) cin &gt;&gt; arr[i];<br>    int cnt &#x3D; 0, len &#x3D; n + 1, left &#x3D; 0, right &#x3D; 0;<br>    for (int i &#x3D; 1, j &#x3D; 1; i &lt;&#x3D; n; i++) {<br>        if (s[arr[i]] &#x3D;&#x3D; 0) {<br>            cnt++;<br>        }<br>        s[arr[i]]++;<br>        while (cnt &#x3D;&#x3D; m &amp;&amp; j &lt;&#x3D; i) {<br>            if (i - j + 1 &lt; len) {<br>                len &#x3D; i - j + 1;<br>                left &#x3D; j;<br>                right &#x3D; i;<br>            }<br>            s[arr[j]]–;<br>            if (s[arr[j]] &#x3D;&#x3D; 0) {<br>                cnt–;<br>            }<br>            j++;<br>        }<br>    }<br>if (len &lt; n + 1) {<br>    cout &lt;&lt; left &lt;&lt; ‘ ‘ &lt;&lt; right;<br>    return  0;<br>}</p>
-<p>###�㷨һ : ��ɢ��(�ں��ظ���������������ȥ���ٽ��в���)(���Ͷ���һ��ʹ��)<br>    while (n–) {<br>        int m;<br>        cin &gt;&gt; m;<br>        vector<int> arr(m);<br>        for (int i &#x3D; 0; i &lt; m; i++) cin &gt;&gt; arr[i];<br>        vector<int> brr &#x3D; arr;<br>        sort(brr.begin(),brr.end());<br>        brr.erase(unique(brr.begin(), brr.end()), brr.end());<br>        for (int i &#x3D; 0; i &lt; m; i++) {<br>            cout &lt;&lt; er_f(arr[i], brr , brr.size()) + 1&lt;&lt;’ ‘;<br>        }<br>	}<br>#��ɢ����ȡ���к�<br>int n, m;<br>int a[N], s[N];<br>vector<int> alls;<br>vector<PII> add, query;</p>
-<p>int find(int x) {<br>    int l &#x3D; –1, r &#x3D; alls.size() ;<br>    while (l +1&lt; r) {<br>        int mid &#x3D; l + r &gt;&gt; 1;<br>        if (alls[mid] &gt;&#x3D; x) r &#x3D; mid;<br>        else l &#x3D; mid + 1;<br>    }<br>    return l ;<br>}</p>
-<p>int main() {<br>    cin &gt;&gt; n &gt;&gt; m;</p>
-<pre><code>for (int i = 0; i &lt; n; i++) &#123;
-    int x, c;
-    cin &gt;&gt; x &gt;&gt; c;
-    add.push_back(&#123;x, c&#125;);
-    alls.push_back(x);
-&#125;
-
-for (int i = 0; i &lt; m; i++) &#123;
-    int l, r;
-    cin &gt;&gt; l &gt;&gt; r;
-    query.push_back(&#123;l, r&#125;);
-    alls.push_back(l);
-    alls.push_back(r);
-&#125;
-#����:����ɢ����������С����
-   // ��ɢ��
-sort(alls.begin(), alls.end());
-alls.erase(unique(alls.begin(), alls.end()), alls.end());
-// �������Ӳ���
-for (auto item : add) &#123;
-    int x = find(item.first);
-    a[x] += item.second;                      
-&#125;
-int max_index = alls.size();
-for (int i = 1; i &lt;= max_index; i++) &#123;
-    s[i] = s[i - 1] + a[i];
-&#125;
-// ������ѯ
-for (auto item : query) &#123;
-    int l = find(item.first), r = find(item.second);
-    cout &lt;&lt; s[r] - s[l - 1] &lt;&lt; endl;
-&#125;
-</code></pre>
-<p>}<br>	###�㷨��: ����ϲ�<br>	code:<br>void merge(vector<PII> &amp;segs)<br>{<br>    vector<PII> res;<br>    sort(segs.begin(), segs.end());<br>    int st &#x3D; -2e9, ed &#x3D; -2e9;<br>    for (auto seg : segs) {<br>        if (ed &lt; seg.first) {<br>            if (st !&#x3D; -2e9) res.push_back({st, ed});<br>            st &#x3D; seg.first;<br>            ed &#x3D; seg.second;<br>        } else {<br>            ed &#x3D; max(ed, seg.second);<br>        }<br>    }<br>    if (st !&#x3D; -2e9) res.push_back({st, ed});<br>    segs &#x3D; res;<br>}</p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="https://17hwliao.github.io/2025/11/06/ackwing8/" data-id="cmiwl8iwj000kq4ug3ib58ym3" data-title="ackwing8" class="article-share-link"><span class="fa fa-share">分享</span></a>
-      
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-
-  
-
-
-  <nav id="page-nav">
-    
-    <a class="extend prev" rel="prev" href="/">&laquo; 上一页</a><a class="page-number" href="/">1</a><span class="page-number current">2</span><a class="page-number" href="/page/3/">3</a><a class="page-number" href="/page/4/">4</a><span class="space">&hellip;</span><a class="page-number" href="/page/9/">9</a><a class="extend next" rel="next" href="/page/3/">下一页 &raquo;</a>
-  </nav>
-
-</section>
-        
-          <aside id="sidebar">
-  
-    
-
-  
-    
-
-  
-    
-  
-    
-  <div class="widget-wrap">
-    <h3 class="widget-title">归档</h3>
-    <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2025/12/">十二月 2025</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2025/11/">十一月 2025</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2025/10/">十月 2025</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2025/09/">九月 2025</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2025/08/">八月 2025</a></li></ul>
-    </div>
-  </div>
-
-
-  
-    
-  <div class="widget-wrap">
-    <h3 class="widget-title">最新文章</h3>
-    <div class="widget">
-      <ul>
-        
-          <li>
-            <a href="/2025/12/07/acking23/">acking23</a>
-          </li>
-        
-          <li>
-            <a href="/2025/12/05/ackwing22/">ackwing22</a>
-          </li>
-        
-          <li>
-            <a href="/2025/12/04/ackwing21/">(no title)</a>
-          </li>
-        
-          <li>
-            <a href="/2025/12/03/ackwing20/">ackwing20</a>
-          </li>
-        
-          <li>
-            <a href="/2025/12/01/ackwing19/">ackwing19</a>
-          </li>
-        
-      </ul>
-    </div>
-  </div>
-
-  
-</aside>
-        
-      </div>
-      <footer id="footer">
-  
-  <div class="outer">
-    <div id="footer-info" class="inner">
-      
-      &copy; 2025 17hwliao<br>
-      Powered by <a href="https://hexo.io/" target="_blank">Hexo</a>
-    </div>
-  </div>
-</footer>
-
-    </div>
-    <nav id="mobile-nav">
-  
-    <a href="/" class="mobile-nav-link">Home</a>
-  
-    <a href="/archives" class="mobile-nav-link">Archives</a>
-  
-</nav>
-    
-
-
-<script src="/js/jquery-3.6.4.min.js"></script>
-
-
-
-  
-<script src="/fancybox/jquery.fancybox.min.js"></script>
-
-
-
-
-<script src="/js/script.js"></script>
-
-
-
-
-
-  </div>
-</body>
-</html>
+<meta name="twitter:card" content="summary"><title>MEOW - 可爱明亮的Hexo主题</title><link rel="shortcut icon" href="/img/site-icon.png">
+<link rel="stylesheet" href="/css/style.css" id="dm-light">
+
+
+<link rel="stylesheet" href="https://cdn.bootcdn.net/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+
+<script src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js" async></script>
+<meta name="generator" content="Hexo 7.3.0"></head><body><header><div class="top-nav" ondblclick="scrollToTop()"><div class="nav-info"><div class="nav-icon"><img id="nav-icon" src="/img/site-icon.png"/></div><div class="nav-title"><a id="nav-title" href="/" title="主页">17hwliao的妙妙屋</a></div></div><div class="nav-ribbon"><div class="top-menu-expanded"><a class="top-menu-item" href="/archives"><span>归档</span></a><a class="top-menu-item" href="/categories"><span>分类</span></a><a class="top-menu-item" href="/tags"><span>标签</span></a><a class="top-menu-item" href="/about"><span>关于</span></a></div><div class="top-search" onclick="toggleSearchWindow()"><div id="top-search-btn" title="搜索"><i class="icon fa-solid fa-magnifying-glass"></i><span>搜索</span></div></div><div id="top-menu-btn" onclick="openTopMenu()" title="打开菜单"><i class="fa-solid fa-bars fa-lg"></i></div></div></div></header><div id="top-menu-hidden"><div class="menu-hidden-content"><div class="menu-hidden-nav"><a class="menu-hidden-item" href="/archives"><i class="fa-solid fa-box-archive fa-sm"></i><span>归档</span></a><a class="menu-hidden-item" href="/categories"><i class="fa-regular fa-folder-open fa-sm"></i><span>分类</span></a><a class="menu-hidden-item" href="/tags"><i class="fa-solid fa-tags fa-sm"></i><span>标签</span></a><a class="menu-hidden-item" href="/about"><i class="fa-solid fa-paw fa-sm"></i><span>关于</span></a></div></div><div class="menu-hidden-blank" onclick="closeTopMenu()"></div></div>
+<div class="blog-info"><div class="blog-pic"><img id="blog-pic" src="/img/site-icon.png"/></div><div class="blog-title"><i class="fa-solid fa-paw fa-2xs fa-rotate-by"></i><span>MEOW</span><i class="fa-solid fa-paw fa-2xs fa-rotate-by"></i></div><div class="blog-desc">Hexo主题「Meow」展示站。本主题尤其适用于发布原创小说、同人二创等文学作品。</div></div><div class="main"><div class="main-content"><div class="index-posts"><article class="index-post-item"><div class="post-title-index"><h1><a href="/2025/11/21/acwing16/"><i class="fa-solid fa-paw"></i>acwing15</a></h1></div><div class="post-head-info"><div class="post-date"><i class="icon fa-regular fa-calendar-plus" title="发布日期"></i><time class="publish-time">2025-11-21</time></div>
+</div><div class="post-excerpt">##动态规划背包问题(0 - 1)int bei_1(vector wei, vectorvalues, int max_wei) {    int n &#x3D; wei.size();    vector dp(max_wei + 1, 0);    for (int i &#x3D; 0; i &lt; n; i++) {        for (int w &#x3D; max_w...</div><div class="read-more"><i class="fa-solid fa-paw fa-xs"></i><a class="read-more-link" href="/2025/11/21/acwing16/">阅读全文</a></div></article><article class="index-post-item"><div class="post-title-index"><h1><a href="/2025/11/20/acwing14/"><i class="fa-solid fa-paw"></i>ackwing14</a></h1></div><div class="post-head-info"><div class="post-date"><i class="icon fa-regular fa-calendar-plus" title="发布日期"></i><time class="publish-time">2025-11-20</time></div>
+</div><div class="post-excerpt">##判断质数bool check(int x ) {	if (x &lt; 2) return false;	for (int i &#x3D; 2; i &lt;&#x3D; x &#x2F; i; i++) {		if (x % i &#x3D;&#x3D; 0) {			return false;		}	}	return true;}##寻找质因数void check(int x) {...</div><div class="read-more"><i class="fa-solid fa-paw fa-xs"></i><a class="read-more-link" href="/2025/11/20/acwing14/">阅读全文</a></div></article><article class="index-post-item"><div class="post-title-index"><h1><a href="/2025/11/14/java-01/"><i class="fa-solid fa-paw"></i>java_01</a></h1></div><div class="post-head-info"><div class="post-date"><i class="icon fa-regular fa-calendar-plus" title="发布日期"></i><time class="publish-time">2025-11-14</time></div>
+</div><div class="post-excerpt">##输入输出流import java.util.Scanner ;     &#x2F;&#x2F;导包    public static void main(String[] args) {        Scanner s &#x3D; new Scanner(System.in);      &#x2F;&#x2F;键盘录入        int n &#x3D; s . nextDo...</div><div class="read-more"><i class="fa-solid fa-paw fa-xs"></i><a class="read-more-link" href="/2025/11/14/java-01/">阅读全文</a></div></article><article class="index-post-item"><div class="post-title-index"><h1><a href="/2025/11/14/acwing13/"><i class="fa-solid fa-paw"></i></a></h1></div><div class="post-head-info"><div class="post-date"><i class="icon fa-regular fa-calendar-plus" title="发布日期"></i><time class="publish-time">2025-11-14</time></div>
+</div><div class="post-excerpt">####修行算法的第十三天
+
+title: ackwing13date: 2025-11-14 10:21:29tags:</div><div class="read-more"><i class="fa-solid fa-paw fa-xs"></i><a class="read-more-link" href="/2025/11/14/acwing13/">阅读全文</a></div></article><article class="index-post-item"><div class="post-title-index"><h1><a href="/2025/11/13/acwing12/"><i class="fa-solid fa-paw"></i>ackwing12</a></h1></div><div class="post-head-info"><div class="post-date"><i class="icon fa-regular fa-calendar-plus" title="发布日期"></i><time class="publish-time">2025-11-13</time></div>
+</div><div class="post-excerpt">###二分结束:#不必求值,卡范围带入数值测试即可##分数列code:#include#includeusing namespace std;#define int long longint n, m;const int N &#x3D; 3e6 + 17 + 3e5;vectorarr(N);int check(int x) {    int num &#x3D; 0, count &#x...</div><div class="read-more"><i class="fa-solid fa-paw fa-xs"></i><a class="read-more-link" href="/2025/11/13/acwing12/">阅读全文</a></div></article><article class="index-post-item"><div class="post-title-index"><h1><a href="/2025/11/12/crawler1/"><i class="fa-solid fa-paw"></i>crawler1</a></h1></div><div class="post-head-info"><div class="post-date"><i class="icon fa-regular fa-calendar-plus" title="发布日期"></i><time class="publish-time">2025-11-12</time></div>
+</div><div class="post-excerpt">构建虚拟环境C:\Crawler\venv\Scripts\python.exe (此处路径包含所有爬虫库函数)&quot;项目地址指向目标文件.py&quot;##爬取图片code:import request ; &#x2F;&#x2F; https 请求url  &#x3D; &quot; &quot;response &#x3D; request.get(url)with open(...</div><div class="read-more"><i class="fa-solid fa-paw fa-xs"></i><a class="read-more-link" href="/2025/11/12/crawler1/">阅读全文</a></div></article><article class="index-post-item"><div class="post-title-index"><h1><a href="/2025/11/12/acwing11/"><i class="fa-solid fa-paw"></i>acking11</a></h1></div><div class="post-head-info"><div class="post-date"><i class="icon fa-regular fa-calendar-plus" title="发布日期"></i><time class="publish-time">2025-11-12</time></div>
+</div><div class="post-excerpt">##计算joker的数目code:#include#include#include#define int long longusing namespace std;int n , m ;const int N &#x3D; 5e6 + 17;vector arr(N);bool check(int x ){    int ans &#x3D; 0  ;    for(int i &#x3D;...</div><div class="read-more"><i class="fa-solid fa-paw fa-xs"></i><a class="read-more-link" href="/2025/11/12/acwing11/">阅读全文</a></div></article><article class="index-post-item"><div class="post-title-index"><h1><a href="/2025/11/10/acwing10/"><i class="fa-solid fa-paw"></i>acking10</a></h1></div><div class="post-head-info"><div class="post-date"><i class="icon fa-regular fa-calendar-plus" title="发布日期"></i><time class="publish-time">2025-11-10</time></div>
+</div><div class="post-excerpt"> ##鼠标不好用了 复习了一天代码
+</div><div class="read-more"><i class="fa-solid fa-paw fa-xs"></i><a class="read-more-link" href="/2025/11/10/acwing10/">阅读全文</a></div></article><article class="index-post-item"><div class="post-title-index"><h1><a href="/2025/11/07/acwing9/"><i class="fa-solid fa-paw"></i>ackwing9</a></h1></div><div class="post-head-info"><div class="post-date"><i class="icon fa-regular fa-calendar-plus" title="发布日期"></i><time class="publish-time">2025-11-07</time></div>
+</div><div class="post-excerpt">###离散化练习#数列离散code:int er_f(int x,const vector&amp;brr ){    int l &#x3D; -1 , r &#x3D; brr.size();    while(l+1 &lt; r){        int mid &#x3D; (l + r)&gt;&gt;1;        if(brr[mid] &lt; x) l &#x3D; ...</div><div class="read-more"><i class="fa-solid fa-paw fa-xs"></i><a class="read-more-link" href="/2025/11/07/acwing9/">阅读全文</a></div></article><article class="index-post-item"><div class="post-title-index"><h1><a href="/2025/11/06/acwing8/"><i class="fa-solid fa-paw"></i>ackwing8</a></h1></div><div class="post-head-info"><div class="post-date"><i class="icon fa-regular fa-calendar-plus" title="发布日期"></i><time class="publish-time">2025-11-06</time></div>
+</div><div class="post-excerpt">##选画家code(寻找最短固定子序列):    for (int i &#x3D; 1; i &lt;&#x3D; n; i++) cin &gt;&gt; arr[i];    int cnt &#x3D; 0, len &#x3D; n + 1, left &#x3D; 0, right &#x3D; 0;    for (int i &#x3D; 1, j &#x3D; 1; i &...</div><div class="read-more"><i class="fa-solid fa-paw fa-xs"></i><a class="read-more-link" href="/2025/11/06/acwing8/">阅读全文</a></div></article></div><div class="pagination"><a class="extend prev" rel="prev" href="/"><i class="icon-prev fa-solid fa-chevron-left"></i></a><a class="page-number" href="/">1</a><span class="page-number current">2</span><a class="page-number" href="/page/3/">3</a><span class="space">&hellip;</span><a class="page-number" href="/page/9/">9</a><a class="extend next" rel="next" href="/page/3/"><i class="icon-next fa-solid fa-chevron-right"></i></a></div></div></div><div id="tool-bar"><div id="tool-bar-main"><div id="tool-toggle" onclick="toolToggle()" title="设置"><i class="fa-solid fa-gear"></i></div><div id="back-to-top" onclick="scrollToTop()" title="返回顶部"><i class="fa-solid fa-chevron-up"></i></div></div><div id="tool-bar-more" style="display: none;"><div id="darkmode-switch" onclick="darkmodeSwitch()" title="深色模式"><i class="fa-solid fa-circle-half-stroke"></i></div></div></div><div id="search-panel"><div class="search-container"><div class="search-head"><div class="search-title"><span><i class="fa-solid fa-paw"></i>搜索</span></div><div class="search-close-btn" onclick="toggleSearchWindow()"><i class="fa-regular fa-circle-xmark"></i></div></div><div class="search-box"><i class="fa-solid fa-magnifying-glass"></i><input id="search-input" type="text" placeholder="请输入需要搜索的内容……" value=""/></div><div class="search-body"><div id="search-count">匹配结果数: </div><div id="search-result"></div><div id="search-result-empty">未搜索到匹配的文章。</div></div></div></div><footer><div class="footer-content"><div class="copyright-info"><i class="fa-regular fa-copyright fa-xs"></i><span>2024 - 2025 </span><a href="/about">17hwliao</a><i class="fa-solid fa-cat fa-sm"></i><span>Powered by </span><a href="https://hexo.io/" target="_blank">Hexo</a><span> &amp; </span><a href="https://github.com/chanwj/hexo-theme-meow" target="_blank" title="v2.1.5">Theme Meow</a></div><div class="pageview-site"><span id="busuanzi_container_site_pv">总访问量 : <span id="busuanzi_value_site_pv"><i class="fa-solid fa-spinner"></i></span></span><span id="busuanzi_container_site_uv">总访客数 : <span id="busuanzi_value_site_uv"><i class="fa-solid fa-spinner"></i></span></span></div></div></footer>
+<script>const GLOBAL_CONFIG = {
+  comment: { theme: ''}
+}
+</script>
+<script src="/js/third-party/darkmode.js"></script>
+<script>var options = {
+  dark: '/css/darkmode.css',
+  startAt: '24:00',
+  endAt: '06:00',
+  checkSystemScheme: 'false',
+  saveOnToggle: 'true'
+};
+var darkMode = new DarkMode(options);
+// change comment theme synchronously 同步修改评论区主题
+if (darkMode.getMode() == "dark" && (true || true)) {
+  if (document.getElementById('comment')) {
+    document.getElementById('comment').getElementsByTagName('script')[0].setAttribute('data-theme', 'noborder_dark');
+  }
+}
+</script>
+<script src="/js/theme/tool-bar.js"></script>
+
+
+<script src="/js/theme/menu.js"></script>
+
+
+<script src="/js/third-party/clipboard.min.js"></script>
+
+
+<script src="/js/theme/copy.js"></script>
+<script>copyCode();
+</script>
+<script src="/js/jquery-3.7.1.min.js"></script>
+
+
+<script src="/js/theme/search.js"></script>
+<script>searchFunc('/search.xml', 'search-input', 'search-result');
+</script></body></html>
