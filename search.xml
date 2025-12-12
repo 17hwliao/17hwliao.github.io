@@ -4,6 +4,19 @@
   
     
     <entry>
+      <title>acwing27</title>
+      <link href="/2025/12/12/acwing27/"/>
+      <url>/2025/12/12/acwing27/</url>
+      
+        <content type="html"><![CDATA[<p>模拟散序列二:<br>&#x2F;&#x2F;开放寻址法<br>&#x2F;&#x2F;蹲坑函数find()<br>int find(int x) {<br>int t &#x3D; (x % N + N) % N;<br>while (h[t] !&#x3D; null &amp;&amp; h[t] !&#x3D; x) {<br>t++;<br>if (t &#x3D;&#x3D; N) t &#x3D; 0;<br>}<br>return t;<br>}</p><p>int main() {<br>memset(h, 0x3f, sizeof(h)); </p><pre><code>int n; cin &gt;&gt; n; while (n--) &#123;string s;int x; cin &gt;&gt; s &gt;&gt; x; if (s == &quot;I&quot;) h[find(x)] = x;else &#123;if (h[find(x)] == null) cout &lt;&lt; &quot;No\n&quot;;else cout &lt;&lt; &quot;Yes\n&quot;; &#125;&#125;return 0; </code></pre><p>}</p><p>字符串哈希:<br>1.将字母映射为数字;( 尽量不要映射到0 )( AA &#x3D; 0 , A  &#x3D; 0 ; )<br>2.只需要映射到0 ~ Q : 不存在哈希冲突<br>3.一般取值时 将P 取为131 或者 1331 , 将Q取为2的64次方   ( 经验值 : 99.99% 不会出错 )<br>计算前缀和实现找到字符哈希值:<br>h[i] &#x3D; h[i - 1] * p + s[i]  , h[0] &#x3D; 0 ;<br>h[l , r] &#x3D; h[r] - h[l - r ] * p^(r - l +1 ) ;<br>#include<iostream><br>#include&lt;string.h&gt;<br>using namespace std;<br>typedef unsigned long long ULL;<br>int  n, m;<br>string s;<br>const int P &#x3D; 1331;<br>const int N &#x3D; 1e5 + 10;<br>&#x2F;&#x2F;预处理p[i] &#x3D; P ^ i, h[i] &#x3D; s[1 ~ i ]的 hash 值;<br>ULL p[N], h[N]; </p><p>&#x2F;&#x2F;预处理整个字符串(求前缀和)<br>void init() {<br>p[0] &#x3D; 1; h[0] &#x3D; 0;<br>for (int i &#x3D; 1; i &lt;&#x3D; n; i++) {<br>p[i] &#x3D; p[i - 1] * P;<br>h[i] &#x3D; h[i - 1] * P + s[i -1];<br>}<br>}</p><p>ULL get(int l, int r) {       &#x2F;&#x2F;限制上限为2的64次方 , 一旦超出会出现整数溢出,自动实现mod 2 ^ 64 的功能<br>return  h[r] - h[l - 1] * p[r - l + 1];<br>}</p><p>bool substr(int l1, int r1, int l2, int r2) {<br>if (get(l1, r1) &#x3D;&#x3D; get(l2, r2)) return true;<br>else return false;<br>}<br>int main() {<br>cin &gt;&gt; n &gt;&gt; m;<br>cin &gt;&gt; s;<br><br>init(); &#x2F;&#x2F;初始化前缀和和各个子字符的哈希值<br><br>while (m--) {<br>int l1, r1, l2, r2;<br>cin &gt;&gt; l1 &gt;&gt; r1 &gt;&gt; l2 &gt;&gt; r2;<br>if (substr(l1, r1, l2, r2)) cout &lt;&lt; &quot;Yes\n&quot;;<br>else cout &lt;&lt; &quot;No\n&quot;;<br>}</p><pre><code>return 0; </code></pre><p>}</p>]]></content>
+      
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>acwing26</title>
       <link href="/2025/12/11/acwing26/"/>
       <url>/2025/12/11/acwing26/</url>
