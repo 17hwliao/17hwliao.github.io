@@ -1,12 +1,12 @@
-<!DOCTYPE html><html lang="zh-CN"><head><meta charset="utf-8"/><meta name="viewport" content="width=device-width, initial-scale=1.0"/><meta name="author" content="17hwliao"/><meta name="keyword" content="[]"/><meta name="description" content="ʹ��Dijkstra �㷨ʵ���ҳ����·��&#x2F;&#x2F;�� : �ڽӾ���&#x2F;&#x2F;ϡ : �ڽӱ�int n , m ;int p[N][N];int d[N];bool st[N];  int dijkstra() {		memset(d, 0x3f, sizeof d);	d[1] &#x3D; 0;  for (int i &#x3D; 0; i &lt; n;">
+<!DOCTYPE html><html lang="zh-CN"><head><meta charset="utf-8"/><meta name="viewport" content="width=device-width, initial-scale=1.0"/><meta name="author" content="17hwliao"/><meta name="keyword" content="[]"/><meta name="description" content="使用Dijkstra 算法实现找出最短路径&#x2F;&#x2F;稠 : 邻接矩阵&#x2F;&#x2F;稀 : 邻接表int n , m ;int p[N][N];int d[N];bool st[N];  int dijkstra() {		memset(d, 0x3f, sizeof d);	d[1] &#x3D; 0;  for (int i &#x3D; 0; i &lt; n; i++) &amp;#1">
 <meta property="og:type" content="article">
 <meta property="og:title" content="acwing34">
 <meta property="og:url" content="https://17hwliao.github.io/2025/12/22/acwing34/index.html">
 <meta property="og:site_name" content="17hwliao的妙妙屋">
-<meta property="og:description" content="ʹ��Dijkstra �㷨ʵ���ҳ����·��&#x2F;&#x2F;�� : �ڽӾ���&#x2F;&#x2F;ϡ : �ڽӱ�int n , m ;int p[N][N];int d[N];bool st[N];  int dijkstra() {		memset(d, 0x3f, sizeof d);	d[1] &#x3D; 0;  for (int i &#x3D; 0; i &lt; n;">
+<meta property="og:description" content="使用Dijkstra 算法实现找出最短路径&#x2F;&#x2F;稠 : 邻接矩阵&#x2F;&#x2F;稀 : 邻接表int n , m ;int p[N][N];int d[N];bool st[N];  int dijkstra() {		memset(d, 0x3f, sizeof d);	d[1] &#x3D; 0;  for (int i &#x3D; 0; i &lt; n; i++) &amp;#1">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2025-12-22T02:08:32.000Z">
-<meta property="article:modified_time" content="2025-12-22T10:32:40.940Z">
+<meta property="article:modified_time" content="2025-12-23T11:09:00.815Z">
 <meta property="article:author" content="17hwliao">
 <meta name="twitter:card" content="summary"><title>acwing34 - MEOW - 可爱明亮的Hexo主题</title><link rel="shortcut icon" href="/img/site-icon.png">
 <link rel="stylesheet" href="/css/style.css" id="dm-light">
@@ -16,10 +16,10 @@
 
 <script src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js" async></script>
 <meta name="generator" content="Hexo 7.3.0"></head><body><header><div class="top-nav" ondblclick="scrollToTop()"><div class="nav-info"><div class="nav-icon"><img id="nav-icon" src="/img/site-icon.png"/></div><div class="nav-title"><a id="nav-title" href="/" title="主页">17hwliao的妙妙屋</a></div></div><div class="nav-ribbon"><div class="top-menu-expanded"><a class="top-menu-item" href="/archives"><span>归档</span></a><a class="top-menu-item" href="/categories"><span>分类</span></a><a class="top-menu-item" href="/tags"><span>标签</span></a><a class="top-menu-item" href="/about"><span>关于</span></a></div><div class="top-search" onclick="toggleSearchWindow()"><div id="top-search-btn" title="搜索"><i class="icon fa-solid fa-magnifying-glass"></i><span>搜索</span></div></div><div id="top-menu-btn" onclick="openTopMenu()" title="打开菜单"><i class="fa-solid fa-bars fa-lg"></i></div></div></div></header><div id="top-menu-hidden"><div class="menu-hidden-content"><div class="menu-hidden-nav"><a class="menu-hidden-item" href="/archives"><i class="fa-solid fa-box-archive fa-sm"></i><span>归档</span></a><a class="menu-hidden-item" href="/categories"><i class="fa-regular fa-folder-open fa-sm"></i><span>分类</span></a><a class="menu-hidden-item" href="/tags"><i class="fa-solid fa-tags fa-sm"></i><span>标签</span></a><a class="menu-hidden-item" href="/about"><i class="fa-solid fa-paw fa-sm"></i><span>关于</span></a></div></div><div class="menu-hidden-blank" onclick="closeTopMenu()"></div></div>
-<div class="blog-info"><div class="blog-pic"><img id="blog-pic" src="/img/site-icon.png"/></div><div class="blog-title"><i class="fa-solid fa-paw fa-2xs fa-rotate-by"></i><span>MEOW</span><i class="fa-solid fa-paw fa-2xs fa-rotate-by"></i></div><div class="blog-desc">Hexo主题「Meow」展示站。本主题尤其适用于发布原创小说、同人二创等文学作品。</div></div><div class="main"><div class="main-content"><article class="post"><div class="post-title"><h1><i class="fa-solid fa-paw"></i>acwing34</h1></div><div class="post-info"><div class="post-info-first-line"><div class="post-date"><i class="icon fa-regular fa-calendar-plus" title="发布日期"></i><time class="publish-time">2025-12-22</time><i class="icon fa-regular fa-calendar-check" title="更新日期"></i><time class="update-time">2025-12-22</time></div>
+<div class="blog-info"><div class="blog-pic"><img id="blog-pic" src="/img/site-icon.png"/></div><div class="blog-title"><i class="fa-solid fa-paw fa-2xs fa-rotate-by"></i><span>MEOW</span><i class="fa-solid fa-paw fa-2xs fa-rotate-by"></i></div><div class="blog-desc">Hexo主题「Meow」展示站。本主题尤其适用于发布原创小说、同人二创等文学作品。</div></div><div class="main"><div class="main-content"><article class="post"><div class="post-title"><h1><i class="fa-solid fa-paw"></i>acwing34</h1></div><div class="post-info"><div class="post-info-first-line"><div class="post-date"><i class="icon fa-regular fa-calendar-plus" title="发布日期"></i><time class="publish-time">2025-12-22</time><i class="icon fa-regular fa-calendar-check" title="更新日期"></i><time class="update-time">2025-12-23</time></div>
 
 </div><div class="post-info-second-line"><div class="post-copyright"><i class="icon fa-brands fa-creative-commons" title="版权声明"></i><span>版权声明: </span><a target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-nd/4.0/deed.zh-hans" title="CC BY-NC-ND 4.0">署名-非商业性使用-禁止演绎 4.0</a></div>
-<div class="post-word-count"><i class="icon fa-solid fa-pen-to-square"></i><span>全文约0.4K字</span></div><div class="pageview-post"><i class="icon fa-regular fa-eye"></i><span id="busuanzi_container_page_pv">阅读次数: <span id="busuanzi_value_page_pv"><i class="fa-solid fa-spinner"></i></span></span></div></div></div><div class="post-content"><p>ʹ��Dijkstra �㷨ʵ���ҳ����·��<br>&#x2F;&#x2F;�� : �ڽӾ���<br>&#x2F;&#x2F;ϡ : �ڽӱ�<br>int n , m ;<br>int p[N][N];<br>int d[N];<br>bool st[N]; </p>
+<div class="post-word-count"><i class="icon fa-solid fa-pen-to-square"></i><span>全文约0.5K字</span></div><div class="pageview-post"><i class="icon fa-regular fa-eye"></i><span id="busuanzi_container_page_pv">阅读次数: <span id="busuanzi_value_page_pv"><i class="fa-solid fa-spinner"></i></span></span></div></div></div><div class="post-content"><p>使用Dijkstra 算法实现找出最短路径<br>&#x2F;&#x2F;稠 : 邻接矩阵<br>&#x2F;&#x2F;稀 : 邻接表<br>int n , m ;<br>int p[N][N];<br>int d[N];<br>bool st[N]; </p>
 <p>int dijkstra() {<br>	<br>	memset(d, 0x3f, sizeof d);<br>	d[1] &#x3D; 0; </p>
 <pre><code>for (int i = 0; i &lt; n; i++) &#123;
 	int t = -1;
@@ -30,10 +30,10 @@
 	st[t] = true;
 
 	for (int j = 1; j &lt;= n; j++)&#123;
-		d[j] = min(d[j], d[t] + p[t][j]);               //�����Ѿ������tֵ�����º����·��
+		d[j] = min(d[j], d[t] + p[t][j]);               //利用已经存入的t值来更新后面的路径
 &#125;
 </code></pre>
-<p>}<br>	<br>	if (d[n] &#x3D;&#x3D; 0x3f3f3f3f) return -1;                 &#x2F;&#x2F;�Ƚ����ֵ �ж��Ƿ����<br>	return d[n]; 													&#x2F;&#x2F;���ڵĻ� ������� n  �����·��<br>}</p>
+<p>}<br>	<br>	if (d[n] &#x3D;&#x3D; 0x3f3f3f3f) return -1;                 &#x2F;&#x2F;比较最大值 判断是否存在<br>	return d[n]; 													&#x2F;&#x2F;存在的话 会输出到 n  的最短路径<br>}</p>
 <p>int main() {<br>	<br>	cin &gt;&gt; n &gt;&gt;  m ;<br>	memset(p, 0x3f, sizeof p); </p>
 <pre><code>while (m--) &#123;
 	int a, b; 
@@ -50,19 +50,19 @@ cout &lt;&lt; count &lt;&lt; &#39;\n&#39;;
 return 0;
 </code></pre>
 <p>}</p>
-<p>ʹ���ڽӱ�ʵ��dijkstra�㷨:<br>typedef pair&lt;int, int &gt; PII;<br>const int N &#x3D; 1e4 + 17;<br>int n, m;<br>int w[N] , h[N], e[N], ne[N], idx;<br>int d[N];<br>bool st[N]; </p>
+<p>使用邻接表实现dijkstra算法:<br>typedef pair&lt;int, int &gt; PII;<br>const int N &#x3D; 1e4 + 17;<br>int n, m;<br>int w[N] , h[N], e[N], ne[N], idx;<br>int d[N];<br>bool st[N]; </p>
 <p>void add(int a, int b, int c) {<br>	e[idx] &#x3D; b;<br>	ne[idx] &#x3D; h[a];<br>	w[idx] &#x3D; c;<br>	h[a] &#x3D; idx++;<br>}</p>
 <p>int dijkstra() {<br>	memset(d, 0x3f, sizeof d);<br>	d[1] &#x3D; 0;<br>	priority_queue&lt;PII, vector<PII>, greater<PII>&gt;  heap;<br>	heap.push({0 ,1 });</p>
 <pre><code>while (heap.size()) &#123;
 	auto t = heap.top(); 
 	heap.pop(); 
 
-	int ver = t.second;   // ��ǰ�ڵ�
-	int dis = t.first;    // ��ǰ����
-	if (st[ver]) continue;        // ����Ѿ�ȷ����̾��룬����
+	int ver = t.second;   // 当前节点
+	int dis = t.first;    // 当前距离
+	if (st[ver]) continue;        // 如果已经确定最短距离，跳过
 	st[ver] = true; 
 	
-	//����ver�ڽӱ� ; 
+	//遍历ver邻接表 ; 
 	for (int i = h[ver]; i != -1; i = ne[i]) &#123;
 		int j = e[i];      
 		if (d[j] &gt; dis + w[i]) &#123;  
