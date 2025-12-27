@@ -4,6 +4,32 @@
   
     
     <entry>
+      <title>javaweb01</title>
+      <link href="/2025/12/27/javaweb01/"/>
+      <url>/2025/12/27/javaweb01/</url>
+      
+        <content type="html"><![CDATA[<p>● 互联网和网络设备<br>访问互联网 :  只能通过网络运营商( 网络服务供应商,ISP )<br>1.通过SIM卡 , 通过移动设备连接到附近的基站使用网络 , 只要有基站就能使用<br>2.通过办理宽带 , 光纤入户 . 位置固定 , 但连接延迟低很稳定<br>光猫 : 光纤入户的是光信号 -&gt; 电信号 ,网线 -&gt; 转换WiFi , 供移动设备使用<br>路由器 : 光猫的有线网口太少 , 不支持多连接 ,  通过路由器发射WiFi 实现多个连接</p><p>● IP地址和端口<br>IP地址分为4类 :<br>其中一种IP4地址 , 一般为192.168.XX.XX 格式:<br>转化为二进制 </p><p>共有4段 , 每段8个bit位 , 一共32位 , 0.0.0.0 - 255.255.255.255 一共有大约43亿<br>但实际供使用的地址是否有限 , 国际按用途对网段划分 ABCDE 共5类<br>网络地址 -&gt; 地区  , 全球唯一性 ,   主机地址 -&gt;具体位置 , 本地分配 ;<br>A类地址 : 0开头 , 网络地址空间长度7位 , 主机地址空间长度24位 , 1.0.0.0 - 127.255.255.255 . 适用于有大量主机的大型网络 , 每个A类网络的主机网址多达16,777,214 ;<br>B类地址 : 以10开头 , 网络地址空间长度14位, 主机地址长度16位 , 128.0.0.0 - 191.255.255.255 , 适用于一些国际性的大公司和政府机构 主机地址可达65536 个.<br>C类地址: 以110开头 , 网址地址为21位 , 主机地址8位, 192.0.0.0 - 223.255.255.255,适用于小公司和普通的研究机会, 主机地址数最多为256个 .<br>D类地址 :以1110开头 , 不标识网路, 特殊用途 , 224.0.0.0-239.255.255.255<br>E类地址: 以11110开头,暂时保留为某些实验和将来使用 , 240.0.0.0-255.255.255.255<br>所有用户的IP地址 : 均为局域网IP , 与互联网无关 .( 路由器去创建一个局域网 , 所有连接的设备都用的局域网的IP去访问互联网 ) ;<br>IPv6地址 :共128种 , 大大扩展地址可用空间 , 但普及率低 , 每个设备都有公网IP .<br>使用IPv6直连 , 不会出现高峰 , 速度显著提升<br>端口连接:实现区分不同的应用 ,实现两台设备之间的通信 , 区分一个公网地址下的不同家庭和设备 , 也是使用端口不同来区分的 . </p>]]></content>
+      
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>java08</title>
+      <link href="/2025/12/27/java08/"/>
+      <url>/2025/12/27/java08/</url>
+      
+        <content type="html"><![CDATA[<p>第九天学习<br>异常<br>在Java中异常已经被封装为类 :<br>第一种异常  :  运行时异常 :<br>算数中出现 &#x2F; 0;<br>对 null 执行 toString() 操作<br>没在类中实现接口但调用方法的<br>第二种异常  :  编译时异常 ( 必须进行手动处理 )<br>第三种异常 : 错误  ,  致命的问题 :<br>创建为 Integer . MAX_VALUE大小的数组<br>在main中调用main 会不断调用 , 会爆栈<br>自定义异常<br>编译时异常 : extends Exception  所有异常都要继承自Exception类<br>运行时异常 : extends RuntimeException  ( 直接创建异常类时会自动变为Runtime类 )<br>抛出异常<br>在方法中设置判断抛出运行时异常<br>private static int div(int a , int b ){<br>    if(b &#x3D;&#x3D; 0){<br>        throw new Exercise1(&quot;发现除0&quot;) ;<br>    }<br>    return a &#x2F; b ;<br>}<br>栈追踪 问题 : at Today.Main.div(Main.java: 异常所在行数)<br>实现抛出编译型异常 : 在实现函数 标清楚 throws TestExecption  , 实现方法的类必须标明throws 编译时异常<br>父类中被标记会抛出某异常 : 但子类中不会出现该异常时可以去除throw操作<br>try - catch 语句 :<br>实现捕获异常 , 错误 :<br>当try中代码发出异常或错误 , 会执行catch中的代码块<br>try{<br>    Object obj &#x3D; null ;<br>    obj.toString();<br>} catch(NullPointerException ws){<br>    System.out.println(&quot;发生异常&quot; );<br>}<br>catch中表明出现的异常并且表明出 代表异常的变量<br>ws.printStackTrace()  ; 通过变量调用追踪函数实现栈异常路径 : 虽然会抛出异常但不会中止运行<br>ws.getmessage() 实现输出异常的原因 ;<br>catch 和 try 中出现的异常必须一致 , 否则还会出现程序被掐断<br>catch(  Exception  ws  ) 可以直接写这个( 所有异常全部继承自Exception )<br>注意在捕获异常时 :<br>一个try 下可以追加很多catch( 类型 变量 ) ; 实现识别不同的异常 并抛出对应异常中的内容<br>可以在一个catch( 异常类型1 | 异常类型2  变量 ) 实现输出对应的异常<br>message类的异常设置String提示 ,可以通过使用getmessage实现输出String<br>运行时异常可以不明确标注 , 但编译时异常在定义方法时就要实现抛出可能出现的异常类型<br>也可以在方法后不抛出异常：可以在方法中就实现try-catch 处理掉异常<br>主方法 , 异常再继续上抛的话 , JVM默认处理 : 中止程序运行 + 打印出栈追踪信息<br>不论是否发生异常 , 最后都要加上收尾操作 : finally{} 不论 是否有异常, 是否被捕获 , 程序是否被中止, 都会执行finally语句<br>断言表达式<br>默认状态下不会自动开启断言操作 , 要实现断言操作 必须手动在虚拟机设置中去手动开启 :<br>在文件的运行与设置中 对当前的主文件 进行配置<br>在配置中选择实行虚拟机选项 : Alt + V ;<br>再VM配置中写入 -enableassertions ;<br>assert关键字 : + 判断语句 出现false 就会报出异常 </p><p>code :<br>package Today;</p><p>public interface Add {<br>    public int add(int a , int b )  ;<br>}</p><p>package Today;</p><p>public class Fulei {<br>    String name  ;</p><pre><code>public Fulei(String name)&#123;    this.name = name ;&#125;public String Lulao()&#123;    return (&quot;得得得得得得得得得&quot;);&#125;</code></pre><p>}</p><p>package Today;</p><p>public interface haoa {<br>    int  haoa(String a) ;<br>}</p><p>package Today;</p><p>public class Main {<br>    public static void main(String[]args){<br>        Test s &#x3D; new Test(&quot;ws1&quot;);<br>        Test.Inner inner &#x3D; new Test.Inner(&quot;wss1&quot;) ;<br>        inner.text(&quot;ws0&quot;);</p><pre><code>    Test s1 = new Test(&quot;ws2&quot;) ;    Test.Inner inner1 = new Test.Inner(&quot;wss2&quot;) ;    inner1.text(&quot;ws00&quot;);    class Inner&#123;        void text()&#123;            System.out.println(&quot;ws是gay&quot;);        &#125;    &#125;    Inner inner0 = new Inner() ;    inner.text(&quot;ws00&quot;);    class Inner11 extends Person&#123;        @Override        public void study() &#123;&#125; ;    &#125;    Person p = new Person()&#123;        String name  = &quot;,ws说自己是gay&quot; ;        public void study()&#123;            System.out.println(&quot;ws是gay&quot; + name );        &#125; ;    &#125; ;    p.study();    Fulei f = new Fulei(&quot;ws&quot;)&#123;        &#123;            System.out.println(name + &quot;是gay&quot;);        &#125;    &#125; ;    Add ws1 = (a , b ) -&gt; a + b  ;    System.out.println(ws1.add(1,2));    Add ws2 = Integer:: sum ;    System.out.println(ws2.add(1,2));    Fulei ws22 = new Fulei(&quot;卢姥爷&quot;);    Study ss =  ws22::Lulao;    System.out.println(ss.study());    haoa a = String::length;    String ws111 = &quot;得得得得得得得得得&quot; ;    System.out.println(a.haoa(ws111));&#125;private static void test(Study s)&#123;    s.study() ;&#125;</code></pre><p>}</p><p>package Today;</p><p>public abstract class Person {<br>    String name ;<br>    public abstract void study() ;<br>}</p><p>package Today;</p><p>public interface Study {<br>    public String study();<br>}</p><p>package Today;</p><p>public class Test {</p><pre><code>String name ;public Test(String name)&#123;    this.name = name ;&#125;static class Inner&#123;    String name ;    public Inner(String name)&#123;        this.name = name;    &#125;    public void text(String name) &#123;        System.out.println(name + &quot;是gay&quot;);        System.out.println(this.name + &quot;是gay&quot;);    &#125;&#125;</code></pre><p>}</p>]]></content>
+      
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>java07</title>
       <link href="/2025/12/26/java07/"/>
       <url>/2025/12/26/java07/</url>
