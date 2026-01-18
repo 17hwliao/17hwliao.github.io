@@ -1,0 +1,155 @@
+<!DOCTYPE html><html lang="zh-CN"><head><meta charset="utf-8"/><meta name="viewport" content="width=device-width, initial-scale=1.0"/><meta name="author" content="17hwliao"/><meta name="keyword" content="[]"/><meta name="description" content="● 函数式接口导包 : import java.util.function.Supplier ;Supplier接口 : 内部方法实现返回需要的类型  ;public void setName(Suppliername){    this.name &#x3D; name.get() ;}Main :使用lambda表达式 :{			public String get(){} ; }">
+<meta property="og:type" content="article">
+<meta property="og:title" content="java14">
+<meta property="og:url" content="https://17hwliao.github.io/2026/01/06/java14/index.html">
+<meta property="og:site_name" content="17hwliao的妙妙屋">
+<meta property="og:description" content="● 函数式接口导包 : import java.util.function.Supplier ;Supplier接口 : 内部方法实现返回需要的类型  ;public void setName(Suppliername){    this.name &#x3D; name.get() ;}Main :使用lambda表达式 :{			public String get(){} ; }">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2026-01-06T12:02:05.000Z">
+<meta property="article:modified_time" content="2026-01-06T12:04:18.271Z">
+<meta property="article:author" content="17hwliao">
+<meta name="twitter:card" content="summary"><title>java14 - 17hwliao的妙妙屋 - 带派不老铁</title><link rel="shortcut icon" href="/img/site-icon.png">
+<link rel="stylesheet" href="/css/style.css" id="dm-light">
+
+
+<link rel="stylesheet" href="https://cdn.bootcdn.net/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+
+<script src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js" async></script>
+<meta name="generator" content="Hexo 7.3.0"></head><body><header><div class="top-nav" ondblclick="scrollToTop()"><div class="nav-info"><div class="nav-icon"><img id="nav-icon" src="/img/site-icon.png"/></div><div class="nav-title"><a id="nav-title" href="/" title="主页">17hwliao的妙妙屋</a></div></div><div class="nav-ribbon"><div class="top-menu-expanded"><a class="top-menu-item" href="/archives"><span>归档</span></a><a class="top-menu-item" href="/categories"><span>分类</span></a><a class="top-menu-item" href="/tags"><span>标签</span></a><a class="top-menu-item" href="/about"><span>关于</span></a></div><div class="top-search" onclick="toggleSearchWindow()"><div id="top-search-btn" title="搜索"><i class="icon fa-solid fa-magnifying-glass"></i><span>搜索</span></div></div><div id="top-menu-btn" onclick="openTopMenu()" title="打开菜单"><i class="fa-solid fa-bars fa-lg"></i></div></div></div></header><div id="top-menu-hidden"><div class="menu-hidden-content"><div class="menu-hidden-nav"><a class="menu-hidden-item" href="/archives"><i class="fa-solid fa-box-archive fa-sm"></i><span>归档</span></a><a class="menu-hidden-item" href="/categories"><i class="fa-regular fa-folder-open fa-sm"></i><span>分类</span></a><a class="menu-hidden-item" href="/tags"><i class="fa-solid fa-tags fa-sm"></i><span>标签</span></a><a class="menu-hidden-item" href="/about"><i class="fa-solid fa-paw fa-sm"></i><span>关于</span></a></div></div><div class="menu-hidden-blank" onclick="closeTopMenu()"></div></div>
+<div class="blog-info"><div class="blog-pic"><img id="blog-pic" src="/img/site-icon.png"/></div><div class="blog-title"><i class="fa-solid fa-paw fa-2xs fa-rotate-by"></i><span>17hwliao的妙妙屋</span><i class="fa-solid fa-paw fa-2xs fa-rotate-by"></i></div><div class="blog-desc">这是我的地盘, 我想写啥写啥 , 要你问 .</div></div><div class="main"><div class="main-content"><article class="post"><div class="post-title"><h1><i class="fa-solid fa-paw"></i>java14</h1></div><div class="post-info"><div class="post-info-first-line"><div class="post-date"><i class="icon fa-regular fa-calendar-plus" title="发布日期"></i><time class="publish-time">2026-01-06</time><i class="icon fa-regular fa-calendar-check" title="更新日期"></i><time class="update-time">2026-01-06</time></div>
+
+</div><div class="post-info-second-line"><div class="post-copyright"><i class="icon fa-brands fa-creative-commons" title="版权声明"></i><span>版权声明: </span><a target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-nd/4.0/deed.zh-hans" title="CC BY-NC-ND 4.0">17hwliao-折磨自己使用-禁止模仿</a></div>
+<div class="post-word-count"><i class="icon fa-solid fa-pen-to-square"></i><span>傻子码了约1.3K字</span></div><div class="pageview-post"><i class="icon fa-regular fa-eye"></i><span id="busuanzi_container_page_pv">阅读次数: <span id="busuanzi_value_page_pv"><i class="fa-solid fa-spinner"></i></span></span></div></div></div><div class="post-content"><p>● 函数式接口<br>导包 : import java.util.function.Supplier ;<br>Supplier接口 : 内部方法实现返回需要的类型  ;<br>public void setName(Supplier<String>name){<br>    this.name &#x3D; name.get() ;<br>}<br>Main :<br>使用lambda表达式 :<br>{			public String get(){} ; }<br>        ws0.setName(()-&gt;{<br>            return &quot;ws&quot; ;<br>        }) ;<br>Consumer接口 :<br>public void usename(Consumer<String> consumer){<br>        consumer.accept(name) ;<br> }<br> consumer.accept(参数) ; 实现传出参数<br> 实现使用接口型函数+ 方法引用<br>ws0.setName(()-&gt;{<br>        return &quot;ws&quot; ;<br>    }) ;<br>    ws0.usename(System.out::println);<br>}<br>consumer &#x3D; consumer.andThen(name -&gt; {<br>            System.out.println(&quot;ws是gay啊&quot;);<br>        }) ;<br>   andThen     实现串联多个接口consumer函数<br>温习下方法引用:<br>具体判断条件表格<br>Lambda形式	可替换为	条件<br>x -&gt; x.method()	ClassName::instanceMethod	实例方法，无额外参数<br>x -&gt; obj.method(x)	obj::instanceMethod	调用特定对象的方法<br>(x, y) -&gt; x.method(y)	ClassName::instanceMethod	第一个参数是目标对象<br>(x, y) -&gt; Class.method(x, y)	Class::staticMethod	静态方法<br>() -&gt; new Class()	Class::new	无参构造器<br>x -&gt; new Class(x)	Class::new	带参构造器<br>区分这两种函数接口 :<br>方面	Supplier	Consumer<br>目的	提供&#x2F;创建数据	消费&#x2F;处理数据<br>方向	数据源头	数据终点<br>返回值	总是有返回值	总是 void<br>参数	无参数	至少一个参数<br>是否纯函数	可以是纯函数（无副作用）	通常有副作用<br>典型应用	工厂方法、配置加载、懒加载	遍历处理、回调、资源清理<br>流式操作	用于生成流（Stream.generate()<br>）	用于终端操作（forEach()<br>）<br>线程安全	通常线程安全（只读）	需要注意（可能修改共享状态）<br>● Function函数类型接口 :<br>消费 + 提供 :<br>public void namelength(Function&lt;String , Integer&gt; function){<br>    Integer apply &#x3D; function.apply(name);<br>    System.out.println(&quot;name的长度&quot;+apply);<br> }<br> ws0.namelength(String::length);<br>实现转化类型<br>Function&lt;String , byte[]&gt; f &#x3D; str -&gt; str.getBytes();<br>Function&lt;String , Integer&gt; f2 &#x3D; f.andThen(bytes -&gt; bytes.length) ;<br>Function&lt;String , String&gt; f3 &#x3D; f2.andThen(Integer::toHexString) ;<br>还有before 反着传值操作<br>Function还支持一个函数 Function.identity().apply ( &quot; SSS &quot; ) ;<br>功能 : 给啥返回啥<br>compose可以实现before操作<br>● Predicate断言型函数接口:<br>public void nameInvalid(Predicate<String> predicate){<br>    boolean test &#x3D; predicate.test(name) ;<br>    System.out.println(test ? &quot;是gay&quot; : &quot;骗你的还是gay&quot;);<br>}<br>主程序中调用 :<br>ws0.nameInvalid(name -&gt; name.length()&gt;&#x3D;3);<br>可以用and实现连接 :<br>Predicate<String> predicate &#x3D; name -&gt; name.length()&gt;&#x3D;3;<br>predicate &#x3D; predicate.and(name -&gt; name.length() &lt; 10);<br>negate是取反 ; 对test函数取反<br>内部equal 可以实现判断是否相等 ;</p>
+<p>● Biconsumer : 实现提供俩参数<br>public void nameid(BiConsumer&lt;String, Integer&gt; biConsumer){<br>    biConsumer.accept(name,id);<br>}</p>
+<p>● optional判空包装 ：　<br>之前 if 判空<br>Optional类 :<br>ofNullable允许空传入<br>ifPresent 不为空会执行后面的操作 , 否则return ;<br>Optional.ofNullable(name).ifPresent(s -&gt; System.out.println(s.length()));<br>使用方法包装后(传入参数String test ) : String s &#x3D; Optional.ofNullable(name).get() ; get可以获取对象的引用 , 若包装对象为空 , 会抛出异常<br>可以在get处写orElse(&quot;实现为空时的操作&quot;)  \ orElseGet( (  ) -&gt; &quot;&quot; )<br>可以使用map实现映射操作 : 可以实现转化类型<br>get处写map(s -&gt; s.length()),orElse( int类型结果 ) ;<br>sout( i ) ;  </p>
+<p>● Optional在Java9 &#x2F; 10 &#x2F;11 版本加强<br>之前 : Optional.ofNullable( str ).ifPresent( s -&gt; { 操作 } ) ;<br>修改后:Optional.ofNullable(str).ifPresentorElse( s-&gt;{ 操作 }　，　（Ｒｕｎｎａｂｌｅ）－＞｛｝ ) ;<br>内部有Runnable函数式接口：返回为空；<br>(str).or( () -&gt; Optional.of [必须要使用optioal.of包起来]  ( &quot;为空时的输出&quot; ) ).ifZPresent( 输出 ) ;<br>orElseThrow() ; 判断是否为空来抛异常<br>private static void test1(String str) {<br>    String result &#x3D; Optional.ofNullable(str)<br>        .filter(s -&gt; s.length() &gt; 2)     &#x2F;&#x2F;断言 , 判断是否保留<br>        .orElse(&quot;(无效输入)&quot;);  &#x2F;&#x2F; ? 为空时返回安全值</p>
+<pre><code>System.out.println(result);
+</code></pre>
+<p>}<br>Optional.ofNullable(str).flagMap(s -&gt; Optional.ofNullable(null)).isEmpty() ; </p>
+<p>code:<br>package Today;</p>
+<p>import java.util.Optional;<br>import java.util.function.Consumer;<br>import java.util.function.Function;<br>import java.util.function.Predicate;<br>import java.util.function.Supplier ;</p>
+<p>public class Today {<br>    public static void main(String[]args){<br>        Ws0<String> ws0 &#x3D; new Ws0<String>();</p>
+<pre><code>    ws0.setName(()-&gt;&#123;
+        return &quot;ws&quot; ;
+    &#125;) ;
+
+    Consumer&lt;String&gt; consumer = name -&gt; &#123;
+        if(name.length() &lt; 10 )&#123;
+            System.out.println(&quot;ws是gay&quot;);
+        &#125;else&#123;
+            System.out.println(&quot;ws一直是gay&quot;);
+        &#125;
+    &#125;;
+
+    consumer = consumer.andThen(name -&gt; &#123;
+        System.out.println(&quot;ws是gay啊&quot;);
+    &#125;) ;
+
+    ws0.usename(consumer);
+
+    ws0.namelength(String::length);
+
+    Function&lt;String , byte[]&gt; f = str -&gt; str.getBytes();
+    Function&lt;String , Integer&gt; f2 = f.andThen(bytes -&gt; bytes.length) ;
+    Function&lt;String , String&gt; f3 = f2.andThen(Integer::toHexString) ;
+
+    ws0.nameInvalid(name -&gt; name.length()&gt;=3);
+
+    Predicate&lt;String&gt; predicate = name -&gt; name.length()&gt;=3;
+    predicate = predicate.and(name -&gt; name.length() &lt; 10);
+
+&#125;
+
+    private static void test1(String str)&#123;
+        System.out.println(Optional.ofNullable(str).filter(s-&gt;s.length()&gt;2).get());
+    &#125;
+</code></pre>
+<p>}</p>
+<p>package Today;</p>
+<p>import java.util.Optional;<br>import java.util.function.*;</p>
+<p>public class Ws0<T> {<br>    private String name ;<br>    int id ;<br>    T  score ;</p>
+<pre><code>public void Ws(String name , int id , T score )&#123;
+    this.name = name;
+    this.id = id;
+    this.score = score;
+&#125;
+
+public void setName(Supplier&lt;String&gt; supplier)&#123;
+    this.name = supplier.get() ;
+&#125;
+
+public String getname()&#123;
+    String name = new String();
+    name = this.name ;
+    return  name ;
+&#125;
+
+public void usename(Consumer&lt;String&gt; consumer)&#123;
+    consumer.accept(name) ;
+&#125;
+
+public void namelength(Function&lt;String , Integer&gt; function)&#123;
+    Integer apply = function.apply(name);
+    System.out.println(&quot;name的长度&quot;+apply);
+ &#125;
+
+public void nameInvalid(Predicate&lt;String&gt; predicate)&#123;
+    boolean test = predicate.test(name) ;
+    System.out.println(test ? &quot;是gay&quot; : &quot;骗你的还是gay&quot;);
+&#125;
+
+public void nameid(BiConsumer&lt;String, Integer&gt; biConsumer)&#123;
+    biConsumer.accept(name,id);
+&#125;
+
+private static void test(String name)&#123;
+    System.out.println(name) ;
+    Optional.ofNullable(name).ifPresent(s -&gt; System.out.println(s.length()));
+&#125;
+</code></pre>
+<p>}</p>
+</div><div class="post-end"><div class="post-prev"><a href="/2026/01/10/Starting-from-poop/" title="上一篇文章"><i class="fa-solid fa-chevron-left fa-lg"></i></a></div><div class="post-reward" onclick="openPostReward()" title="赞赏"><i class="fa-regular fa-thumbs-up fa-xl fa-beat-fade"></i></div><div id="reward-panel" onclick="closePostReward()"><div class="reward-container"><p>作者快被折磨死了，给点银子都给你了, 连我也给你了 &#128151;</p>
+<div class="reward-nav"><div class="reward-item"><img class="reward-img" src="/img/reward/wechat.jpg" title="Wechat" alt="Wechat"/><span>Wechat</span></div><div class="reward-item"><img class="reward-img" src="/img/reward/alipay.jpg" title="Alipay" alt="Alipay"/><span>Alipay</span></div></div></div></div><div class="post-next"><a href="/2026/01/04/java13/" title="下一篇文章"><i class="fa-solid fa-chevron-right fa-lg"></i></a></div></div></article><div class="comment" id="comment"><script src="https://giscus.app/client.js" async="async"></script></div><div id="post-toc"><aside class="toc-aside"><div class="toc-title"><span><i class="fa-solid fa-paw"></i>目录</span></div><div class="toc-container" id="toc-body"></div></aside><div class="toc-blank" onclick="tocToggle()"></div></div></div></div><div id="tool-bar"><div id="tool-bar-main"><div id="tool-toggle" onclick="toolToggle()" title="设置"><i class="fa-solid fa-gear"></i></div><div id="toc-toggle" onclick="tocToggle()" title="目录"><i class="fa-solid fa-list-ul"></i></div><div id="go-to-comment" onclick="gotoComment()" title="评论"><i class="fa-regular fa-message fa-flip-horizontal"></i></div><div id="back-to-top" onclick="scrollToTop()" title="返回顶部"><i class="fa-solid fa-chevron-up"></i></div></div><div id="tool-bar-more" style="display: none;"><div id="darkmode-switch" onclick="darkmodeSwitch()" title="深色模式"><i class="fa-solid fa-circle-half-stroke"></i></div><div id="font-size-increase" onclick="fontSizeIncrease()" title="放大字体"><i class="fa-solid fa-plus"></i></div><div id="font-size-decrease" onclick="fontSizeDecrease()" title="缩小字体"><i class="fa-solid fa-minus"></i></div></div></div><div id="search-panel"><div class="search-container"><div class="search-head"><div class="search-title"><span><i class="fa-solid fa-paw"></i>搜索</span></div><div class="search-close-btn" onclick="toggleSearchWindow()"><i class="fa-regular fa-circle-xmark"></i></div></div><div class="search-box"><i class="fa-solid fa-magnifying-glass"></i><input id="search-input" type="text" placeholder="请输入需要搜索的内容……" value=""/></div><div class="search-body"><div id="search-count">匹配结果数: </div><div id="search-result"></div><div id="search-result-empty">未搜索到匹配的文章。</div></div></div></div><footer><div class="footer-content"><div class="copyright-info"><i class="fa-regular fa-copyright fa-xs"></i><span>2024 - 2026 </span><a href="/about">17hwliao</a><i class="fa-solid fa-cat fa-sm"></i><span>Powered by </span><a href="https://hexo.io/" target="_blank">Hexo</a><span> &amp; </span><a href="https://github.com/chanwj/hexo-theme-meow" target="_blank" title="v2.1.5">Theme Meow</a></div><div class="pageview-site"><span id="busuanzi_container_site_pv">总访问量 : <span id="busuanzi_value_site_pv"><i class="fa-solid fa-spinner"></i></span></span><span id="busuanzi_container_site_uv">总访客数 : <span id="busuanzi_value_site_uv"><i class="fa-solid fa-spinner"></i></span></span></div></div></footer>
+<script>const GLOBAL_CONFIG = {
+  comment: { theme: ''}
+}
+</script>
+<script src="/js/third-party/darkmode.js"></script>
+<script>var options = {
+  dark: '/css/darkmode.css',
+  startAt: '24:00',
+  endAt: '06:00',
+  checkSystemScheme: 'false',
+  saveOnToggle: 'true'
+};
+var darkMode = new DarkMode(options);
+// change comment theme synchronously 同步修改评论区主题
+if (darkMode.getMode() == "dark" && (true || true)) {
+  if (document.getElementById('comment')) {
+    document.getElementById('comment').getElementsByTagName('script')[0].setAttribute('data-theme', 'noborder_dark');
+  }
+}
+</script><script>if (localStorage.getItem('font-size')) {
+  document.querySelector('.post-content').style.fontSize = localStorage.getItem('font-size') + 'px';
+}
+</script>
+<script src="/js/theme/tool-bar.js"></script>
+
+
+<script src="/js/theme/menu.js"></script>
+
+
+<script src="/js/third-party/clipboard.min.js"></script>
+
+
+<script src="/js/theme/copy.js"></script>
+<script>copyCode();
+</script>
+<script src="/js/theme/reward.js"></script>
+
+<script src="/js/jquery-3.7.1.min.js"></script>
+
+
+<script src="/js/theme/search.js"></script>
+<script>searchFunc('/search.xml', 'search-input', 'search-result');
+</script></body></html>

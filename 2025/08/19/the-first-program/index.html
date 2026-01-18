@@ -1,0 +1,90 @@
+<!DOCTYPE html><html lang="zh-CN"><head><meta charset="utf-8"/><meta name="viewport" content="width=device-width, initial-scale=1.0"/><meta name="author" content="17hwliao"/><meta name="keyword" content="[]"/><meta name="description" content="game.c:&#x2F;&#x2F;具体实现函数运营#include &quot;game.h&quot;#include &lt;stdio.h&gt;void in_board(char board[ROW][COL], int row, int col){	int i &#x3D; 0;	int j &#x3D; 0;	for (i &#x3D; 0; i &lt; row; i++)">
+<meta property="og:type" content="article">
+<meta property="og:title" content="the first program">
+<meta property="og:url" content="https://17hwliao.github.io/2025/08/19/the-first-program/index.html">
+<meta property="og:site_name" content="17hwliao的妙妙屋">
+<meta property="og:description" content="game.c:&#x2F;&#x2F;具体实现函数运营#include &quot;game.h&quot;#include &lt;stdio.h&gt;void in_board(char board[ROW][COL], int row, int col){	int i &#x3D; 0;	int j &#x3D; 0;	for (i &#x3D; 0; i &lt; row; i++)">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2025-08-19T05:34:52.000Z">
+<meta property="article:modified_time" content="2025-08-19T05:36:46.886Z">
+<meta property="article:author" content="17hwliao">
+<meta name="twitter:card" content="summary"><title>the first program - 17hwliao的妙妙屋 - 带派不老铁</title><link rel="shortcut icon" href="/img/site-icon.png">
+<link rel="stylesheet" href="/css/style.css" id="dm-light">
+
+
+<link rel="stylesheet" href="https://cdn.bootcdn.net/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+
+<script src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js" async></script>
+<meta name="generator" content="Hexo 7.3.0"></head><body><header><div class="top-nav" ondblclick="scrollToTop()"><div class="nav-info"><div class="nav-icon"><img id="nav-icon" src="/img/site-icon.png"/></div><div class="nav-title"><a id="nav-title" href="/" title="主页">17hwliao的妙妙屋</a></div></div><div class="nav-ribbon"><div class="top-menu-expanded"><a class="top-menu-item" href="/archives"><span>归档</span></a><a class="top-menu-item" href="/categories"><span>分类</span></a><a class="top-menu-item" href="/tags"><span>标签</span></a><a class="top-menu-item" href="/about"><span>关于</span></a></div><div class="top-search" onclick="toggleSearchWindow()"><div id="top-search-btn" title="搜索"><i class="icon fa-solid fa-magnifying-glass"></i><span>搜索</span></div></div><div id="top-menu-btn" onclick="openTopMenu()" title="打开菜单"><i class="fa-solid fa-bars fa-lg"></i></div></div></div></header><div id="top-menu-hidden"><div class="menu-hidden-content"><div class="menu-hidden-nav"><a class="menu-hidden-item" href="/archives"><i class="fa-solid fa-box-archive fa-sm"></i><span>归档</span></a><a class="menu-hidden-item" href="/categories"><i class="fa-regular fa-folder-open fa-sm"></i><span>分类</span></a><a class="menu-hidden-item" href="/tags"><i class="fa-solid fa-tags fa-sm"></i><span>标签</span></a><a class="menu-hidden-item" href="/about"><i class="fa-solid fa-paw fa-sm"></i><span>关于</span></a></div></div><div class="menu-hidden-blank" onclick="closeTopMenu()"></div></div>
+<div class="blog-info"><div class="blog-pic"><img id="blog-pic" src="/img/site-icon.png"/></div><div class="blog-title"><i class="fa-solid fa-paw fa-2xs fa-rotate-by"></i><span>17hwliao的妙妙屋</span><i class="fa-solid fa-paw fa-2xs fa-rotate-by"></i></div><div class="blog-desc">这是我的地盘, 我想写啥写啥 , 要你问 .</div></div><div class="main"><div class="main-content"><article class="post"><div class="post-title"><h1><i class="fa-solid fa-paw"></i>the first program</h1></div><div class="post-info"><div class="post-info-first-line"><div class="post-date"><i class="icon fa-regular fa-calendar-plus" title="发布日期"></i><time class="publish-time">2025-08-19</time><i class="icon fa-regular fa-calendar-check" title="更新日期"></i><time class="update-time">2025-08-19</time></div>
+
+</div><div class="post-info-second-line"><div class="post-copyright"><i class="icon fa-brands fa-creative-commons" title="版权声明"></i><span>版权声明: </span><a target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-nd/4.0/deed.zh-hans" title="CC BY-NC-ND 4.0">17hwliao-折磨自己使用-禁止模仿</a></div>
+<div class="post-word-count"><i class="icon fa-solid fa-pen-to-square"></i><span>傻子码了约1.2K字</span></div><div class="pageview-post"><i class="icon fa-regular fa-eye"></i><span id="busuanzi_container_page_pv">阅读次数: <span id="busuanzi_value_page_pv"><i class="fa-solid fa-spinner"></i></span></span></div></div></div><div class="post-content"><p>game.c:<br>&#x2F;&#x2F;具体实现函数运营<br>#include &quot;game.h&quot;<br>#include &lt;stdio.h&gt;<br>void in_board(char board[ROW][COL], int row, int col){<br>	int i &#x3D; 0;<br>	int j &#x3D; 0;<br>	for (i &#x3D; 0; i &lt; row; i++)      &#x2F;&#x2F;实现二维数组<br>	{<br>		for (j &#x3D; 0; j &lt; col; j++)<br>		{<br>			board[i][j] &#x3D; &#39; &#39;;        &#x2F;&#x2F;空格为字符占位<br>	}</p>
+<pre><code>&#125;
+</code></pre>
+<p>}<br>void out_board(char board[ROW][COL], int row, int col) {<br>	int i &#x3D; 0;<br>	for (i &#x3D;0; i&lt;row ; i++){<br>	&#x2F;&#x2F;printf(&quot; %c | %c | %c \n&quot;, board[i][0], board[i][1], board[i][2]);    &#x2F;&#x2F;打印数据<br>		int j &#x3D; 0;<br>		for (j &#x3D; 0; j &lt; col; j++) {<br>			printf(&quot; %c &quot;, board[i][j]);<br>			if (j &lt; col-1)<br>				printf(&quot;|&quot;);</p>
+<pre><code>	&#125;
+	printf(&quot;\n&quot;);
+	if (i &lt; row - 1) &#123;
+		int j = 0;
+		for (j = 0; j &lt; col; j++) &#123;
+			printf(&quot;---&quot;);
+			if (j &lt; col - 1)
+				printf(&quot;|&quot;);
+		&#125;
+
+		printf(&quot;\n&quot;);
+	&#125;
+
+&#125;
+</code></pre>
+<p>}<br>void people(char board[ROW][COL], int row, int col) {<br>	int x &#x3D; 0;<br>	int y &#x3D; 0;<br>	printf(&quot;牢底轮你了\n&quot;);<br>	while (1) {<br>		printf(&quot;输入坐标\n&quot;);<br>		scanf_s(&quot;%d %d&quot;, &amp;x, &amp;y);<br>		if (x &gt;&#x3D; 1 &amp;&amp; x &lt;&#x3D; row &amp;&amp; y &gt;&#x3D; 1 &amp;&amp; y &lt;&#x3D; col) {<br>			if (board[x - 1][y - 1] &#x3D;&#x3D; &#39; &#39;) {<br>				board[x - 1][y - 1] &#x3D; &#39;*&#39;;<br>				break;<br>			}<br>			else {<br>				printf(&quot;牢底重复下了&quot;);<br>			}<br>		}<br>		else {<br>			printf(&quot;牢底别瞎玩\n&quot;);<br>		}<br>	}</p>
+<p>}<br>void computer(char board[ROW][COL], int row, int col) {<br>	printf(&quot;电脑该你下了\n&quot;);<br>		int x &#x3D; 0;<br>	    int y &#x3D; 0;<br>		while (1) {<br>			x &#x3D; rand() % row;<br>			y &#x3D; rand() % col;<br>			if (board[x][y] &#x3D;&#x3D; &#39; &#39;) {<br>				board[x][y] &#x3D; &#39;#&#39;;<br>				break;<br>			}<br>		}</p>
+<p>}<br>int ping(char board[ROW][COL], int row, int col) {<br>	int i &#x3D; 0;<br>	int j &#x3D; 0;<br>	for (i &#x3D; 0; i &lt; col; i++) {<br>		for (j &#x3D; 0; j &lt; col; j++) {<br>			if (board[i][j] &#x3D;&#x3D; &#39; &#39;) {<br>				return 0;<br>			}<br>		}<br>	}<br>	return 1;<br>}<br>char win(char board[ROW][COL], int row, int col) {<br>	int i &#x3D; 0;        &#x2F;&#x2F;行<br>	for (i &#x3D; 0; i &lt; row; i++) {<br>		if (board[i][0] &#x3D;&#x3D; board[i][1] &amp;&amp; board[i][2] &amp;&amp; board[i][1] !&#x3D; &#39; &#39;) {<br>			return board[i][1];<br>		}<br>	}<br>	int j &#x3D; 0;        &#x2F;&#x2F;列<br>	for (j &#x3D; 0; j &lt; row; j++) {<br>		if (board[0][j] &#x3D;&#x3D; board[1][j] &amp;&amp; board[2][j] &amp;&amp; board[1][j] !&#x3D; &#39; &#39;) {<br>			return board[1][j];<br>		}<br>	}<br>	if(board[0][2] &#x3D;&#x3D; board[1][1] &amp;&amp; board[2][0] &#x3D;&#x3D; board[1][1] &amp;&amp; board[1][1] !&#x3D; &#39; &#39;){<br>	return board[1][1]; }                          &#x2F;&#x2F;对角线<br>	<br>if (ping(board, row, col)) {<br>	return&#39;Q&#39;;<br>}<br>return&#39;C&#39;;<br>}</p>
+<p>test.c:<br>#include &lt;stdio.h&gt;<br>#include &quot;game.h&quot;<br>void menu() {<br>	printf(&quot;########################################\n&quot;);<br>	printf(&quot;################1.开始玩耍###############\n&quot;);<br>	printf(&quot;################2.离开游戏###############\n&quot;);<br>           }   &#x2F;&#x2F;设计个菜单<br>void game() {<br>	char ret &#x3D; 0;          &#x2F;&#x2F;加个变量接收值<br>	char board[ROW][COL] &#x3D; { 0 };<br>	in_board(board, ROW, COL);  &#x2F;&#x2F;初始化棋盘<br>	out_board(board, ROW, COL);        &#x2F;&#x2F;耍时候打印的棋盘<br>	while (1) {                    &#x2F;&#x2F;下棋<br>		people(board, ROW, COL);<br>		ret &#x3D; win(board, ROW, COL);     &#x2F;&#x2F;判断输赢<br>		if (ret !&#x3D; &#39;C&#39;) {<br>			break;<br>		}<br>		out_board(board, ROW, COL);<br>		computer(board, ROW, COL);<br>		ret &#x3D; win(board, ROW, COL);<br>		if (ret !&#x3D; &#39;C&#39;) {<br>			break;<br>		}<br>		out_board(board, ROW, COL);<br>	}<br>	if (ret &#x3D;&#x3D; &#39;*&#39;) {<br>		printf(&quot;牢底666赢了\n&quot;);<br>	}<br>	else if (ret &#x3D;&#x3D; &#39;#&#39;) {<br>		printf(&quot;牢底你没下过电脑\n&quot;);<br>	}<br>	else {<br>		printf(&quot;这都能平局，菜！&quot;);<br>	}<br>	out_board(board, ROW, COL);<br>}<br>int main() {<br>	srand((unsigned int)time(NULL));    &#x2F;&#x2F;利用时间栈制作随机数<br>	int input &#x3D; 0;<br>	do {<br>		menu();                     &#x2F;&#x2F;设置循环，方便玩耍<br>		printf(&quot;你想选啥？&gt;&quot;);<br>		scanf_s(&quot;%d&quot;, &amp;input);<br>		switch (input) {<br>		case 1:<br>			printf(&quot;下棋了牢弟\n&quot;);<br>			game();    &#x2F;&#x2F;设计游戏<br>				break;<br>		case 2:<br>			printf(&quot;想退选这&quot;);<br>				break;<br>		default:<br>			printf(&quot;选个数字都不会，菜！&quot;);<br>				break;<br>		}<br>	} while (input);<br>	return 0;<br>}</p>
+<p>game.h:<br>#include &lt;stdio.h&gt;<br>#pragma once           &#x2F;&#x2F;只用来声明函数<br>#define ROW 3            &#x2F;&#x2F;定义下实现n子棋<br>#define COL 3<br>#include &lt;stdlib.h&gt;<br>#include &lt;time.h&gt;<br>void in_board(char board[ROW][COL], int row, int col);    &#x2F;&#x2F;初始棋盘<br>void out_board(char board[ROW][COL], int row, int col);     &#x2F;&#x2F;打印棋盘<br>void people(char board[ROW][COL], int row, int col);    &#x2F;&#x2F;玩家游玩参数<br>void computer(char board[ROW][COL], int row, int col);    &#x2F;&#x2F;电脑参数<br>&#x2F;&#x2F;“ * ”   玩家赢<br>&#x2F;&#x2F;“ # ”   电脑赢<br>&#x2F;&#x2F;“ Q ”	  平局<br>&#x2F;&#x2F;“ C ”    继续<br>char win(char board[ROW][COL], int row, int col);</p>
+</div><div class="post-end"><div class="post-prev"><a href="/2025/08/20/blog2/" title="上一篇文章"><i class="fa-solid fa-chevron-left fa-lg"></i></a></div><div class="post-reward" onclick="openPostReward()" title="赞赏"><i class="fa-regular fa-thumbs-up fa-xl fa-beat-fade"></i></div><div id="reward-panel" onclick="closePostReward()"><div class="reward-container"><p>作者快被折磨死了，给点银子都给你了, 连我也给你了 &#128151;</p>
+<div class="reward-nav"><div class="reward-item"><img class="reward-img" src="/img/reward/wechat.jpg" title="Wechat" alt="Wechat"/><span>Wechat</span></div><div class="reward-item"><img class="reward-img" src="/img/reward/alipay.jpg" title="Alipay" alt="Alipay"/><span>Alipay</span></div></div></div></div><div class="post-next"><a href="/2025/08/19/new-jounary/" title="下一篇文章"><i class="fa-solid fa-chevron-right fa-lg"></i></a></div></div></article><div class="comment" id="comment"><script src="https://giscus.app/client.js" async="async"></script></div><div id="post-toc"><aside class="toc-aside"><div class="toc-title"><span><i class="fa-solid fa-paw"></i>目录</span></div><div class="toc-container" id="toc-body"></div></aside><div class="toc-blank" onclick="tocToggle()"></div></div></div></div><div id="tool-bar"><div id="tool-bar-main"><div id="tool-toggle" onclick="toolToggle()" title="设置"><i class="fa-solid fa-gear"></i></div><div id="toc-toggle" onclick="tocToggle()" title="目录"><i class="fa-solid fa-list-ul"></i></div><div id="go-to-comment" onclick="gotoComment()" title="评论"><i class="fa-regular fa-message fa-flip-horizontal"></i></div><div id="back-to-top" onclick="scrollToTop()" title="返回顶部"><i class="fa-solid fa-chevron-up"></i></div></div><div id="tool-bar-more" style="display: none;"><div id="darkmode-switch" onclick="darkmodeSwitch()" title="深色模式"><i class="fa-solid fa-circle-half-stroke"></i></div><div id="font-size-increase" onclick="fontSizeIncrease()" title="放大字体"><i class="fa-solid fa-plus"></i></div><div id="font-size-decrease" onclick="fontSizeDecrease()" title="缩小字体"><i class="fa-solid fa-minus"></i></div></div></div><div id="search-panel"><div class="search-container"><div class="search-head"><div class="search-title"><span><i class="fa-solid fa-paw"></i>搜索</span></div><div class="search-close-btn" onclick="toggleSearchWindow()"><i class="fa-regular fa-circle-xmark"></i></div></div><div class="search-box"><i class="fa-solid fa-magnifying-glass"></i><input id="search-input" type="text" placeholder="请输入需要搜索的内容……" value=""/></div><div class="search-body"><div id="search-count">匹配结果数: </div><div id="search-result"></div><div id="search-result-empty">未搜索到匹配的文章。</div></div></div></div><footer><div class="footer-content"><div class="copyright-info"><i class="fa-regular fa-copyright fa-xs"></i><span>2024 - 2026 </span><a href="/about">17hwliao</a><i class="fa-solid fa-cat fa-sm"></i><span>Powered by </span><a href="https://hexo.io/" target="_blank">Hexo</a><span> &amp; </span><a href="https://github.com/chanwj/hexo-theme-meow" target="_blank" title="v2.1.5">Theme Meow</a></div><div class="pageview-site"><span id="busuanzi_container_site_pv">总访问量 : <span id="busuanzi_value_site_pv"><i class="fa-solid fa-spinner"></i></span></span><span id="busuanzi_container_site_uv">总访客数 : <span id="busuanzi_value_site_uv"><i class="fa-solid fa-spinner"></i></span></span></div></div></footer>
+<script>const GLOBAL_CONFIG = {
+  comment: { theme: ''}
+}
+</script>
+<script src="/js/third-party/darkmode.js"></script>
+<script>var options = {
+  dark: '/css/darkmode.css',
+  startAt: '24:00',
+  endAt: '06:00',
+  checkSystemScheme: 'false',
+  saveOnToggle: 'true'
+};
+var darkMode = new DarkMode(options);
+// change comment theme synchronously 同步修改评论区主题
+if (darkMode.getMode() == "dark" && (true || true)) {
+  if (document.getElementById('comment')) {
+    document.getElementById('comment').getElementsByTagName('script')[0].setAttribute('data-theme', 'noborder_dark');
+  }
+}
+</script><script>if (localStorage.getItem('font-size')) {
+  document.querySelector('.post-content').style.fontSize = localStorage.getItem('font-size') + 'px';
+}
+</script>
+<script src="/js/theme/tool-bar.js"></script>
+
+
+<script src="/js/theme/menu.js"></script>
+
+
+<script src="/js/third-party/clipboard.min.js"></script>
+
+
+<script src="/js/theme/copy.js"></script>
+<script>copyCode();
+</script>
+<script src="/js/theme/reward.js"></script>
+
+<script src="/js/jquery-3.7.1.min.js"></script>
+
+
+<script src="/js/theme/search.js"></script>
+<script>searchFunc('/search.xml', 'search-input', 'search-result');
+</script></body></html>

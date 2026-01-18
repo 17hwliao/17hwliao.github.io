@@ -1,0 +1,122 @@
+<!DOCTYPE html><html lang="zh-CN"><head><meta charset="utf-8"/><meta name="viewport" content="width=device-width, initial-scale=1.0"/><meta name="author" content="17hwliao"/><meta name="keyword" content="[]"/><meta name="description" content="第十天学习工具类 :数学工具类 :通过Math类调用函数 : pow , min , max , abs , sin , cos  ;Java重载魅力时刻 : Java 中的 Math.abs() 方法适用于所有数值类型，无论是整数还是小数，正数还是负数。   floor( 向下取整 )  , round( 四舍五入 )使用 MPI可以实现找到 派  ;Math.logq( x ) ; 以q为底">
+<meta property="og:type" content="article">
+<meta property="og:title" content="java09">
+<meta property="og:url" content="https://17hwliao.github.io/2025/12/28/java09/index.html">
+<meta property="og:site_name" content="17hwliao的妙妙屋">
+<meta property="og:description" content="第十天学习工具类 :数学工具类 :通过Math类调用函数 : pow , min , max , abs , sin , cos  ;Java重载魅力时刻 : Java 中的 Math.abs() 方法适用于所有数值类型，无论是整数还是小数，正数还是负数。   floor( 向下取整 )  , round( 四舍五入 )使用 MPI可以实现找到 派  ;Math.logq( x ) ; 以q为底">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2025-12-28T13:45:29.000Z">
+<meta property="article:modified_time" content="2025-12-28T13:48:31.841Z">
+<meta property="article:author" content="17hwliao">
+<meta name="twitter:card" content="summary"><title>java09 - 17hwliao的妙妙屋 - 带派不老铁</title><link rel="shortcut icon" href="/img/site-icon.png">
+<link rel="stylesheet" href="/css/style.css" id="dm-light">
+
+
+<link rel="stylesheet" href="https://cdn.bootcdn.net/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+
+<script src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js" async></script>
+<meta name="generator" content="Hexo 7.3.0"></head><body><header><div class="top-nav" ondblclick="scrollToTop()"><div class="nav-info"><div class="nav-icon"><img id="nav-icon" src="/img/site-icon.png"/></div><div class="nav-title"><a id="nav-title" href="/" title="主页">17hwliao的妙妙屋</a></div></div><div class="nav-ribbon"><div class="top-menu-expanded"><a class="top-menu-item" href="/archives"><span>归档</span></a><a class="top-menu-item" href="/categories"><span>分类</span></a><a class="top-menu-item" href="/tags"><span>标签</span></a><a class="top-menu-item" href="/about"><span>关于</span></a></div><div class="top-search" onclick="toggleSearchWindow()"><div id="top-search-btn" title="搜索"><i class="icon fa-solid fa-magnifying-glass"></i><span>搜索</span></div></div><div id="top-menu-btn" onclick="openTopMenu()" title="打开菜单"><i class="fa-solid fa-bars fa-lg"></i></div></div></div></header><div id="top-menu-hidden"><div class="menu-hidden-content"><div class="menu-hidden-nav"><a class="menu-hidden-item" href="/archives"><i class="fa-solid fa-box-archive fa-sm"></i><span>归档</span></a><a class="menu-hidden-item" href="/categories"><i class="fa-regular fa-folder-open fa-sm"></i><span>分类</span></a><a class="menu-hidden-item" href="/tags"><i class="fa-solid fa-tags fa-sm"></i><span>标签</span></a><a class="menu-hidden-item" href="/about"><i class="fa-solid fa-paw fa-sm"></i><span>关于</span></a></div></div><div class="menu-hidden-blank" onclick="closeTopMenu()"></div></div>
+<div class="blog-info"><div class="blog-pic"><img id="blog-pic" src="/img/site-icon.png"/></div><div class="blog-title"><i class="fa-solid fa-paw fa-2xs fa-rotate-by"></i><span>17hwliao的妙妙屋</span><i class="fa-solid fa-paw fa-2xs fa-rotate-by"></i></div><div class="blog-desc">这是我的地盘, 我想写啥写啥 , 要你问 .</div></div><div class="main"><div class="main-content"><article class="post"><div class="post-title"><h1><i class="fa-solid fa-paw"></i>java09</h1></div><div class="post-info"><div class="post-info-first-line"><div class="post-date"><i class="icon fa-regular fa-calendar-plus" title="发布日期"></i><time class="publish-time">2025-12-28</time><i class="icon fa-regular fa-calendar-check" title="更新日期"></i><time class="update-time">2025-12-28</time></div>
+
+</div><div class="post-info-second-line"><div class="post-copyright"><i class="icon fa-brands fa-creative-commons" title="版权声明"></i><span>版权声明: </span><a target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-nd/4.0/deed.zh-hans" title="CC BY-NC-ND 4.0">17hwliao-折磨自己使用-禁止模仿</a></div>
+<div class="post-word-count"><i class="icon fa-solid fa-pen-to-square"></i><span>傻子码了约1.2K字</span></div><div class="pageview-post"><i class="icon fa-regular fa-eye"></i><span id="busuanzi_container_page_pv">阅读次数: <span id="busuanzi_value_page_pv"><i class="fa-solid fa-spinner"></i></span></span></div></div></div><div class="post-content"><p>第十天学习<br>工具类 :<br>数学工具类 :<br>通过Math类调用函数 : pow , min , max , abs , sin , cos  ;<br>Java重载魅力时刻 : Java 中的 Math.abs() 方法适用于所有数值类型，无论是整数还是小数，正数还是负数。   floor( 向下取整 )  , round( 四舍五入 )<br>使用 MPI可以实现找到 派  ;<br>Math.logq( x ) ; 以q为底 , x 的对数,<br>Random 随机数生成类 ; 创建出对象后  x.nextInt( 范围 ) ;<br>数组工具类 :<br>Arrays类 : 实现直接打印数组   ;<br>Array . sort( arr  ,x , y ) ; 实现( 对 x 到 y 位置的数字 )排序  ;<br>Array.fill( brr , x  )将brr数组中所有元素修改为数值 x  ;<br>Arrays.copyOfRange(arr , 2 , 5); 实现拷贝 2 - 5 位置之间的元素<br>Arrays.copyOf( 数组 , 拷贝的元素长度 )  ; 若是超出原数组大小会自动补零<br>Arrays.binarySearch(arr , 1222); 在arr数组中查找数值 , 若是未找到该数值 , 会返回负数( -4  , 在索引为3的位置插入查找数据 ) ;<br>Arrays.deepToString() 实现打印内外层的数组 ( 适合用于多维数组 ) ;<br> 针对多维数组 使用deepEquals 实现比较是否相等( 深层次判断 )  ;  内部实现的函数包装的是Object 类型<br>日期相关类 :<br>区分Date 和 Calendar 差别 : Date是表示时间戳  , 而Calendar 是具体表示出来时间的具体年份 , 月 , 日<br>日期一般是以时间戳的形式存在 , 是自1970年1月1日00:00:00起的时刻毫秒数 , 当时间戳为1000时 ,实际上过了1秒 ;<br>时区 : 地球划分区域 , 实现标准化时间 , 共24时区 , 每精度15度划分一个时区 , 由英国的本初子午线开始划起 ;<br>中国东8区 : 本初子午线 0 点的时候, 中国是 8 点 ;<br>UTC : 协调世界时 , 同步世界时间 , 中国 UTC + 8 ;<br>Date 类 创建类对象 , date.tolocaleString() [ 被弃用 ]; 实现播报当地时间<br>getTime获取当前时间戳 ; 精确到毫秒o<br>获取格林威治时间的时间戳 : System.out.println(u.toGMTString());<br>年份 1900 + 输入年份 ,  月份类似下标 1 - 11 , 日期1 - 31 ;<br>Date date  &#x3D; new Date(125 , 11 , 17 , 2 , 2 ,2   ) ;可以精确到秒 ;<br>构造都过时 , 也无法设置时区 ;<br>实现比较时间的先后 :<br>输出true , false :<br>sout( date1.after( date2 ) ) ;<br>sout( date.before( date1 ) ) ;<br>输出 -1( 早 )  0 ( 相等 )  1( 晚 ) :<br>sout( date2.compareTo(date1) ) ;<br>实现修改当前时间 , 并且输出当前时间<br>Calendar cal &#x3D; Calendar.getInstance();<br>cal.set(2025 , Calendar.JANUARY , 16 , 12 , 2 , 2  ) ;<br>System.out.println(cal.getTime());    &#x2F;&#x2F;获取当前时间<br>cal.set(Calendar.YEAR , 2026) ;    &#x2F;&#x2F;实现具体修改<br>内部实现的set方法</p>
+<p>public final void set(int year, int month, int date, int hourOfDay, int minute,<br>                      int second)<br>{<br>    set(YEAR, year);<br>    set(MONTH, month);<br>    set(DATE, date);<br>    set(HOUR_OF_DAY, hourOfDay);<br>    set(MINUTE, minute);<br>    set(SECOND, second);<br>}<br>一堆方法 自己摸索<br>cal.getweeksInWeekYear()  获取基于周的年份 : 将一年中的第一个周作为一年的开始 , 最后一周的周日为年的结束<br>System.out.println(cal.getFirstDayOfWeek()); 获取到一周的第一天<br>DateFormat抽象类 实现将日期和字符串之间相互转化 , 抽象无法直接创建对象 ,<br>常利用子类 SimpleDateFormat 实现创建<br>创建对象 ：( 提供方法 )DateFormat formatter &#x3D; new SimpleDateFormat(&quot;yyyy-MM-dd HH:mm:ss&quot;);<br>System.out.println(formatter.format(new Date()));实现按上述格式输出<br>输出的规则 :  实现字符和对应的数据之间进行转化<br>实现反向转化</p>
+<p>Date parse &#x3D; formatter.parse(&quot;2026-01-01 24:00:00&quot;);<br>System.out.println(parse);</p>
+<p>code :<br>package Today;</p>
+<p>import java.text.* ;<br>import java.time.* ;<br>import java.util.* ; </p>
+<p>public class Main {<br>    public static void main(String[] args) throws ParseException {<br>        System.out.println(Math.abs(-1));<br>        System.out.printf(&quot;%.3f      &quot; , Math.pow(-2.2 , 2 ));</p>
+<pre><code>    Random x = new Random();
+    for(int i = 0 ;  i  &lt; 20 ; i++)&#123;
+        System.out.println(x.nextDouble(10008) + &quot;   &quot;);
+    &#125;
+
+    int[] arr = &#123;1 , 22 , 2323, -12321, 31 , 2333, 23123&#125;;
+    Arrays.sort(arr , 2  , 4);
+    System.out.println(Arrays.toString(arr));
+    int[] brr = new int[10] ;
+    Arrays.fill(brr, -1);
+    brr = Arrays.copyOfRange(arr , 2 , 5);
+    System.out.println(Arrays.toString(brr));
+    int[] crr = new int[10] ;
+    System.arraycopy(arr , 0 , crr ,1  , 2 );
+    System.out.println(Arrays.binarySearch(arr , 1222));
+
+    int[][]arr1 = &#123; &#123;1 ,2 ,2 ,3 ,3213&#125; ,  &#123;1232,323213, 23123 ,22&#125; &#125; ;
+    System.out.println(Arrays.deepToString(arr1));
+    int[][]brr1 = &#123;&#123;1 ,2 ,2 ,3 ,3213&#125; ,  &#123;1232,323213, 23123 ,22&#125; &#125; ;
+    System.out.println(Arrays.equals(arr1 , brr1)) ;
+
+    System.out.println(Arrays.toString(crr));
+
+    Date u   =  new Date();
+    System.out.println(u.toGMTString());
+    System.out.println(u.getTime());
+
+    Date date1  = new Date(125 , 11 , 17 , 2 , 2 ,2   ) ;
+    Date date2  = new Date(125 , 11 , 17 , 2 , 2 ,1  ) ;
+
+    System.out.println(date2.compareTo(date1));
+
+    Calendar cal = Calendar.getInstance();
+    cal.set(2025 , Calendar.JANUARY , 16 , 12 , 2 , 2  ) ;
+    cal.set(Calendar.YEAR , 2026) ;
+    System.out.println(cal.getTime());
+    System.out.println(cal.getWeeksInWeekYear());
+    System.out.println(cal.getFirstDayOfWeek());
+
+    System.out.println(cal.getTime());    //获取当前时间
+
+    DateFormat formatter = new SimpleDateFormat(&quot;yyyy-MM-dd HH:mm:ss&quot;);
+    System.out.println(formatter.format(new Date()));
+
+    Date parse = formatter.parse(&quot;2026-01-01 24:00:00&quot;);
+    System.out.println(parse);
+
+&#125;
+</code></pre>
+<p>}</p>
+</div><div class="post-end"><div class="post-prev"><a href="/2025/12/29/java10/" title="上一篇文章"><i class="fa-solid fa-chevron-left fa-lg"></i></a></div><div class="post-reward" onclick="openPostReward()" title="赞赏"><i class="fa-regular fa-thumbs-up fa-xl fa-beat-fade"></i></div><div id="reward-panel" onclick="closePostReward()"><div class="reward-container"><p>作者快被折磨死了，给点银子都给你了, 连我也给你了 &#128151;</p>
+<div class="reward-nav"><div class="reward-item"><img class="reward-img" src="/img/reward/wechat.jpg" title="Wechat" alt="Wechat"/><span>Wechat</span></div><div class="reward-item"><img class="reward-img" src="/img/reward/alipay.jpg" title="Alipay" alt="Alipay"/><span>Alipay</span></div></div></div></div><div class="post-next"><a href="/2025/12/27/javaweb01/" title="下一篇文章"><i class="fa-solid fa-chevron-right fa-lg"></i></a></div></div></article><div class="comment" id="comment"><script src="https://giscus.app/client.js" async="async"></script></div><div id="post-toc"><aside class="toc-aside"><div class="toc-title"><span><i class="fa-solid fa-paw"></i>目录</span></div><div class="toc-container" id="toc-body"></div></aside><div class="toc-blank" onclick="tocToggle()"></div></div></div></div><div id="tool-bar"><div id="tool-bar-main"><div id="tool-toggle" onclick="toolToggle()" title="设置"><i class="fa-solid fa-gear"></i></div><div id="toc-toggle" onclick="tocToggle()" title="目录"><i class="fa-solid fa-list-ul"></i></div><div id="go-to-comment" onclick="gotoComment()" title="评论"><i class="fa-regular fa-message fa-flip-horizontal"></i></div><div id="back-to-top" onclick="scrollToTop()" title="返回顶部"><i class="fa-solid fa-chevron-up"></i></div></div><div id="tool-bar-more" style="display: none;"><div id="darkmode-switch" onclick="darkmodeSwitch()" title="深色模式"><i class="fa-solid fa-circle-half-stroke"></i></div><div id="font-size-increase" onclick="fontSizeIncrease()" title="放大字体"><i class="fa-solid fa-plus"></i></div><div id="font-size-decrease" onclick="fontSizeDecrease()" title="缩小字体"><i class="fa-solid fa-minus"></i></div></div></div><div id="search-panel"><div class="search-container"><div class="search-head"><div class="search-title"><span><i class="fa-solid fa-paw"></i>搜索</span></div><div class="search-close-btn" onclick="toggleSearchWindow()"><i class="fa-regular fa-circle-xmark"></i></div></div><div class="search-box"><i class="fa-solid fa-magnifying-glass"></i><input id="search-input" type="text" placeholder="请输入需要搜索的内容……" value=""/></div><div class="search-body"><div id="search-count">匹配结果数: </div><div id="search-result"></div><div id="search-result-empty">未搜索到匹配的文章。</div></div></div></div><footer><div class="footer-content"><div class="copyright-info"><i class="fa-regular fa-copyright fa-xs"></i><span>2024 - 2026 </span><a href="/about">17hwliao</a><i class="fa-solid fa-cat fa-sm"></i><span>Powered by </span><a href="https://hexo.io/" target="_blank">Hexo</a><span> &amp; </span><a href="https://github.com/chanwj/hexo-theme-meow" target="_blank" title="v2.1.5">Theme Meow</a></div><div class="pageview-site"><span id="busuanzi_container_site_pv">总访问量 : <span id="busuanzi_value_site_pv"><i class="fa-solid fa-spinner"></i></span></span><span id="busuanzi_container_site_uv">总访客数 : <span id="busuanzi_value_site_uv"><i class="fa-solid fa-spinner"></i></span></span></div></div></footer>
+<script>const GLOBAL_CONFIG = {
+  comment: { theme: ''}
+}
+</script>
+<script src="/js/third-party/darkmode.js"></script>
+<script>var options = {
+  dark: '/css/darkmode.css',
+  startAt: '24:00',
+  endAt: '06:00',
+  checkSystemScheme: 'false',
+  saveOnToggle: 'true'
+};
+var darkMode = new DarkMode(options);
+// change comment theme synchronously 同步修改评论区主题
+if (darkMode.getMode() == "dark" && (true || true)) {
+  if (document.getElementById('comment')) {
+    document.getElementById('comment').getElementsByTagName('script')[0].setAttribute('data-theme', 'noborder_dark');
+  }
+}
+</script><script>if (localStorage.getItem('font-size')) {
+  document.querySelector('.post-content').style.fontSize = localStorage.getItem('font-size') + 'px';
+}
+</script>
+<script src="/js/theme/tool-bar.js"></script>
+
+
+<script src="/js/theme/menu.js"></script>
+
+
+<script src="/js/third-party/clipboard.min.js"></script>
+
+
+<script src="/js/theme/copy.js"></script>
+<script>copyCode();
+</script>
+<script src="/js/theme/reward.js"></script>
+
+<script src="/js/jquery-3.7.1.min.js"></script>
+
+
+<script src="/js/theme/search.js"></script>
+<script>searchFunc('/search.xml', 'search-input', 'search-result');
+</script></body></html>

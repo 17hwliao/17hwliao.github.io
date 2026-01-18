@@ -1,0 +1,347 @@
+<!DOCTYPE html><html lang="zh-CN"><head><meta charset="utf-8"/><meta name="viewport" content="width=device-width, initial-scale=1.0"/><meta name="author" content="17hwliao"/><meta name="keyword" content="[]"/><meta name="description" content="汉诺塔函数实现void hanni(n , char a , char b , char c ){		if(n &#x3D;&#x3D; 1 ) {		cout&lt;&lt;a&lt;&lt;&quot; -&gt;&quot;&lt;&lt;b &lt;&lt;endl;		return ;}		hanni(n - 1,  a , c , b ) ;		cout&lt;&lt;a&lt;&amp;lt">
+<meta property="og:type" content="article">
+<meta property="og:title" content="ackwing20">
+<meta property="og:url" content="https://17hwliao.github.io/2025/12/03/acwing20/index.html">
+<meta property="og:site_name" content="17hwliao的妙妙屋">
+<meta property="og:description" content="汉诺塔函数实现void hanni(n , char a , char b , char c ){		if(n &#x3D;&#x3D; 1 ) {		cout&lt;&lt;a&lt;&lt;&quot; -&gt;&quot;&lt;&lt;b &lt;&lt;endl;		return ;}		hanni(n - 1,  a , c , b ) ;		cout&lt;&lt;a&lt;&amp;lt">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2025-12-03T07:51:43.000Z">
+<meta property="article:modified_time" content="2025-12-10T06:10:32.116Z">
+<meta property="article:author" content="17hwliao">
+<meta name="twitter:card" content="summary"><title>ackwing20 - 17hwliao的妙妙屋 - 带派不老铁</title><link rel="shortcut icon" href="/img/site-icon.png">
+<link rel="stylesheet" href="/css/style.css" id="dm-light">
+
+
+<link rel="stylesheet" href="https://cdn.bootcdn.net/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+
+<script src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js" async></script>
+<meta name="generator" content="Hexo 7.3.0"></head><body><header><div class="top-nav" ondblclick="scrollToTop()"><div class="nav-info"><div class="nav-icon"><img id="nav-icon" src="/img/site-icon.png"/></div><div class="nav-title"><a id="nav-title" href="/" title="主页">17hwliao的妙妙屋</a></div></div><div class="nav-ribbon"><div class="top-menu-expanded"><a class="top-menu-item" href="/archives"><span>归档</span></a><a class="top-menu-item" href="/categories"><span>分类</span></a><a class="top-menu-item" href="/tags"><span>标签</span></a><a class="top-menu-item" href="/about"><span>关于</span></a></div><div class="top-search" onclick="toggleSearchWindow()"><div id="top-search-btn" title="搜索"><i class="icon fa-solid fa-magnifying-glass"></i><span>搜索</span></div></div><div id="top-menu-btn" onclick="openTopMenu()" title="打开菜单"><i class="fa-solid fa-bars fa-lg"></i></div></div></div></header><div id="top-menu-hidden"><div class="menu-hidden-content"><div class="menu-hidden-nav"><a class="menu-hidden-item" href="/archives"><i class="fa-solid fa-box-archive fa-sm"></i><span>归档</span></a><a class="menu-hidden-item" href="/categories"><i class="fa-regular fa-folder-open fa-sm"></i><span>分类</span></a><a class="menu-hidden-item" href="/tags"><i class="fa-solid fa-tags fa-sm"></i><span>标签</span></a><a class="menu-hidden-item" href="/about"><i class="fa-solid fa-paw fa-sm"></i><span>关于</span></a></div></div><div class="menu-hidden-blank" onclick="closeTopMenu()"></div></div>
+<div class="blog-info"><div class="blog-pic"><img id="blog-pic" src="/img/site-icon.png"/></div><div class="blog-title"><i class="fa-solid fa-paw fa-2xs fa-rotate-by"></i><span>17hwliao的妙妙屋</span><i class="fa-solid fa-paw fa-2xs fa-rotate-by"></i></div><div class="blog-desc">这是我的地盘, 我想写啥写啥 , 要你问 .</div></div><div class="main"><div class="main-content"><article class="post"><div class="post-title"><h1><i class="fa-solid fa-paw"></i>ackwing20</h1></div><div class="post-info"><div class="post-info-first-line"><div class="post-date"><i class="icon fa-regular fa-calendar-plus" title="发布日期"></i><time class="publish-time">2025-12-03</time><i class="icon fa-regular fa-calendar-check" title="更新日期"></i><time class="update-time">2025-12-10</time></div>
+
+</div><div class="post-info-second-line"><div class="post-copyright"><i class="icon fa-brands fa-creative-commons" title="版权声明"></i><span>版权声明: </span><a target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-nd/4.0/deed.zh-hans" title="CC BY-NC-ND 4.0">17hwliao-折磨自己使用-禁止模仿</a></div>
+<div class="post-word-count"><i class="icon fa-solid fa-pen-to-square"></i><span>傻子码了约2.4K字</span></div><div class="pageview-post"><i class="icon fa-regular fa-eye"></i><span id="busuanzi_container_page_pv">阅读次数: <span id="busuanzi_value_page_pv"><i class="fa-solid fa-spinner"></i></span></span></div></div></div><div class="post-content"><p>汉诺塔函数实现<br>void hanni(n , char a , char b , char c ){<br>		if(n &#x3D;&#x3D; 1 ) {<br>		cout&lt;&lt;a&lt;&lt;&quot; -&gt;&quot;&lt;&lt;b &lt;&lt;endl;<br>		return ;<br>}<br>		hanni(n - 1,  a , c , b ) ;<br>		cout&lt;&lt;a&lt;&lt;&quot;-&gt;&quot;&lt;&lt;b&lt;&lt;endl;<br>		hanni(n -1 , c , b , a ) ;<br>		return ;<br>}</p>
+<p>实现单链表<br>#include<iostream><br>#include<cstdlib><br>using namespace std;<br>typedef struct node {      &#x2F;&#x2F;创建节点(里面是数据和下一节点的位置)<br>	int data;<br>	struct node* next;<br>};<br>typedef struct {               &#x2F;&#x2F;创建整个链表(里面是头 , 尾节点和链表内的数据多少)<br>	node* head;<br>	node* end;<br>	int size;<br>} lian;<br>node* add_arr (int x) {<br>	node* newnode &#x3D; (node*)malloc(sizeof(node));  &#x2F;&#x2F;malloc需要头文件cstdlib<br>	newnode-&gt;data &#x3D; x;<br>	newnode-&gt;next &#x3D; NULL;<br>	return newnode;<br>}<br>void init(lian* arr) {<br>	arr-&gt;head &#x3D; NULL;<br>	arr-&gt;end &#x3D; NULL;<br>	arr-&gt;size &#x3D; 0;<br>}<br>void add_lian1(int x ,lian <em>arr ) {      &#x2F;&#x2F;头插法<br>	node</em> newcode &#x3D; add_arr(x);<br>	if (newcode &#x3D;&#x3D; NULL) return;<br>	if (arr-&gt;size &#x3D;&#x3D; 0) {<br>		arr-&gt;head &#x3D; newcode;<br>		arr-&gt;end &#x3D; newcode;<br>	}<br>	else {<br>		newcode-&gt;next &#x3D; arr-&gt;head;<br>		arr-&gt;head &#x3D; newcode;<br>	}<br>	arr-&gt;size++;<br>}<br>void add_lian2(int x, lian* arr) {		  &#x2F;&#x2F;尾插法<br>	node* newcode &#x3D; add_arr(x);<br>	if (newcode &#x3D;&#x3D; NULL) return;<br>	if (arr-&gt;size &#x3D;&#x3D; 0) {<br>		arr-&gt;head &#x3D; newcode;<br>		arr-&gt;end &#x3D; newcode;<br>	}<br>	else {<br>		arr-&gt;end -&gt; next &#x3D;  newcode;<br>		arr-&gt;end &#x3D; newcode;<br>	}<br>	arr-&gt;size++;<br>}<br>node* find_node(lian* arr, int x) {<br>	node* k &#x3D; arr-&gt;head;<br>	while (k !&#x3D; NULL) {<br>		if (k -&gt; d ata &#x3D;&#x3D; x) {<br>			return k;<br>		}<br>		k &#x3D; k-&gt;next;<br>	}<br>	return NULL;<br>}<br>void delete_head(lian* arr) {<br>	if (arr-&gt;size &#x3D;&#x3D; 0) {<br>		return;<br>	}</p>
+<pre><code>node* temp = arr-&gt;head;
+arr-&gt;head = arr-&gt;head-&gt;next;
+
+if (arr-&gt;size == 1) &#123;  
+	arr-&gt;end = NULL;
+&#125;
+
+free(temp);
+arr-&gt;size--;
+</code></pre>
+<p>}<br>void display(lian* arr) {<br>	node* chu &#x3D; arr-&gt;head;<br>	while (chu !&#x3D; NULL) {<br>		cout &lt;&lt; chu-&gt;data ;<br>		chu &#x3D; chu-&gt;next;<br>	}<br>	cout &lt;&lt; arr-&gt;size;<br>}<br>int main() {<br>	lian arr;<br>	init(&amp;arr);<br>	return 0;<br>}</p>
+<p>&#x2F;&#x2F;双链表实现<br>#include<iostream><br>#include<cstdlib><br>using namespace std;</p>
+<p>&#x2F;&#x2F; 双向链表节点结构<br>typedef struct node {<br>    int data;<br>    struct node* prev;  &#x2F;&#x2F; 前驱指针（应该是prev，不是l）<br>    struct node* next;  &#x2F;&#x2F; 后继指针（应该是next）<br>} node;</p>
+<p>&#x2F;&#x2F; 双向链表结构<br>typedef struct list {<br>    int size;<br>    node* head;<br>    node* end;<br>} lian;</p>
+<p>&#x2F;&#x2F; 创建新节点<br>node* create_node(int x) {<br>    node* newnode &#x3D; (node*)malloc(sizeof(node));<br>    if (newnode &#x3D;&#x3D; NULL) {<br>        return NULL;<br>    }<br>    newnode-&gt;data &#x3D; x;<br>    newnode-&gt;prev &#x3D; NULL;<br>    newnode-&gt;next &#x3D; NULL;<br>    return newnode;<br>}</p>
+<p>&#x2F;&#x2F; 初始化链表<br>void init(lian* arr) {<br>    arr-&gt;head &#x3D; NULL;<br>    arr-&gt;end &#x3D; NULL;<br>    arr-&gt;size &#x3D; 0;<br>}</p>
+<p>&#x2F;&#x2F; 头插法<br>void add_to_head(int x, lian* arr) {<br>    node* newnode &#x3D; create_node(x);<br>    if (newnode &#x3D;&#x3D; NULL) return;</p>
+<pre><code>if (arr-&gt;size == 0) &#123;
+    arr-&gt;head = newnode;
+    arr-&gt;end = newnode;
+&#125;
+else &#123;
+    newnode-&gt;next = arr-&gt;head;
+    arr-&gt;head-&gt;prev = newnode;
+    arr-&gt;head = newnode;
+&#125;
+arr-&gt;size++;
+</code></pre>
+<p>}</p>
+<p>&#x2F;&#x2F; 尾插法<br>void add_to_tail(int x, lian* arr) {<br>    node* newnode &#x3D; create_node(x);<br>    if (newnode &#x3D;&#x3D; NULL) return;</p>
+<pre><code>if (arr-&gt;size == 0) &#123;
+    arr-&gt;head = newnode;
+    arr-&gt;end = newnode;
+&#125;
+else &#123;
+    newnode-&gt;prev = arr-&gt;end;
+    arr-&gt;end-&gt;next = newnode;
+    arr-&gt;end = newnode;
+&#125;
+arr-&gt;size++;
+</code></pre>
+<p>}</p>
+<p>&#x2F;&#x2F; 在指定位置插入（位置从0开始）<br>void insert_at(int x, int pos, lian* arr) {<br>    if (pos &lt; 0 || pos &gt; arr-&gt;size) {<br>        cout &lt;&lt; &quot;位置无效！&quot; &lt;&lt; endl;<br>        return;<br>    }</p>
+<pre><code>if (pos == 0) &#123;
+    add_to_head(x, arr);
+    return;
+&#125;
+
+if (pos == arr-&gt;size) &#123;
+    add_to_tail(x, arr);
+    return;
+&#125;
+
+node* newnode = create_node(x);
+if (newnode == NULL) return;
+
+// 找到插入位置的前一个节点
+node* current;
+if (pos &lt;= arr-&gt;size / 2) &#123;
+    // 从前向后找
+    current = arr-&gt;head;
+    for (int i = 0; i &lt; pos - 1; i++) &#123;
+        current = current-&gt;next;
+    &#125;
+&#125;
+else &#123;
+    // 从后向前找
+    current = arr-&gt;end;
+    for (int i = arr-&gt;size - 1; i &gt; pos - 1; i--) &#123;
+        current = current-&gt;prev;
+    &#125;
+&#125;
+
+// 插入新节点
+newnode-&gt;next = current-&gt;next;
+newnode-&gt;prev = current;
+current-&gt;next-&gt;prev = newnode;
+current-&gt;next = newnode;
+
+arr-&gt;size++;
+</code></pre>
+<p>}</p>
+<p>&#x2F;&#x2F; 删除头节点<br>void delete_head(lian* arr) {<br>    if (arr-&gt;size &#x3D;&#x3D; 0) {<br>        cout &lt;&lt; &quot;链表为空！&quot; &lt;&lt; endl;<br>        return;<br>    }</p>
+<pre><code>node* temp = arr-&gt;head;
+
+if (arr-&gt;size == 1) &#123;
+    arr-&gt;head = NULL;
+    arr-&gt;end = NULL;
+&#125;
+else &#123;
+    arr-&gt;head = arr-&gt;head-&gt;next;
+    arr-&gt;head-&gt;prev = NULL;
+&#125;
+
+free(temp);
+arr-&gt;size--;
+</code></pre>
+<p>}</p>
+<p>&#x2F;&#x2F; 删除尾节点<br>void delete_tail(lian* arr) {<br>    if (arr-&gt;size &#x3D;&#x3D; 0) {<br>        cout &lt;&lt; &quot;链表为空！&quot; &lt;&lt; endl;<br>        return;<br>    }</p>
+<pre><code>node* temp = arr-&gt;end;
+
+if (arr-&gt;size == 1) &#123;
+    arr-&gt;head = NULL;
+    arr-&gt;end = NULL;
+&#125;
+else &#123;
+    arr-&gt;end = arr-&gt;end-&gt;prev;
+    arr-&gt;end-&gt;next = NULL;
+&#125;
+
+free(temp);
+arr-&gt;size--;
+</code></pre>
+<p>}</p>
+<p>&#x2F;&#x2F; 删除指定值的节点（删除第一个匹配的）<br>void delete_value(int x, lian* arr) {<br>    if (arr-&gt;size &#x3D;&#x3D; 0) {<br>        cout &lt;&lt; &quot;链表为空！&quot; &lt;&lt; endl;<br>        return;<br>    }</p>
+<pre><code>node* current = arr-&gt;head;
+while (current != NULL) &#123;
+    if (current-&gt;data == x) &#123;
+        if (current == arr-&gt;head) &#123;
+            delete_head(arr);
+        &#125;
+        else if (current == arr-&gt;end) &#123;
+            delete_tail(arr);
+        &#125;
+        else &#123;
+            current-&gt;prev-&gt;next = current-&gt;next;
+            current-&gt;next-&gt;prev = current-&gt;prev;
+            free(current);
+            arr-&gt;size--;
+        &#125;
+        cout &lt;&lt; &quot;删除成功！&quot; &lt;&lt; endl;
+        return;
+    &#125;
+    current = current-&gt;next;
+&#125;
+
+cout &lt;&lt; &quot;未找到值为 &quot; &lt;&lt; x &lt;&lt; &quot; 的节点！&quot; &lt;&lt; endl;
+</code></pre>
+<p>}</p>
+<p>&#x2F;&#x2F; 删除指定位置的节点<br>void delete_at(int pos, lian* arr) {<br>    if (pos &lt; 0 || pos &gt;&#x3D; arr-&gt;size) {<br>        cout &lt;&lt; &quot;位置无效！&quot; &lt;&lt; endl;<br>        return;<br>    }</p>
+<pre><code>if (pos == 0) &#123;
+    delete_head(arr);
+    return;
+&#125;
+
+if (pos == arr-&gt;size - 1) &#123;
+    delete_tail(arr);
+    return;
+&#125;
+
+// 找到要删除的节点
+node* current;
+if (pos &lt;= arr-&gt;size / 2) &#123;
+    current = arr-&gt;head;
+    for (int i = 0; i &lt; pos; i++) &#123;
+        current = current-&gt;next;
+    &#125;
+&#125;
+else &#123;
+    current = arr-&gt;end;
+    for (int i = arr-&gt;size - 1; i &gt; pos; i--) &#123;
+        current = current-&gt;prev;
+    &#125;
+&#125;
+
+// 删除节点
+current-&gt;prev-&gt;next = current-&gt;next;
+current-&gt;next-&gt;prev = current-&gt;prev;
+free(current);
+arr-&gt;size--;
+
+cout &lt;&lt; &quot;删除成功！&quot; &lt;&lt; endl;
+</code></pre>
+<p>}</p>
+<p>&#x2F;&#x2F; 查找节点<br>node* find_node(int x, lian* arr) {<br>    node* current &#x3D; arr-&gt;head;<br>    while (current !&#x3D; NULL) {<br>        if (current-&gt;data &#x3D;&#x3D; x) {<br>            return current;<br>        }<br>        current &#x3D; current-&gt;next;<br>    }<br>    return NULL;<br>}</p>
+<p>&#x2F;&#x2F; 查找节点（反向查找）<br>node* find_node_reverse(int x, lian* arr) {<br>    node* current &#x3D; arr-&gt;end;<br>    while (current !&#x3D; NULL) {<br>        if (current-&gt;data &#x3D;&#x3D; x) {<br>            return current;<br>        }<br>        current &#x3D; current-&gt;prev;<br>    }<br>    return NULL;<br>}</p>
+<p>&#x2F;&#x2F; 修改节点值<br>void update_value(int old_value, int new_value, lian* arr) {<br>    node* target &#x3D; find_node(old_value, arr);<br>    if (target !&#x3D; NULL) {<br>        target-&gt;data &#x3D; new_value;<br>        cout &lt;&lt; &quot;修改成功！&quot; &lt;&lt; endl;<br>    }<br>    else {<br>        cout &lt;&lt; &quot;未找到值为 &quot; &lt;&lt; old_value &lt;&lt; &quot; 的节点！&quot; &lt;&lt; endl;<br>    }<br>}</p>
+<p>&#x2F;&#x2F; 修改指定位置的节点值<br>void update_at(int pos, int new_value, lian* arr) {<br>    if (pos &lt; 0 || pos &gt;&#x3D; arr-&gt;size) {<br>        cout &lt;&lt; &quot;位置无效！&quot; &lt;&lt; endl;<br>        return;<br>    }</p>
+<pre><code>node* current;
+if (pos &lt;= arr-&gt;size / 2) &#123;
+    current = arr-&gt;head;
+    for (int i = 0; i &lt; pos; i++) &#123;
+        current = current-&gt;next;
+    &#125;
+&#125;
+else &#123;
+    current = arr-&gt;end;
+    for (int i = arr-&gt;size - 1; i &gt; pos; i--) &#123;
+        current = current-&gt;prev;
+    &#125;
+&#125;
+
+current-&gt;data = new_value;
+cout &lt;&lt; &quot;修改成功！&quot; &lt;&lt; endl;
+</code></pre>
+<p>}</p>
+<p>&#x2F;&#x2F; 正向显示链表<br>void display_forward(lian* arr) {<br>    if (arr-&gt;size &#x3D;&#x3D; 0) {<br>        cout &lt;&lt; &quot;链表为空！&quot; &lt;&lt; endl;<br>        return;<br>    }</p>
+<pre><code>node* current = arr-&gt;head;
+cout &lt;&lt; &quot;正向遍历: &quot;;
+while (current != NULL) &#123;
+    cout &lt;&lt; current-&gt;data;
+    if (current-&gt;next != NULL) &#123;
+        cout &lt;&lt; &quot; &lt;-&gt; &quot;;
+    &#125;
+    current = current-&gt;next;
+&#125;
+cout &lt;&lt; endl &lt;&lt; &quot;链表大小: &quot; &lt;&lt; arr-&gt;size &lt;&lt; endl;
+</code></pre>
+<p>}</p>
+<p>&#x2F;&#x2F; 反向显示链表<br>void display_backward(lian* arr) {<br>    if (arr-&gt;size &#x3D;&#x3D; 0) {<br>        cout &lt;&lt; &quot;链表为空！&quot; &lt;&lt; endl;<br>        return;<br>    }</p>
+<pre><code>node* current = arr-&gt;end;
+cout &lt;&lt; &quot;反向遍历: &quot;;
+while (current != NULL) &#123;
+    cout &lt;&lt; current-&gt;data;
+    if (current-&gt;prev != NULL) &#123;
+        cout &lt;&lt; &quot; &lt;-&gt; &quot;;
+    &#125;
+    current = current-&gt;prev;
+&#125;
+cout &lt;&lt; endl &lt;&lt; &quot;链表大小: &quot; &lt;&lt; arr-&gt;size &lt;&lt; endl;
+</code></pre>
+<p>}</p>
+<p>&#x2F;&#x2F; 释放链表内存<br>void free_list(lian* arr) {<br>    node* current &#x3D; arr-&gt;head;<br>    while (current !&#x3D; NULL) {<br>        node* temp &#x3D; current;<br>        current &#x3D; current-&gt;next;<br>        free(temp);<br>    }<br>    arr-&gt;head &#x3D; NULL;<br>    arr-&gt;end &#x3D; NULL;<br>    arr-&gt;size &#x3D; 0;<br>}</p>
+<p>int main() {<br>    lian list;<br>    init(&amp;list);</p>
+<pre><code>cout &lt;&lt; &quot;=== 双向链表操作演示 ===&quot; &lt;&lt; endl;
+
+// 增加操作
+cout &lt;&lt; &quot;\n1. 增加节点测试：&quot; &lt;&lt; endl;
+add_to_tail(1, &amp;list);
+add_to_tail(2, &amp;list);
+add_to_tail(3, &amp;list);
+add_to_head(0, &amp;list);
+add_to_head(-1, &amp;list);
+insert_at(99, 2, &amp;list);
+display_forward(&amp;list);
+display_backward(&amp;list);
+
+// 查找操作
+cout &lt;&lt; &quot;\n2. 查找节点测试：&quot; &lt;&lt; endl;
+node* found = find_node(2, &amp;list);
+if (found != NULL) &#123;
+    cout &lt;&lt; &quot;找到节点: &quot; &lt;&lt; found-&gt;data &lt;&lt; endl;
+&#125;
+else &#123;
+    cout &lt;&lt; &quot;未找到节点&quot; &lt;&lt; endl;
+&#125;
+
+// 修改操作
+cout &lt;&lt; &quot;\n3. 修改节点测试：&quot; &lt;&lt; endl;
+update_value(2, 20, &amp;list);
+update_at(3, 30, &amp;list);
+display_forward(&amp;list);
+
+// 删除操作
+cout &lt;&lt; &quot;\n4. 删除节点测试：&quot; &lt;&lt; endl;
+cout &lt;&lt; &quot;删除头节点: &quot;;
+delete_head(&amp;list);
+display_forward(&amp;list);
+
+cout &lt;&lt; &quot;删除尾节点: &quot;;
+delete_tail(&amp;list);
+display_forward(&amp;list);
+
+cout &lt;&lt; &quot;删除值为20的节点: &quot;;
+delete_value(20, &amp;list);
+display_forward(&amp;list);
+
+cout &lt;&lt; &quot;删除位置1的节点: &quot;;
+delete_at(1, &amp;list);
+display_forward(&amp;list);
+
+// 清理
+cout &lt;&lt; &quot;\n5. 释放链表内存：&quot; &lt;&lt; endl;
+free_list(&amp;list);
+display_forward(&amp;list);
+
+return 0;
+</code></pre>
+<p>}</p>
+</div><div class="post-end"><div class="post-prev"><a href="/2025/12/04/acwing21/" title="上一篇文章"><i class="fa-solid fa-chevron-left fa-lg"></i></a></div><div class="post-reward" onclick="openPostReward()" title="赞赏"><i class="fa-regular fa-thumbs-up fa-xl fa-beat-fade"></i></div><div id="reward-panel" onclick="closePostReward()"><div class="reward-container"><p>作者快被折磨死了，给点银子都给你了, 连我也给你了 &#128151;</p>
+<div class="reward-nav"><div class="reward-item"><img class="reward-img" src="/img/reward/wechat.jpg" title="Wechat" alt="Wechat"/><span>Wechat</span></div><div class="reward-item"><img class="reward-img" src="/img/reward/alipay.jpg" title="Alipay" alt="Alipay"/><span>Alipay</span></div></div></div></div><div class="post-next"><a href="/2025/11/28/acwing19/" title="下一篇文章"><i class="fa-solid fa-chevron-right fa-lg"></i></a></div></div></article><div class="comment" id="comment"><script src="https://giscus.app/client.js" async="async"></script></div><div id="post-toc"><aside class="toc-aside"><div class="toc-title"><span><i class="fa-solid fa-paw"></i>目录</span></div><div class="toc-container" id="toc-body"></div></aside><div class="toc-blank" onclick="tocToggle()"></div></div></div></div><div id="tool-bar"><div id="tool-bar-main"><div id="tool-toggle" onclick="toolToggle()" title="设置"><i class="fa-solid fa-gear"></i></div><div id="toc-toggle" onclick="tocToggle()" title="目录"><i class="fa-solid fa-list-ul"></i></div><div id="go-to-comment" onclick="gotoComment()" title="评论"><i class="fa-regular fa-message fa-flip-horizontal"></i></div><div id="back-to-top" onclick="scrollToTop()" title="返回顶部"><i class="fa-solid fa-chevron-up"></i></div></div><div id="tool-bar-more" style="display: none;"><div id="darkmode-switch" onclick="darkmodeSwitch()" title="深色模式"><i class="fa-solid fa-circle-half-stroke"></i></div><div id="font-size-increase" onclick="fontSizeIncrease()" title="放大字体"><i class="fa-solid fa-plus"></i></div><div id="font-size-decrease" onclick="fontSizeDecrease()" title="缩小字体"><i class="fa-solid fa-minus"></i></div></div></div><div id="search-panel"><div class="search-container"><div class="search-head"><div class="search-title"><span><i class="fa-solid fa-paw"></i>搜索</span></div><div class="search-close-btn" onclick="toggleSearchWindow()"><i class="fa-regular fa-circle-xmark"></i></div></div><div class="search-box"><i class="fa-solid fa-magnifying-glass"></i><input id="search-input" type="text" placeholder="请输入需要搜索的内容……" value=""/></div><div class="search-body"><div id="search-count">匹配结果数: </div><div id="search-result"></div><div id="search-result-empty">未搜索到匹配的文章。</div></div></div></div><footer><div class="footer-content"><div class="copyright-info"><i class="fa-regular fa-copyright fa-xs"></i><span>2024 - 2026 </span><a href="/about">17hwliao</a><i class="fa-solid fa-cat fa-sm"></i><span>Powered by </span><a href="https://hexo.io/" target="_blank">Hexo</a><span> &amp; </span><a href="https://github.com/chanwj/hexo-theme-meow" target="_blank" title="v2.1.5">Theme Meow</a></div><div class="pageview-site"><span id="busuanzi_container_site_pv">总访问量 : <span id="busuanzi_value_site_pv"><i class="fa-solid fa-spinner"></i></span></span><span id="busuanzi_container_site_uv">总访客数 : <span id="busuanzi_value_site_uv"><i class="fa-solid fa-spinner"></i></span></span></div></div></footer>
+<script>const GLOBAL_CONFIG = {
+  comment: { theme: ''}
+}
+</script>
+<script src="/js/third-party/darkmode.js"></script>
+<script>var options = {
+  dark: '/css/darkmode.css',
+  startAt: '24:00',
+  endAt: '06:00',
+  checkSystemScheme: 'false',
+  saveOnToggle: 'true'
+};
+var darkMode = new DarkMode(options);
+// change comment theme synchronously 同步修改评论区主题
+if (darkMode.getMode() == "dark" && (true || true)) {
+  if (document.getElementById('comment')) {
+    document.getElementById('comment').getElementsByTagName('script')[0].setAttribute('data-theme', 'noborder_dark');
+  }
+}
+</script><script>if (localStorage.getItem('font-size')) {
+  document.querySelector('.post-content').style.fontSize = localStorage.getItem('font-size') + 'px';
+}
+</script>
+<script src="/js/theme/tool-bar.js"></script>
+
+
+<script src="/js/theme/menu.js"></script>
+
+
+<script src="/js/third-party/clipboard.min.js"></script>
+
+
+<script src="/js/theme/copy.js"></script>
+<script>copyCode();
+</script>
+<script src="/js/theme/reward.js"></script>
+
+<script src="/js/jquery-3.7.1.min.js"></script>
+
+
+<script src="/js/theme/search.js"></script>
+<script>searchFunc('/search.xml', 'search-input', 'search-result');
+</script></body></html>
