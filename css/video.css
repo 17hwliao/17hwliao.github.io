@@ -1,0 +1,41 @@
+/* 视频样式 */
+.meow-video-container {
+  position: relative;
+  padding-bottom: 56.25%;
+  height: 0;
+  overflow: hidden;
+  margin: 2rem 0;
+  border-radius: 12px;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.1);
+  background: #f8f9fa;
+}
+
+.meow-video-container video,
+.meow-video-container iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
+  border-radius: 12px;
+}
+
+.video-title {
+  text-align: center;
+  font-size: 0.9rem;
+  color: #666;
+  margin-top: 0.5rem;
+  margin-bottom: 1.5rem;
+}
+
+/* 深色模式适配 */
+@media (prefers-color-scheme: dark) {
+  .meow-video-container {
+    background: #2d2d2d;
+    box-shadow: 0 6px 20px rgba(0,0,0,0.3);
+  }
+  .video-title {
+    color: #aaa;
+  }
+}
