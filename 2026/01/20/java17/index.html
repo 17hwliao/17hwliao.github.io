@@ -1,0 +1,113 @@
+<!DOCTYPE html><html lang="zh-CN"><head><meta charset="utf-8"/><meta name="viewport" content="width=device-width, initial-scale=1.0"/><meta name="author" content="17hwliao"/><meta name="keyword" content="[]"/><meta name="description" content="Map映射元素之间是两两对应的，是以键值对的形式存在。Map接口 :&#x2F;&#x2F;Map并不是Collection体系下的接口，而是单独的一个体系，因为操作特殊&#x2F;&#x2F;这里需要填写两个泛型参数，其中K就是键的类型，V就是值的类型，比如上面的学生信息，ID一般是int，那么键就是Integer类型的，而值就是学生信息，所以说值是学生对象类型的public interface">
+<meta property="og:type" content="article">
+<meta property="og:title" content="java17">
+<meta property="og:url" content="https://17hwliao.github.io/2026/01/20/java17/index.html">
+<meta property="og:site_name" content="17hwliao的妙妙屋">
+<meta property="og:description" content="Map映射元素之间是两两对应的，是以键值对的形式存在。Map接口 :&#x2F;&#x2F;Map并不是Collection体系下的接口，而是单独的一个体系，因为操作特殊&#x2F;&#x2F;这里需要填写两个泛型参数，其中K就是键的类型，V就是值的类型，比如上面的学生信息，ID一般是int，那么键就是Integer类型的，而值就是学生信息，所以说值是学生对象类型的public interface">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2026-01-20T07:20:10.000Z">
+<meta property="article:modified_time" content="2026-01-20T07:28:41.747Z">
+<meta property="article:author" content="17hwliao">
+<meta name="twitter:card" content="summary"><title>java17 - 17hwliao的妙妙屋 - 带派不老铁</title><link rel="shortcut icon" href="/img/site-icon.png">
+<link rel="stylesheet" href="/css/style.css" id="dm-light">
+
+
+<link rel="stylesheet" href="https://cdn.bootcdn.net/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+
+<script src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js" async></script>
+<meta name="generator" content="Hexo 7.3.0"></head><body><header><div class="top-nav" ondblclick="scrollToTop()"><div class="nav-info"><div class="nav-icon"><img id="nav-icon" src="/img/site-icon.png"/></div><div class="nav-title"><a id="nav-title" href="/" title="主页">17hwliao的妙妙屋</a></div></div><div class="nav-ribbon"><div class="top-menu-expanded"><a class="top-menu-item" href="/archives"><span>归档</span></a><a class="top-menu-item" href="/categories"><span>分类</span></a><a class="top-menu-item" href="/tags"><span>标签</span></a><a class="top-menu-item" href="/about"><span>关于</span></a></div><div class="top-search" onclick="toggleSearchWindow()"><div id="top-search-btn" title="搜索"><i class="icon fa-solid fa-magnifying-glass"></i><span>搜索</span></div></div><div id="top-menu-btn" onclick="openTopMenu()" title="打开菜单"><i class="fa-solid fa-bars fa-lg"></i></div></div></div></header><div id="top-menu-hidden"><div class="menu-hidden-content"><div class="menu-hidden-nav"><a class="menu-hidden-item" href="/archives"><i class="fa-solid fa-box-archive fa-sm"></i><span>归档</span></a><a class="menu-hidden-item" href="/categories"><i class="fa-regular fa-folder-open fa-sm"></i><span>分类</span></a><a class="menu-hidden-item" href="/tags"><i class="fa-solid fa-tags fa-sm"></i><span>标签</span></a><a class="menu-hidden-item" href="/about"><i class="fa-solid fa-paw fa-sm"></i><span>关于</span></a></div></div><div class="menu-hidden-blank" onclick="closeTopMenu()"></div></div>
+<div class="blog-info"><div class="blog-pic"><img id="blog-pic" src="/img/site-icon.png"/></div><div class="blog-title"><i class="fa-solid fa-paw fa-2xs fa-rotate-by"></i><span>17hwliao的妙妙屋</span><i class="fa-solid fa-paw fa-2xs fa-rotate-by"></i></div><div class="blog-desc">这是我的地盘, 我想写啥写啥 , 要你问 .</div></div><div class="main"><div class="main-content"><article class="post"><div class="post-title"><h1><i class="fa-solid fa-paw"></i>java17</h1></div><div class="post-info"><div class="post-info-first-line"><div class="post-date"><i class="icon fa-regular fa-calendar-plus" title="发布日期"></i><time class="publish-time">2026-01-20</time><i class="icon fa-regular fa-calendar-check" title="更新日期"></i><time class="update-time">2026-01-20</time></div>
+
+</div><div class="post-info-second-line"><div class="post-copyright"><i class="icon fa-brands fa-creative-commons" title="版权声明"></i><span>版权声明: </span><a target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-nd/4.0/deed.zh-hans" title="CC BY-NC-ND 4.0">17hwliao-折磨自己使用-禁止模仿</a></div>
+<div class="post-word-count"><i class="icon fa-solid fa-pen-to-square"></i><span>傻子码了约3.0K字</span></div><div class="pageview-post"><i class="icon fa-regular fa-eye"></i><span id="busuanzi_container_page_pv">阅读次数: <span id="busuanzi_value_page_pv"><i class="fa-solid fa-spinner"></i></span></span></div></div></div><div class="post-content"><p>Map映射<br>元素之间是两两对应的，是以键值对的形式存在。<br>Map接口 :<br>&#x2F;&#x2F;Map并不是Collection体系下的接口，而是单独的一个体系，因为操作特殊<br>&#x2F;&#x2F;这里需要填写两个泛型参数，其中K就是键的类型，V就是值的类型，比如上面的学生信息，ID一般是int，那么键就是Integer类型的，而值就是学生信息，所以说值是学生对象类型的<br>public interface Map&lt;K,V&gt; {<br>&#x2F;&#x2F;-------- 查询相关操作 -------- 	<br>&#x2F;&#x2F;获取当前存储的键值对数量<br>int size();<br>&#x2F;&#x2F;是否为空<br>boolean isEmpty();<br>&#x2F;&#x2F;查看Map中是否包含指定的键<br>boolean  containsKey(Object key);<br>&#x2F;&#x2F;查看Map中是否包含指定的值<br>boolean  containsValue(Object value);<br>&#x2F;&#x2F;通过给定的键，返回其映射的值<br>V get(Object key);<br>&#x2F;&#x2F;-------- 修改相关操作 --------<br>&#x2F;&#x2F;向Map中添加新的映射关系，也就是新的键值对<br> V put(K key, V value);<br>&#x2F;根据给定的键，移除其映射关系，也就是移除对应的键值对<br>V remove(Object key); 注意这里有返回值 ; 可以获取键对应的值<br>&#x2F;&#x2F;-------- 批量操作 --------&#x2F;&#x2F;<br>将另一个Map中的所有键值对添加到当前Map中<br>void  putAll(Map&lt;? extends K, ? extends V&gt; m);<br>&#x2F;&#x2F;清空整个Map<br>void clear();<br>&#x2F;&#x2F;-------- 其他视图操作 --------<br>&#x2F;&#x2F;返回Map中存放的所有键，以Set形式返回<br> Set<K> keySet();    ----只包含key<br>&#x2F;&#x2F;返回Map中存放的所有值<br>Collection<V> values();     ---只包含vaule<br>&#x2F;&#x2F;返回所有的键值对，这里用的是内部类Entry在表示<br>Set&lt;Map.Entry&lt;K, V&gt;&gt; entrySet();      ---下面是其定义<br>&#x2F;&#x2F;这个是内部接口Entry，表示一个键值对<br>interfaceEntry&lt;K,V&gt; {<br>&#x2F;&#x2F;获取键值对的键<br> K getKey();<br>&#x2F;&#x2F;获取键值对的值<br> V getValue();<br>&#x2F;&#x2F;修改键值对的值<br> V setValue(V value);<br>&#x2F;&#x2F;判断两个键值对是否相等<br>boolean  equals(Object o);<br>&#x2F;&#x2F;返回当前键值对的哈希值<br>int   hashCode(); ... } ... }<br>&#x2F;&#x2F;Map中无法添加相同的键，同样的键只能存在一个，即使值不同。如果出现键相同的情况，那么会覆盖掉之前的：<br>&#x2F;&#x2F;安全插入 , 若有值不会覆盖, ;<br>map.putIfAbsent(2,&quot;xiao&quot;) ;<br>&#x2F;&#x2F;我们在获取一个不存在的映射时，默认会返回null作为结果<br>&#x2F;&#x2F;我们也可以为这种情况添加一个预备方案，当Map中不存在时，可以返回一个备选的返回值<br>map.getOrDefault(3, &quot;备胎&quot;)<br>&#x2F;&#x2F;同样的，因为HashMap底层采用哈希表实现，所以不维护顺序，我们在获取所有键和所有值时，可能会是乱序的：基础的123还是可以的 , 符号就不行了<br>&#x2F;&#x2F;如果需要维护顺序，我们同样可以使用LinkedHashMap，它的内部对插入顺序进行了维护<br>操作和HashMap&lt;&gt;() 内部方法相同 ; 只是维护了插入顺序 ;<br>遍历map , 不能直接用for , 没接口 ,但内部接口 Entry 实现了itearable接口 可以直接for ;<br>map.entrySet().for ; 实现迭代 ;<br>简单实现替换  : V<br>注意看这里不是BiConsumer接口( 这个不会返回值 ) 详见函数式接口<br>1修改现有值2如果 key 不存在，创建新值<br>V compute(K key, BiFunction&lt;? super K,? super V,? extends V&gt; remappingFunction)  需要返回一个V值 ;<br>map.compute(1,(key , value) -&gt; value + &quot;A&quot; ) ;<br>map.merge(1,&quot;qaa&quot; , (o1 ,o2) -&gt; o1 + o2 );  内部是返回值的函数接口 ;  &#x3D; Integer:: sum ;<br>底层采用的是哈希表<br>哈希表可能会出现哈希冲突，这样保存的元素数量就会存在限制，而我们可以通过链地址法解决这种问题，最后哈希表就长这样了<br>实际上这个表就是一个存放头结点的数组+若干结点，而HashMap也是差不多的实现，我们来看看这里面是怎么定义的：<br>public class HashMap&lt;K,V&gt; extends AbstractMap&lt;K,V&gt;<br>    implements Map&lt;K,V&gt;, Cloneable, Serializable {<br>}<br>比较相关接口( 和自动排序, 和sort排序密切相关 )<br>compareTo  实际上是因为这个类实现了Comparable接口获得的方法，我们常见的一些JDK提供的类型，如String、基本类型包装类、Date、LocalDate等，其实都实现了此接口，从而自带对于其类型对象之间的比较操作：<br>String s1 &#x3D; &quot;AAA&quot;, s2 &#x3D; &quot;BBB&quot;;<br>System.out.println(s1.compareTo(s2));  &#x2F;&#x2F;按字典顺序比较两个字符串,比较基于字符串中每个字符的 Unicode 值。<br>需要实现排序功能需要自己手动implements Comparable&lt;元素&gt; 接口 ;<br>可以重写下方法;<br>public   int   compareTo(Student o) {<br>return age - o.age; &#x2F;&#x2F;直接比较年龄<br> }<br>@Override<br>public String toString() { return&quot;Student{&quot; + &quot;age&#x3D;&quot; + age + &#39;}&#39;; }<br>TreeSet 内部还有Comparator接口 : 调用时也可以在构造时写入比较器( 规则 ) [ 内部自动实现的排序 ]<br> 创建一个比较器 ; Comparator<Student> comparator &#x3D; ( 比较规则 ) ;<br>TreeSet&lt;元素&gt; set &#x3D; new TreeSet&lt;&gt;( comparator.reversed() ) ;   反转排序 ;<br>添加次级比较规则 : 函数式接口 -&gt; comparator.thencomparing(o1 , o2 ) -&gt; o1.元素.compareTo( o2.元素 ) ;   由于内部红黑数比较comparator比较结果是相等 , 那么自动判读为两元素相等, 不会实现覆盖原来Tree中的内容 ;<br>&#x2F;&#x2F;上面的进阶版，可以自定义类中属性(作为key)的获取规则，并对此属性进行比较<br>default <U> Comparator<T> thenComparing(<br>Function&lt;? super T, ? extends U&gt; keyExtractor,          &#x2F;&#x2F;先写清楚获取元素的方法 , 之后lambda中的元素自动为方法元素 ;<br>Comparator&lt;? super U&gt; keyComparator) {<br>return thenComparing(comparing(keyExtractor, keyComparator));<br>}<br>&#x2F;&#x2F;针对于特定内置类型的提取并比较，同上，后续同理<br>default Comparator<T> thenComparingInt(ToIntFunction&lt;? super T&gt; keyExtractor)<br> { return thenComparing(comparingInt(keyExtractor)); }<br>TreeSet中实现的String比较方法实现Comparator.reverseOrder() ; 内部封装好了 , 可以直接使用 ;<br>&#x2F;&#x2F;------以下是所有的静态方法，可以直接生成一个新的Comparator对象<br>&#x2F;&#x2F;生成一个指定类型（需要实现Comparable）的反向比较器<br>public   static &lt;T extends   Comparable&lt;? super T&gt;&gt; Comparator<T> reverseOrder()<br> { return Collections.reverseOrder(); }<br>&#x2F;&#x2F;生成一个指定类型（需要实现Comparable）的正向比较器<br>@SuppressWarnings(&quot;unchecked&quot;)<br>publicstatic &lt;T extends    Comparable&lt;? super T&gt;&gt; Comparator<T> naturalOrder()<br>{ return (Comparator<T>) Comparators.NaturalOrderComparator.INSTANCE; }<br>&#x2F;&#x2F;生成一个指定类型的正向比较器，且针对于null值，会优先排到前面<br>public   static <T> Comparator<T> nullsFirst(Comparator&lt;? super T&gt; comparator) { return     newComparators.NullComparator&lt;&gt;(true, comparator); }<br>&#x2F;&#x2F;生成一个指定类型的正向比较器，且针对于null值，会直接排到后面<br>publicstatic <T> Comparator<T> nullsLast(Comparator&lt;? super T&gt; comparator) {<br>return   new   Comparators.NullComparator&lt;&gt;(false, comparator); }<br>实际使用时 Comparator.null---(Comparator.naturalOrder()) ;<br>&#x2F;&#x2F;传入一个指定类型用于比较的Key的获取方式，然后再传入Key的比较操作实现 , 泛型方法 ;<br>Comparator<br>public   static &lt;T, U&gt; Comparator<T> comparing(<br>Function&lt;? super T, ? extends U&gt; keyExtractor,<br>Comparator&lt;? super U&gt; keyComparator)<br>{ Objects.requireNonNull(keyExtractor);<br>Objects.requireNonNull(keyComparator);<br>return (Comparator<T> &amp; Serializable)<br> (c1, c2) -&gt; keyComparator.compare(keyExtractor.apply(c1),<br>keyExtractor.apply(c2)); }<br>&#x2F;&#x2F;传入一个指定类型用于比较的Key（需要实现Comparable）的获取方式，然后自动进行比较<br>public  static &lt;T, U extendsComparable&lt;? super U&gt;&gt; Comparator<T> comparing(<br>Function&lt;? super T, ? extends U&gt; keyExtractor) {<br>Objects.requireNonNull(keyExtractor);<br>return (Comparator<T> &amp; Serializable)<br>(c1, c2) -&gt; keyExtractor.apply(c1).compareTo(keyExtractor.apply(c2)); }<br>&#x2F;&#x2F;针对于内置类型的<br>public   static <T> Comparator<T> comparingInt(ToIntFunction&lt;? super T&gt; keyExtractor)<br> { Objects.requireNonNull(keyExtractor);<br>return (Comparator<T> &amp; Serializable)<br>(c1, c2) -&gt; Integer.compare(keyExtractor.applyAsInt(c1), keyExtractor.applyAsInt(c2)); } ... }<br>实现可以比较的类<br>&#x2F;&#x2F; 构造时传入比较器<br>    public SortableList(Comparator<T> comparator) {<br>        this.list &#x3D; new ArrayList&lt;&gt;();<br>        this.comparator &#x3D; comparator;<br>    }<br>想实现逆向.就在后面comparing后面加一个.reversed()即可 ;<br>因为是泛型类 &lt;需要后期标清楚类型&gt; ;<br>Collections工具类 ;<br>集合中的&quot;Arrays&quot; :<br> List<Integer> list &#x3D; newArrayList&lt;&gt;(Array.aslist(  ));<br>&#x2F;&#x2F;快速获取到最大最小值 ;<br>Collections.max(list);<br> Collections.min(list);<br>同样的，我们可以对一个集合进行二分搜索（注意，集合的具体类型，必须是实现Comparable接口的类 必须实现排序)：<br>Collections.binarySearch(list, 8)<br>也可以对集合的元素进行快速填充，注意这个填充是对集合中已有的元素进行覆盖：<br>Collections.fill(list, 6);    &#x2F;&#x2F;集合中本身没有元素，那么fill操作不会生效。<br>可能需要生成一个空的集合类返回，那么我们可以使用emptyXXX来快速生成一个只读的空集合：<br> List<Integer> list &#x3D; Collections.emptyList(); 	&#x2F;&#x2F;Collections.singletonList()  , 可以用于创建List , 会生成一个只有一个元素的List list.add(10); &#x2F;&#x2F;不支持，会直接抛出异常 , 以上标记数组都不会再次发生变化 ;<br>List<Integer> newList &#x3D; Collections.unmodifiableList(list);    &#x2F;&#x2F;相当final 无法实现修改 ;<br>寻找子集和的位置 :<br>Collections.indexOfSubList(list, Arrays.asList(4, 5))<br>类型擦除机制，实际上最后只要是Object的实现类都可以保存到集合类中，那么就会出现这种情况：<br> &#x2F;&#x2F;使用原始类型接收一个Integer类型的ArrayList<br>List list&#x3D;newArrayList&lt;&gt;(Arrays.asList(1,2,3,4,5));   Lisr此处不标签类型 ;<br>list.add(&quot;aaa&quot;); &#x2F;&#x2F;我们惊奇地发现，这玩意居然能存字符串进去<br>额外的洗牌功能 : Collections.shuffle(list) ;<br>在实际运行时，并不会真的进行类型检查，要解决这种问题很简单，就是在运行时进行类型检查<br>Collections.checkedList(list, Integer.class); &#x2F;&#x2F;这里的.class关键字我们会在后面反射中介绍<br>checkedXXX可以将给定集合类进行包装，在运行时同样会进行类型检查，如果通过上面的漏洞插入一个本不应该是当前类型集合支持的类型，那么会直接抛出类型转换异常：<br>表示Integer这个类型 	list.add(&quot;aaa&quot;);  只要是Object类型就可以实现填入<br>import java.io.<em>;<br>import java.util.</em>;</p>
+<p>public class Main {</p>
+<pre><code>public static void main(String[] args)  &#123;
+    Map&lt;Integer , String&gt; map = new HashMap&lt;&gt;() ;
+    map.put(1,&quot;xiao&quot;) ;
+    map.put(2,&quot;ming&quot;) ;
+    map.putIfAbsent(2,&quot;xiao&quot;) ;
+    System.out.println(map);
+    System.out.println(map.get(2));
+    System.out.println(map.getOrDefault(4, &quot;gay&quot;));
+    Map&lt;Integer, String&gt; map2 = new LinkedHashMap&lt;&gt;() ;
+    System.out.println(map.containsKey(1));
+    Set&lt;Map.Entry&lt;Integer , String&gt;&gt; entries = map.entrySet() ;
+
+    for(Map.Entry&lt;Integer , String &gt; entry : entries) &#123;
+        Integer key = entry.getKey() ;
+        String value = entry.getValue() ;
+        System.out.println(&quot;key = &quot;+key+&quot;value = &quot;+value);
+    &#125;
+    map.forEach((key , value) -&gt; &#123;
+        System.out.println(&quot;key = &quot;+key+&quot;value = &quot;+value);
+    &#125;);
+    map.compute(1,(key , va) -&gt; &#123;
+        System.out.println(&quot;key = &quot;+key+&quot;value = &quot;+va);
+        return va ;
+    &#125; ) ;
+    map.merge(1,&quot;qaa&quot; , (o1 ,o2) -&gt; o1 + o2 );
+    System.out.println(map.get(1));
+
+    List&lt;Integer&gt; list = new ArrayList&lt;&gt;(Arrays.asList(1,2,3,4)) ;
+    Collections.sort(list);
+    System.out.println(list);
+
+&#125;
+static class  Student  &#123;
+    int age ;
+    String name ;
+    public Student(int age, String name) &#123;
+        this.age = age;
+        this.name = name;
+    &#125;
+    public String toString() &#123;
+        return &quot;Student [age=&quot; + age + &quot;, name=&quot; + name + &quot;]&quot;;
+    &#125;
+&#125;
+</code></pre>
+<p>}</p>
+</div><div class="post-end"><div class="post-prev"></div><div class="post-reward" onclick="openPostReward()" title="赞赏"><i class="fa-regular fa-thumbs-up fa-xl fa-beat-fade"></i></div><div id="reward-panel" onclick="closePostReward()"><div class="reward-container"><p>作者快被折磨死了，给点银子都给你了, 连我也给你了 &#128151;</p>
+<div class="reward-nav"><div class="reward-item"><img class="reward-img" src="/img/reward/wechat.jpg" title="Wechat" alt="Wechat"/><span>Wechat</span></div><div class="reward-item"><img class="reward-img" src="/img/reward/alipay.jpg" title="Alipay" alt="Alipay"/><span>Alipay</span></div></div></div></div><div class="post-next"><a href="/2026/01/17/gitLearn/" title="下一篇文章"><i class="fa-solid fa-chevron-right fa-lg"></i></a></div></div></article><div class="comment" id="comment"><script src="https://giscus.app/client.js" async="async"></script></div><div id="post-toc"><aside class="toc-aside"><div class="toc-title"><span><i class="fa-solid fa-paw"></i>目录</span></div><div class="toc-container" id="toc-body"></div></aside><div class="toc-blank" onclick="tocToggle()"></div></div></div></div><div id="tool-bar"><div id="tool-bar-main"><div id="tool-toggle" onclick="toolToggle()" title="设置"><i class="fa-solid fa-gear"></i></div><div id="toc-toggle" onclick="tocToggle()" title="目录"><i class="fa-solid fa-list-ul"></i></div><div id="go-to-comment" onclick="gotoComment()" title="评论"><i class="fa-regular fa-message fa-flip-horizontal"></i></div><div id="back-to-top" onclick="scrollToTop()" title="返回顶部"><i class="fa-solid fa-chevron-up"></i></div></div><div id="tool-bar-more" style="display: none;"><div id="darkmode-switch" onclick="darkmodeSwitch()" title="深色模式"><i class="fa-solid fa-circle-half-stroke"></i></div><div id="font-size-increase" onclick="fontSizeIncrease()" title="放大字体"><i class="fa-solid fa-plus"></i></div><div id="font-size-decrease" onclick="fontSizeDecrease()" title="缩小字体"><i class="fa-solid fa-minus"></i></div></div></div><div id="search-panel"><div class="search-container"><div class="search-head"><div class="search-title"><span><i class="fa-solid fa-paw"></i>搜索</span></div><div class="search-close-btn" onclick="toggleSearchWindow()"><i class="fa-regular fa-circle-xmark"></i></div></div><div class="search-box"><i class="fa-solid fa-magnifying-glass"></i><input id="search-input" type="text" placeholder="请输入需要搜索的内容……" value=""/></div><div class="search-body"><div id="search-count">匹配结果数: </div><div id="search-result"></div><div id="search-result-empty">未搜索到匹配的文章。</div></div></div></div><footer><div class="footer-content"><div class="copyright-info"><i class="fa-regular fa-copyright fa-xs"></i><span>2024 - 2026 </span><a href="/about">17hwliao</a><i class="fa-solid fa-cat fa-sm"></i><span>Powered by </span><a href="https://hexo.io/" target="_blank">Hexo</a><span> &amp; </span><a href="https://github.com/chanwj/hexo-theme-meow" target="_blank" title="v2.1.5">Theme Meow</a></div><div class="pageview-site"><span id="busuanzi_container_site_pv">总访问量 : <span id="busuanzi_value_site_pv"><i class="fa-solid fa-spinner"></i></span></span><span id="busuanzi_container_site_uv">总访客数 : <span id="busuanzi_value_site_uv"><i class="fa-solid fa-spinner"></i></span></span></div></div></footer>
+<script>const GLOBAL_CONFIG = {
+  comment: { theme: ''}
+}
+</script>
+<script src="/js/third-party/darkmode.js"></script>
+<script>var options = {
+  dark: '/css/darkmode.css',
+  startAt: '24:00',
+  endAt: '06:00',
+  checkSystemScheme: 'false',
+  saveOnToggle: 'true'
+};
+var darkMode = new DarkMode(options);
+// change comment theme synchronously 同步修改评论区主题
+if (darkMode.getMode() == "dark" && (true || true)) {
+  if (document.getElementById('comment')) {
+    document.getElementById('comment').getElementsByTagName('script')[0].setAttribute('data-theme', 'noborder_dark');
+  }
+}
+</script><script>if (localStorage.getItem('font-size')) {
+  document.querySelector('.post-content').style.fontSize = localStorage.getItem('font-size') + 'px';
+}
+</script>
+<script src="/js/theme/tool-bar.js"></script>
+
+
+<script src="/js/theme/menu.js"></script>
+
+
+<script src="/js/third-party/clipboard.min.js"></script>
+
+
+<script src="/js/theme/copy.js"></script>
+<script>copyCode();
+</script>
+<script src="/js/theme/reward.js"></script>
+
+<script src="/js/jquery-3.7.1.min.js"></script>
+
+
+<script src="/js/theme/search.js"></script>
+<script>searchFunc('/search.xml', 'search-input', 'search-result');
+</script></body></html>
