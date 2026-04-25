@@ -51,7 +51,7 @@ export default function HiCard() {
 					<img src='/images/avatar.png' className='mx-auto rounded-full' style={{ width: 120, height: 120, boxShadow: ' 0 16px 32px -5px #E2D9CE' }} />
 				</Link>
 				<h1 className='font-averia mt-3 text-2xl'>
-					{greeting} <br /> I'm <span className='text-linear text-[32px]'>{username}</span> , welcome to my<br /> new blog !
+					{greeting} <br /> I'm <span className='text-linear text-[32px]'>{username}</span> , welcome to my new blog !
 				</h1>
 			</Card>
 		</HomeDraggableLayer>
