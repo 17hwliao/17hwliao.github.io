@@ -1,5 +1,15 @@
 [
   {
+    "slug": "now-plan",
+    "title": "开始一下之后的学习计划",
+    "tags": [],
+    "date": "2026-04-27T18:34",
+    "summary": "制定一下之后的计划, 顺便看看能不能水下github上传数 , 嘿嘿",
+    "cover": "/blogs/now-plan/1ca7505a8f5ecf4e.webp",
+    "hidden": false,
+    "category": "总结"
+  },
+  {
     "slug": "data-dashboard",
     "title": "数据大屏中的地图渲染",
     "tags": [
