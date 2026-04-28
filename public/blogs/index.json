@@ -1,5 +1,15 @@
 [
   {
+    "slug": "my-day",
+    "title": "今日份学习总结",
+    "tags": [],
+    "date": "2026-04-28T20:25",
+    "summary": "我要要私吗\n",
+    "cover": "/blogs/my-day/15649ea516f5223b.webp",
+    "hidden": false,
+    "category": "总结"
+  },
+  {
     "slug": "now-plan",
     "title": "开始一下之后的学习计划",
     "tags": [],
