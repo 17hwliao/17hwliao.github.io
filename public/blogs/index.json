@@ -1,5 +1,15 @@
 [
   {
+    "slug": "new-day",
+    "title": "my_new_day",
+    "tags": [],
+    "date": "2026-04-29T20:30",
+    "summary": "今天的状态有点差",
+    "cover": "/blogs/new-day/ashdjk.webp",
+    "hidden": false,
+    "category": "总结"
+  },
+  {
     "slug": "my-day",
     "title": "今日份学习总结",
     "tags": [],
