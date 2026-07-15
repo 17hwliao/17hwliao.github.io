@@ -1,14 +1,5 @@
 [
   {
-    "slug": "daily-07-15",
-    "title": "test",
-    "tags": [],
-    "date": "2026-07-15T19:15",
-    "summary": "",
-    "hidden": false,
-    "category": ""
-  },
-  {
     "slug": "daily-study",
     "title": "Elasticsearch的学习",
     "tags": [],
