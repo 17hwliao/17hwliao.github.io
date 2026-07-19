@@ -1,5 +1,15 @@
 [
   {
+    "slug": "daily-zap-sql",
+    "title": "PostgreSql + Zap开源日志框架",
+    "tags": [],
+    "date": "2026-07-19T14:22",
+    "summary": "",
+    "cover": "/blogs/daily-zap-sql/fa30d784ddcc3c9e.jpg",
+    "hidden": false,
+    "category": ""
+  },
+  {
     "slug": "daily-casbin",
     "title": "Context和简单的鉴权框架",
     "tags": [],
