@@ -1,5 +1,15 @@
 [
   {
+    "slug": "daily-rabbitMq",
+    "title": "RabbitMq",
+    "tags": [],
+    "date": "2026-07-21T16:25",
+    "summary": "",
+    "cover": "/blogs/daily-rabbitMq/b0e1a21c18513520.jpg",
+    "hidden": false,
+    "category": ""
+  },
+  {
     "slug": "daily-kafka",
     "title": "Kafka",
     "tags": [],
