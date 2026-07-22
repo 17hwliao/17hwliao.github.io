@@ -1,5 +1,15 @@
 [
   {
+    "slug": "daily-manager",
+    "title": "go设计模式",
+    "tags": [],
+    "date": "2026-07-22T17:22",
+    "summary": "",
+    "cover": "/blogs/daily-manager/8a2cca91b43a2304.png",
+    "hidden": false,
+    "category": ""
+  },
+  {
     "slug": "daily-rabbitMq",
     "title": "RabbitMq",
     "tags": [],
